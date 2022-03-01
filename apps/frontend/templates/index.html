@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <section x-data="{ number: Math.random() }" class="text-center py-10 px-5">
+        <article x-cloak class="prose mx-auto">
+            <h1>JobifyRecruitment</h1>
+            <p x-text="number"></p>
+        </article>
+    </section>
+{% endblock %}

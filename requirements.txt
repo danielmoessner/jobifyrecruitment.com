@@ -1,0 +1,6 @@
+# base
+wheel==0.37.1
+# django
+Django==4.0.3
+# debug toolbar
+django-debug-toolbar==3.2.4

@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* alpine */
+[x-cloak] { display: none !important; }
+
+/* form */
+.djangoform p {
+    @apply mb-5 xl:mb-8;
+}
+
+.djangoform label {
+    @apply block mb-1;
+}
+
+.djangoform input, .djangoform select, .djangoform textarea {
+    @apply bg-white px-4 box-border transition w-full border-gray-200 text-gray-700 block outline-none py-2 border-[6px] border-solid text-lg leading-relaxed;
+    @apply hover:border-gray-400;
+}
+
+.djangoform input {
+    @apply appearance-none;
+}
+
+.djangoform select {
+    @apply appearance-none;
+}
+
+.djangoform textarea {
+
+}
+
+.djangoform .helptext {
+
+}
+
+.djangoform .errorlist {
+    @apply -mt-4 mb-5 pl-4 lg:-mt-7;
+}
+
+.djangoform .errorlist li {
+    @apply text-red-600;
+}
+
+.djangoform .errorlist li::before {
+    content: '';
+}

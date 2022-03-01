@@ -1,0 +1,12 @@
+tmp/db.sqlite3
+tmp/secrets.json
+tmp/venv/*
+node_modules/*
+static/css/main.css
+static/js/main.js
+tmp/media/*
+tmp/static/*
+apps/*/migrations/*
+.idea
+__pycache__
+output.*
