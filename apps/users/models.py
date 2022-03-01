@@ -42,3 +42,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return '{}'.format(self.email)
+
+    @property
+    def is_superuser(self):
+        if self.email.endswith('@tortuga-webdesign.de') or self.email.endswith('@a2d.at'):
+            return True
+        return False
+
+    @property
+    def is_staff(self):
+        if self.email.endswith('@tortuga-webdesign.de') or self.email.endswith('@a2d.at'):
+            return True
+        return False
