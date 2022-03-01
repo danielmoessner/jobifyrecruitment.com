@@ -18,4 +18,4 @@ ln -s /home/jobifyrecruitment.com/apache.conf /etc/apache2/sites-available/jobif
 certbot certonly --apache -d jobifyrecruitment.com -d www.jobifyrecruitment.com --register-unsafely-without-email
 a2enmod ssl
 a2enmod rewrite
-a2ensite prod-api.jobifyrecruitment.com.conf
+a2ensite jobifyrecruitment.com.conf
