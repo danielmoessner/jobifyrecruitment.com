@@ -36,8 +36,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ["name"]
 
     class Meta:
-        verbose_name = "User"
-        verbose_name_plural = "Users"
+        verbose_name = "Nutzer"
+        verbose_name_plural = "Nutzer"
         ordering = ["name"]
 
     def __str__(self):
