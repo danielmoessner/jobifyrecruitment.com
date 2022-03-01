@@ -10,3 +10,4 @@ apps/*/migrations/*
 .idea
 __pycache__
 output.*
+.DS_STORE
