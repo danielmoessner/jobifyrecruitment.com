@@ -14,9 +14,9 @@ snap install --classic certbot
 # create venv
 python3 -m venv tmp/venv
 # setup apache configs
-ln -s /home/jobifyrecruitment.com/apache.conf /etc/apache2/sites-available/jobifyrecruitment.com.conf
 certbot certonly --apache -d jobifyrecruitment.com -d www.jobifyrecruitment.com --register-unsafely-without-email
 a2enmod ssl
 a2enmod rewrite
+ln -s /home/jobifyrecruitment.com/apache.conf /etc/apache2/sites-available/jobifyrecruitment.com.conf
 a2ensite jobifyrecruitment.com.conf
 systemctl restart apache2
