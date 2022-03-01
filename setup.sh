@@ -7,7 +7,7 @@ touch tmp/logs/django.log
 touch tmp/secrets.json
 # install everything
 apt update
-apt install python3-pip python3-venv python3-dev apache2 libapache2-mod-wsgi-py3 libpq-dev
+apt install python3-pip python3-venv python3-dev apache2 libapache2-mod-wsgi-py3 libpq-dev snapd
 snap install core
 snap refresh core
 snap install --classic certbot
@@ -19,3 +19,4 @@ certbot certonly --apache -d jobifyrecruitment.com -d www.jobifyrecruitment.com 
 a2enmod ssl
 a2enmod rewrite
 a2ensite jobifyrecruitment.com.conf
+systemctl restart apache2
