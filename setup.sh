@@ -11,7 +11,7 @@ apt install python3-pip python3-venv python3-dev apache2 libapache2-mod-wsgi-py3
 snap install core
 snap refresh core
 snap install --classic certbot
-# create venv
+# create venv and install deps
 python3 -m venv tmp/venv
 # setup apache configs
 certbot certonly --apache -d jobifyrecruitment.com -d www.jobifyrecruitment.com --register-unsafely-without-email
