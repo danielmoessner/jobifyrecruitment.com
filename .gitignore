@@ -8,5 +8,4 @@ tmp/media/*
 tmp/static/*
 .idea
 __pycache__
-output.*
 .DS_STORE
