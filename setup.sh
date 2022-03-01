@@ -13,6 +13,7 @@ snap refresh core
 snap install --classic certbot
 # create venv and install deps
 python3 -m venv tmp/venv
+touch tmp/logs/django.log
 # setup apache configs
 certbot certonly --apache -d jobifyrecruitment.com -d www.jobifyrecruitment.com --register-unsafely-without-email
 a2enmod ssl

@@ -22,7 +22,7 @@ EMAIL_USE_SSL = False
 
 # Logging
 # https://docs.djangoproject.com/en/dev/topics/logging/
-LOGGING_DIR = os.path.join(BASE_DIR, 'tmp/logs')
+LOGGING_DIR = os.path.join(BASE_DIR, 'tmp')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
