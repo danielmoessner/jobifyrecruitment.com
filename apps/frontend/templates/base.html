@@ -2,12 +2,19 @@
 
 <html lang="de">
 <head>
-	{% include 'symbols/head.html' %}
+    {% include 'symbols/head.html' %}
 </head>
 <body>
-    {% block main %}
-
-    {% endblock %}
-	{% include 'symbols/scripts.html' %}
+{% include 'symbols/navigation.html' %}
+{% block main %}
+    <section x-data="{ number: Math.random() }" class="text-center py-10 px-5">
+        <article x-cloak class="prose mx-auto">
+            <h1>JobifyRecruitment</h1>
+            <p x-text="number"></p>
+        </article>
+    </section>
+{% endblock %}
+{% include 'symbols/footer.html' %}
+{% include 'symbols/scripts.html' %}
 </body>
 </html>
