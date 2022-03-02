@@ -1,4 +1,5 @@
-<nav class="relative bg-white xl:sticky xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })" x-init="init()"
+<nav class="relative bg-white xl:sticky xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
+     x-init="init()"
      @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
     <div class="relative z-20">
@@ -34,7 +35,8 @@
                     <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Bewerberportal
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a href="{% url 'frontend:initiative_application' %}"
+                       class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Initiativbewerbung
                     </a>
                     <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
@@ -96,7 +98,8 @@
                         Bewerberportal
                     </a>
 
-                    <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="{% url 'frontend:initiative_application' %}"
+                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Initiativbewerbung
                     </a>
 

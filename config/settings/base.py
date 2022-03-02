@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'apps.users',
-    'apps.frontend'
+    'apps.frontend',
+    'apps.applicants',
+    'crispy_forms'
 ]
 
 # Middleware

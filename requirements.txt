@@ -4,3 +4,7 @@ wheel==0.37.1
 Django==4.0.3
 # debug toolbar
 django-debug-toolbar==3.2.4
+# image
+Pillow==9.0.1
+# crispy forms
+django-crispy-forms==1.14.0

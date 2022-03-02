@@ -3,9 +3,31 @@
 @tailwind utilities;
 
 /* alpine */
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
 /* form */
+.djangoform h2 {
+    @apply font-bold text-2xl !mt-16;
+}
+
+.djangoform .row {
+    @apply flex space-x-3;
+}
+
+.djangoform .row > * {
+    @apply w-full;
+}
+
+.djangoform .form-actions {
+    @apply pt-5;
+}
+
+.djangoform {
+    @apply space-y-5;
+}
+
 .djangoform p {
     @apply mb-5 xl:mb-8;
 }
@@ -14,17 +36,26 @@
     @apply block mb-1;
 }
 
-.djangoform input, .djangoform select, .djangoform textarea {
-    @apply bg-white px-4 box-border transition w-full border-gray-200 text-gray-700 block outline-none py-2 border-[6px] border-solid text-lg leading-relaxed;
-    @apply hover:border-gray-400;
+.djangoform input:not([type='checkbox']), .djangoform select, .djangoform textarea {
+    @apply w-full py-2 border border-gray-300 px-4 rounded-sm;
+    /*@apply bg-white px-4 box-border transition w-full border-gray-200 text-gray-700 block outline-none py-2 border-[6px] border-solid text-lg leading-relaxed;*/
+    /*@apply hover:border-gray-400;*/
 }
 
-.djangoform input {
-    @apply appearance-none;
+.djangoform input[type='checkbox'], .djangoform label.checkbox {
+    cursor: pointer;
 }
 
-.djangoform select {
-    @apply appearance-none;
+.djangoform .controls label {
+    @apply flex space-x-4 max-w-lg;
+}
+
+/*.djangoform select {*/
+/*    @apply appearance-none;*/
+/*}*/
+
+.djangoform .asteriskField {
+    display: none;
 }
 
 .djangoform textarea {

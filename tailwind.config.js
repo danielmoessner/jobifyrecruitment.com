@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 
 // tailwind.config.js
 module.exports = {
-  content: ['./templates/**/*.html', './apps/*/templates/**/*.html'],
+  content: ['./templates/**/*.html', './apps/*/templates/**/*.html', './apps/applicants/forms.py'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -12,7 +12,6 @@ module.exports = {
       gray: colors.gray,
       blue: colors.blue,
       red: colors.rose,
-      red: colors.green,
       purple: colors.purple,
       yellow: colors.yellow
     },

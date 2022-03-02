@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+    <section>
+        <div class="mx-auto max-w-6xl mx-auto py-32">
+            <div class="">
+                {% crispy form %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
