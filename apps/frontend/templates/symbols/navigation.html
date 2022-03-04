@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <nav class="relative bg-white xl:sticky xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
      x-init="init()"
      @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
@@ -5,7 +7,7 @@
     <div class="relative z-20">
         <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 xl:px-8 xl:justify-start xl:space-x-10">
             <div>
-                <a href="#" class="flex">
+                <a href="{% url 'frontend:index' %}" class="flex">
                     <span class="sr-only">JobifyRecruitment</span>
                     {% include 'symbols/logo.html' with class='h-10 w-auto sm:h-12' %}
                 </a>
@@ -26,31 +28,41 @@
             </div>
             <div class="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a href="{% url 'frontend:for_companies' %}"
+                       class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Für Unternehmen
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a href="{% url 'frontend:for_applicants' %}"
+                       class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Für Bewerber
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a href="{% url 'frontend:portal' %}"
+                       class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Bewerberportal
                     </a>
                     <a href="{% url 'frontend:initiative_application' %}"
                        class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Initiativbewerbung
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+                    <a href="{% url 'frontend:contact' %}"
+                       class="text-base font-medium text-gray-500 hover:text-gray-900">
                         Kontakt
                     </a>
                 </div>
                 <div class="flex items-center xl:ml-12 space-x-1">
-                    <a href="#" class="block text-base font-medium text-gray-500 hover:text-gray-900">
-                        DE
-                    </a>
+                    {% language 'de' %}
+                        <a href="{% url 'frontend:index' %}"
+                           class="block text-base font-medium text-gray-500 hover:text-gray-900">
+                            DE
+                        </a>
+                    {% endlanguage %}
                     <div>/</div>
-                    <a href="#" class="block text-base font-medium text-gray-500 hover:text-gray-900">
-                        EN
-                    </a>
+                    {% language 'en' %}
+                        <a href="{% url 'frontend:index' %}"
+                           class="block text-base font-medium text-gray-500 hover:text-gray-900">
+                            EN
+                        </a>
+                    {% endlanguage %}
                 </div>
             </div>
         </div>
@@ -87,35 +99,40 @@
             </div>
             <div class="py-6 px-5 divide-y-2 divide-gray-50">
                 <div class="grid grid-cols-2 gap-4">
-                    <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="{% url 'frontend:for_companies' %}"
+                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Für Unternehmen
                     </a>
-                    <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="{% url 'frontend:for_applicants' %}"
+                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Für Bewerber
                     </a>
-
-                    <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="{% url 'frontend:portal' %}"
+                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Bewerberportal
                     </a>
-
                     <a href="{% url 'frontend:initiative_application' %}"
                        class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Initiativbewerbung
                     </a>
-
-                    <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="{% url 'frontend:contact' %}"
+                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Kontakt
                     </a>
                 </div>
                 <div class="mt-6">
                     <div class="mt-6 flex items-center justify-end space-x-2 text-base font-medium text-gray-500">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                            DE
-                        </a>
+                        {% language 'de' %}
+                            <a href="{% url 'frontend:index' %}" class="text-indigo-600 hover:text-indigo-500">
+                                DE
+                            </a>
+                        {% endlanguage %}
                         <div>/</div>
-                        <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                            EN
-                        </a>
+                        {% language 'en' %}
+                            <a href="{% url 'frontend:index' %}" class="text-indigo-600 hover:text-indigo-500">
+                                EN
+                            </a>
+                        {% endlanguage %}
                     </div>
                 </div>
             </div>

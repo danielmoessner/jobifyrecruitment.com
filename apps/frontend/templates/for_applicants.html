@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% include 'symbols/subheader.html' with title='Für Bewerber' text='Text' %}
+
+    {% include 'for_applicants/text.html' %}
+
+    {% include 'for_applicants/cta.html' %}
+
+    {% include 'for_applicants/courses.html' %}
+{% endblock %}

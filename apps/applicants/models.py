@@ -1,4 +1,4 @@
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 
@@ -17,8 +17,8 @@ class Applicant(models.Model):
         ('WIDOWED', _('Verwitwet'))
     )
     # contact details
-    photo = models.ImageField(upload_to='applicants/applicant/photo/')
-    salutation = models.CharField(choices=SALUTATION_CHOICES, max_length=1)
+    photo = models.ImageField(verbose_name=_('Photo'), upload_to='applicants/applicant/photo/')
+    salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     street = models.CharField(max_length=100)

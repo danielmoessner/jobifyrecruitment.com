@@ -8,3 +8,5 @@ django-debug-toolbar==3.2.4
 Pillow==9.0.1
 # crispy forms
 django-crispy-forms==1.14.0
+# translation
+django-modeltranslation==0.17.5
