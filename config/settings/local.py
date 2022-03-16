@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 # https://docs.djangoproject.com/en/dev/ref/applications/
-INSTALLED_APPS += ["debug_toolbar", "livereload"]
+INSTALLED_APPS += ["debug_toolbar"]
 
 # Middleware
 # https://docs.djangoproject.com/en/dev/topics/http/middleware/
