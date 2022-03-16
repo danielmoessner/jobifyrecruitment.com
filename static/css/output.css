@@ -1141,6 +1141,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1809,6 +1813,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
@@ -1825,6 +1834,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-top {
+  -o-object-position: top;
+     object-position: top;
 }
 
 .p-2 {
@@ -2750,6 +2764,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     top: 3rem;
   }
 
+  .lg\:left-0 {
+    left: 0px;
+  }
+
   .lg\:z-0 {
     z-index: 0;
   }
@@ -2892,6 +2910,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 5rem;
   }
 
+  .lg\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  .lg\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   .lg\:pt-20 {
     padding-top: 5rem;
   }
@@ -2914,6 +2942,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 1280px) {
   .xl\:fixed {
     position: fixed;
+  }
+
+  .xl\:sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   .xl\:top-0 {

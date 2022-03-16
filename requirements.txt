@@ -10,5 +10,3 @@ Pillow==9.0.1
 django-crispy-forms==1.14.0
 # translation
 django-modeltranslation==0.17.5
-# development server
-django-livereload-server==0.4.0

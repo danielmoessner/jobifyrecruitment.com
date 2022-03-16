@@ -1,6 +1,7 @@
 {% load i18n %}
 
-<nav class="relative w-full xl:fixed xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
+<nav class="relative w-full xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
+     :class="[{{ fixed|default:0 }} ? 'xl:fixed' : 'bg-gray-800 xl:sticky']"
      x-init="init()"
      @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="relative z-20">
@@ -29,10 +30,6 @@
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
                     {% include 'symbols/navigation/job_seeker.html' %}
                     {% include 'symbols/navigation/employer.html' %}
-                    <a href="{% url 'frontend:for_applicants' %}"
-                       class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Employer
-                    </a>
                     <a href="{% url 'frontend:initiative_application' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
                         Über uns
@@ -68,7 +65,7 @@
          x-description="Mobile menu, show/hide based on mobile menu state."
          class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden" x-ref="panel"
          @click.away="open = false" style="display: none;">
-        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+        <div class="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
             <div class="pt-5 px-5">
                 <div class="flex items-center justify-between">
                     <div>

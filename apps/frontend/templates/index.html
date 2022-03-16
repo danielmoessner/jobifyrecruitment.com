@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block navigation %}
+    {% include 'symbols/navigation.html' with fixed=1 %}
+{% endblock %}
+
 {% block main %}
 
     {% include 'index/header.html' %}

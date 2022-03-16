@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 from apps.applicants.forms import ApplicantForm
 from django.views.generic import TemplateView
 
+from apps.companies.forms import CompanyForm
+
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = 'index.html'
@@ -21,6 +23,11 @@ class InitiativeApplicationView(FormMixin, TemplateView):
 
 class ForCompaniesView(TemplateView):
     template_name = 'for_companies.html'
+
+
+class CompanyFormView(FormMixin, TemplateView):
+    template_name = 'company_form.html'
+    form_class = CompanyForm
 
 
 class ForApplicantsView(TemplateView):

@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    {% include 'symbols/subheader.html' with title='Für Bewerber' text='Text' %}
+    {% include 'symbols/header.html' with title='Sie suchen eine neue berufliche Herausforderung?' image='img/job-apply-opt.jpeg' %}
 
     {% include 'for_applicants/text.html' %}
 
-    {% include 'for_applicants/cta.html' %}
-
-    {% include 'for_applicants/courses.html' %}
+    {% include 'for_applicants/plan.html' %}
 {% endblock %}

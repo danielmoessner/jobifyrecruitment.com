@@ -49,6 +49,9 @@ class Applicant(models.Model):
     # cv
     cv = models.FileField(upload_to='applicants/applicant/cv/')
     more = models.FileField(upload_to='applicants/applicant/more/')
+    # other
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'Applicant'

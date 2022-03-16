@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-{% if debug %}
-    {% load livereload_tags %}
-{% endif %}
+{% load livereload_tags %}
 <html lang="de">
 <head>
     {% include 'symbols/head.html' %}
 </head>
 <body>
-{% include 'symbols/navigation.html' %}
+{% block navigation %}
+    {% include 'symbols/navigation.html' %}
+{% endblock %}
 {% block main %}
     <section x-data="{ number: Math.random() }" class="text-center py-10 px-5">
         <article x-cloak class="prose mx-auto">
@@ -16,7 +16,11 @@
         </article>
     </section>
 {% endblock %}
-{% include 'symbols/footer.html' %}
-{% include 'symbols/scripts.html' %}
+{% block footer %}
+    {% include 'symbols/footer.html' %}
+{% endblock %}
+{% block scripts %}
+    {% include 'symbols/scripts.html' %}
+{% endblock %}
 </body>
 </html>
