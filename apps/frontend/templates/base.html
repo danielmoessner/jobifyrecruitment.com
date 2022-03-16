@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+{% if debug %}
+    {% load livereload_tags %}
+{% endif %}
 <html lang="de">
 <head>
     {% include 'symbols/head.html' %}

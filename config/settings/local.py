@@ -10,13 +10,11 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 # https://docs.djangoproject.com/en/dev/ref/applications/
-INSTALLED_APPS += ["debug_toolbar"]
+INSTALLED_APPS += ["debug_toolbar", "livereload"]
 
 # Middleware
 # https://docs.djangoproject.com/en/dev/topics/http/middleware/
-MIDDLEWARE += [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
-]
+MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
 # E-Mail
 # https://docs.djangoproject.com/en/dev/topics/email/#smtp-backend
