@@ -27,10 +27,8 @@
             </div>
             <div class="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
-                    <a href="{% url 'frontend:for_companies' %}"
-                       class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Job Seeker
-                    </a>
+                    {% include 'symbols/navigation/job_seeker.html' %}
+                    {% include 'symbols/navigation/employer.html' %}
                     <a href="{% url 'frontend:for_applicants' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
                         Employer
