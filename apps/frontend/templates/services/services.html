@@ -1,0 +1,19 @@
+<section class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <div class="lg:max-w-prose lg:text-lg mx-auto w-full">
+        <ul>
+            {% for service in services %}
+                <li class="flex space-x-5 items-center" id="service-{{ service.pk }}">
+                    <img class="max-w-full w-64" src="{{ service.image.url }}" alt="{{ service.name }}">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800">
+                            {{ service.title }}
+                        </h3>
+                        <p class="text-lg mt-3">
+                            {{ service.text }}
+                        </p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

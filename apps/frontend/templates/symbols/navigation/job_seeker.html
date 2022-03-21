@@ -31,20 +31,29 @@
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Search Jobs</span>
                     </div>
-                    <a href="#"
+                    <a href="{% url 'frontend:why_work_with_us' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Analytics
+                                Why work with us
                             </p>
                         </div>
                     </a>
 
-                    <a href="#"
+                    <a href="{% url 'frontend:submit_a_referral' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Engagement
+                                Submit a Referral
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'frontend:applicants_how_it_works' %}"
+                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                        <div class="">
+                            <p class="text-base font-medium text-gray-900">
+                                How it works
                             </p>
                         </div>
                     </a>
@@ -54,34 +63,27 @@
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Managed Services</span>
                     </div>
-                    <a href="#"
-                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
-                        <div class="">
-                            <p class="text-base font-medium text-gray-900">
-                                Security
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#"
-                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
-                        <div class="">
-                            <p class="text-base font-medium text-gray-900">
-                                Integrations
-                            </p>
-                        </div>
-                    </a>
+                    {% for service in services %}
+                        <a href="{% url 'frontend:services' %}#service-{{ service.pk }}"
+                           class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                            <div class="">
+                                <p class="text-base font-medium text-gray-900">
+                                    {{ service.name }}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Resources</span>
                     </div>
-                    <a href="#"
+                    <a href="{% url 'frontend:working_in_austria' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Automations
+                                Working in Austria
                             </p>
                         </div>
                     </a>
@@ -90,7 +92,25 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Reports
+                                2022 Salary Guides
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#"
+                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                        <div class="">
+                            <p class="text-base font-medium text-gray-900">
+                                FAQs
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'frontend:video_resume' %}"
+                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                        <div class="">
+                            <p class="text-base font-medium text-gray-900">
+                                What's a video resume
                             </p>
                         </div>
                     </a>

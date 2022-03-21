@@ -10,3 +10,7 @@ Pillow==9.0.1
 django-crispy-forms==1.14.0
 # translation
 django-modeltranslation==0.17.5
+# rich text editor
+django-tinymce==3.4.0
+# singleton models
+django-solo==2.0.0

@@ -1,10 +1,10 @@
-from apps.companies.models import Company
+from apps.referrals.models import Referral
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Row
+from crispy_forms.layout import Submit, Layout, Field
 from django import forms
 
 
-class CompanyForm(forms.ModelForm):
+class ReferralForm(forms.ModelForm):
     privacy = forms.BooleanField(label='Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt '
                                        'und erst nach Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich '
                                        'mit den Datenschutzbestimmungen einverstanden.')
@@ -13,7 +13,7 @@ class CompanyForm(forms.ModelForm):
                     'einverstanden.'
 
     class Meta:
-        model = Company
+        model = Referral
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
@@ -24,9 +24,12 @@ class CompanyForm(forms.ModelForm):
         self.helper.attrs = {'novalidate': True}
         self.helper.add_input(Submit('submit', 'Submit'))
         self.helper.layout = Layout(
-            'manager_name',
-            Row('company_name', 'company_email'),
-            Row('company_phone', 'job'),
-            Row('job_duration', 'job_start'),
-            'job_description'
+            'your_name',
+            'your_email',
+            'referral_name',
+            'referral_email',
+            'referral_phone',
+            'referral_job',
+            'referral_resume',
+            Field('privacy', css_class='w-6 h-6 mr-2 flex-shrink-0'),
         )

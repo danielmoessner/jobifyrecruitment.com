@@ -12,6 +12,8 @@ sitemaps = {}
 urlpatterns = [
     # sitemap
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # tinymce
+    path('tinymce/', include('tinymce.urls')),
     # robots file
     path('robots.txt', TemplateView.as_view(template_name="general/robots.txt", content_type='text/plain')),
     # admin

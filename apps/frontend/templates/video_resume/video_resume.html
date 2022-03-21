@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    {% include 'symbols/header.html' with title='Video resume' image='img/video-opt.png' %}
+
+    {% include 'video_resume/text.html' %}
+
+    {% include 'video_resume/benefits.html' %}
+
+    {% include 'video_resume/sample.html' %}
+
+    {% include 'video_resume/faq.html' %}
+{% endblock %}

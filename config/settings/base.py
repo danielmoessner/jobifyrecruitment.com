@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'apps.frontend',
     'apps.applicants',
     'apps.companies',
-    'crispy_forms'
+    'apps.referrals',
+    'apps.content',
+    'crispy_forms',
+    'tinymce',
+    'solo',
+    'modeltranslation'
 ]
 
 # Middleware
@@ -157,3 +162,28 @@ ADMINS = [('Daniel Mössner', 'bugs@tortuga-webdesign.de')]
 # sites framework
 # https://docs.djangoproject.com/en/dev/ref/contrib/sites/
 SITE_ID = 1
+
+# TinyMCE
+# https://django-tinymce.readthedocs.io/en/latest/installation.html#configuration
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "height": 500,
+    "menubar": False,
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
+               "searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,"
+               "code,help,wordcount",
+    "toolbar": "undo redo | formatselect | "
+               "bold italic underline | forecolor backcolor | alignleft aligncenter "
+               "alignright alignjustify | bullist numlist outdent indent | link",
+    "block_formats": 'Paragraph=p; Überschrift=h3; Unterüberschrift=h4; Vorformatiert=pre',
+    # "invalid_styles": 'font-family font-size font-weight',
+    # "keep_styles": False,
+    "invalid_elements": "div",
+    "valid_classes": "",
+    "valid_styles": {
+        '*': 'color,text-align,padding-left,text-decoration,background-color'
+    },
+    # "invalid_elements": "span",
+    "advlist_bullet_styles": "default",
+    "advlist_number_styles": "default"
+}
