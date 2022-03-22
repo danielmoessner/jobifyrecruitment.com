@@ -5,7 +5,7 @@ from apps.applicants.forms import ApplicantForm
 from django.views.generic import TemplateView
 from apps.referrals.forms import ReferralForm
 from apps.companies.forms import CompanyForm
-from apps.content.models import WhyToWorkWithUsPage, Service
+from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory
 
 
 ###
@@ -15,6 +15,7 @@ class BaseContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['services'] = Service.objects.all()
+        context['staff_categories'] = StaffCategory.objects.all()
         return context
 
 
@@ -43,22 +44,27 @@ class InitiativeApplicationView(BaseContext, FormMixin, TemplateView):
 
 
 class ForCompaniesView(BaseContext, TemplateView):
-    template_name = 'for_companies/for_companies.html'
+    template_name = 'staffing_solutions/index.html'
 
 
-class CompanyFormView(BaseContext, FormMixin, TemplateView):
-    template_name = 'company_form/company_form.html'
+class SubmitPositionView(BaseContext, FormMixin, TemplateView):
+    template_name = 'submit_a_position/index.html'
     form_class = CompanyForm
 
 
+class EmployerFaqsView(BaseContext, TemplateView):
+    template_name = 'employer_faqs/index.html'
+
+
 class WhyWorkWithUsView(BaseContext, PageContext, TemplateView):
-    template_name = 'why_work_with_us/why_work_with_us.html'
+    template_name = 'why_work_with_us/index.html'
     page = WhyToWorkWithUsPage
 
 
-class SubmitReferralView(BaseContext, FormMixin, TemplateView):
-    template_name = 'submit_a_referral/submit_a_referral.html'
+class SubmitReferralView(BaseContext, PageContext, FormMixin, TemplateView):
+    template_name = 'submit_a_referral/index.html'
     form_class = ReferralForm
+    page = SubmitReferralPage
 
 
 class ApplicantsHowItWorksView(BaseContext, TemplateView):
@@ -81,7 +87,7 @@ class PortalView(BaseContext, TemplateView):
 # both
 ###
 class ContactView(BaseContext, TemplateView):
-    template_name = 'contact/contact.html'
+    template_name = 'contact/index.html'
 
 
 class VideoResumeView(BaseContext, TemplateView):

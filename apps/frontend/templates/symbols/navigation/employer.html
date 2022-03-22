@@ -31,34 +31,27 @@
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Staffing Solutions</span>
                     </div>
-                    <a href="#"
-                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
-                        <div class="">
-                            <p class="text-base font-medium text-gray-900">
-                                Analytics
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#"
-                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
-                        <div class="">
-                            <p class="text-base font-medium text-gray-900">
-                                Engagement
-                            </p>
-                        </div>
-                    </a>
+                    {% for category in staff_categories %}
+                        <a href="{% url 'frontend:staffing_solutions' %}"
+                           class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                            <div class="">
+                                <p class="text-base font-medium text-gray-900">
+                                    {{ category.name }}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Open Role?</span>
                     </div>
-                    <a href="{% url 'frontend:for_companies' %}"
+                    <a href="{% url 'frontend:submit_a_position' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Zur Registrierung
+                                Submit a position
                             </p>
                         </div>
                     </a>
@@ -67,7 +60,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Integrations
+                                How it works (todo)
                             </p>
                         </div>
                     </a>
@@ -77,20 +70,20 @@
                     <div class="pb-3">
                         <span class="block text-lg font-bold">Resources</span>
                     </div>
-                    <a href="#"
+                    <a href="{% url 'frontend:video_resume' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Automations
+                                What's a video resume
                             </p>
                         </div>
                     </a>
 
-                    <a href="#"
+                    <a href="{% url 'frontend:employer_faqs' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Reports
+                                Employer FAQs
                             </p>
                         </div>
                     </a>

@@ -30,9 +30,9 @@
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
                     {% include 'symbols/navigation/job_seeker.html' %}
                     {% include 'symbols/navigation/employer.html' %}
-                    <a href="{% url 'frontend:initiative_application' %}"
+                    <a href=""
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Über uns
+                        Über uns (todo)
                     </a>
                     <a href="{% url 'frontend:contact' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
@@ -89,9 +89,9 @@
             </div>
             <div class="py-6 px-5 divide-y-2 divide-gray-50">
                 <div class="grid grid-cols-2 gap-4">
-                    <a href="{% url 'frontend:for_companies' %}"
+                    <a href="{% url 'frontend:staffing_solutions' %}"
                        class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Für Unternehmen
+                        Staffing Solutions
                     </a>
                     <a href="{% url 'frontend:applicants_how_it_works' %}"
                        class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
