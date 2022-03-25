@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    {% include 'symbols/header.html' with title='Kurse' image='img/service.jpg' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/service.jpg' %}
 
-    {% include 'services/text.html' %}
+    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
 
     {% include 'services/services.html' %}
 

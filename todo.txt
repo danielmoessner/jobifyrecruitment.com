@@ -1,2 +1,3 @@
-ionos port 25 freischalten
+bild ganz darstellen und dabei ganz nach rechts
+text überall in der mitte darstellen
 

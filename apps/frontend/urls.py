@@ -9,11 +9,11 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     # job seeker
     path(_('initiative-application/'), views.InitiativeApplicationView.as_view(), name='initiative_application'),
-    path(_('why-work-with-us'), views.WhyWorkWithUsView.as_view(), name='why_work_with_us'),
-    path(_('submit-a-referral'), views.SubmitReferralView.as_view(), name='submit_a_referral'),
-    path(_('applicants-how-it-works'), views.ApplicantsHowItWorksView.as_view(), name='applicants_how_it_works'),
-    path(_('working-in-austria'), views.WorkingInAustriaView.as_view(), name='working_in_austria'),
-    path(_('services'), views.ServicesView.as_view(), name='services'),
+    path(_('why-work-with-us/'), views.WhyWorkWithUsView.as_view(), name='why_work_with_us'),
+    path(_('submit-a-referral/'), views.SubmitReferralView.as_view(), name='submit_a_referral'),
+    path(_('applicants-how-it-works/'), views.ApplicantsHowItWorksView.as_view(), name='applicants_how_it_works'),
+    path(_('working-in-austria/'), views.WorkingInAustriaView.as_view(), name='working_in_austria'),
+    path(_('services/'), views.ServicesView.as_view(), name='services'),
     # employer or company
     path(_('staffing-solutions/'), views.ForCompaniesView.as_view(), name='staffing_solutions'),
     path(_('submit-a-position/'), views.SubmitPositionView.as_view(), name='submit_a_position'),

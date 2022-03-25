@@ -5,7 +5,8 @@ from apps.applicants.forms import ApplicantForm
 from django.views.generic import TemplateView
 from apps.referrals.forms import ReferralForm
 from apps.companies.forms import CompanyForm
-from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory
+from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
+    ApplicantsHowItWorksPage, WorkingInAustriaPage
 
 
 ###
@@ -67,12 +68,14 @@ class SubmitReferralView(BaseContext, PageContext, FormMixin, TemplateView):
     page = SubmitReferralPage
 
 
-class ApplicantsHowItWorksView(BaseContext, TemplateView):
-    template_name = 'applicants_how_it_works/applicants_how_it_works.html'
+class ApplicantsHowItWorksView(BaseContext, PageContext, TemplateView):
+    template_name = 'applicants_how_it_works/index.html'
+    page = ApplicantsHowItWorksPage
 
 
-class WorkingInAustriaView(BaseContext, TemplateView):
+class WorkingInAustriaView(BaseContext, PageContext, TemplateView):
     template_name = 'working_in_austria/index.html'
+    page = WorkingInAustriaPage
 
 
 class ServicesView(BaseContext, TemplateView):

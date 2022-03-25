@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
-
 {% block main %}
-    {% include 'symbols/header.html' with title=page.header_title image='img/together-opt.jpeg' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/job-apply-opt.jpeg' %}
 
     {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
+
+    {% include 'applicants_how_it_works/plan.html' %}
 {% endblock %}
