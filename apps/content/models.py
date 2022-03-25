@@ -45,13 +45,13 @@ class StaffCategory(models.Model):
 ###
 class WhyToWorkWithUsPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_left = tinymce_models.HTMLField(verbose_name='Text > Left')
-    text_right = tinymce_models.HTMLField(verbose_name='Text > Right')
-    text_button = models.CharField(verbose_name='Text > Button', max_length=200)
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_left = tinymce_models.HTMLField(verbose_name='Text > Left', blank=True)
+    text_right = tinymce_models.HTMLField(verbose_name='Text > Right', blank=True)
+    text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -62,13 +62,13 @@ class WhyToWorkWithUsPage(SingletonModel):
 
 class SubmitReferralPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_left = tinymce_models.HTMLField(verbose_name='Text > Left')
-    text_right = tinymce_models.HTMLField(verbose_name='Text > Right')
-    text_button = models.CharField(verbose_name='Text > Button', max_length=200)
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_left = tinymce_models.HTMLField(verbose_name='Text > Left', blank=True)
+    text_right = tinymce_models.HTMLField(verbose_name='Text > Right', blank=True)
+    text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
     faq_title = models.CharField(verbose_name='FAQ > Title', max_length=100)
     faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=100, blank=True)
@@ -93,19 +93,19 @@ class SubmitReferralPage(SingletonModel):
 
 class ApplicantsHowItWorksPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_text = tinymce_models.HTMLField(verbose_name='Text > Text')
-    text_button = models.CharField(verbose_name='Text > Button', max_length=200)
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
-    plan_title = models.CharField(verbose_name='Plan > Title', max_length=100)
+    plan_title = models.CharField(verbose_name='Plan > Title', max_length=100, blank=True)
     plan_1 = models.TextField(verbose_name='Plan > Step 1', blank=True)
     plan_2 = models.TextField(verbose_name='Plan > Step 2', blank=True)
     plan_3 = models.TextField(verbose_name='Plan > Step 3', blank=True)
     plan_4 = models.TextField(verbose_name='Plan > Step 4', blank=True)
-    plan_button = models.CharField(verbose_name='Plan > Button', max_length=100)
+    plan_button = models.CharField(verbose_name='Plan > Button', max_length=100, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -116,11 +116,11 @@ class ApplicantsHowItWorksPage(SingletonModel):
 
 class ServicesPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_text = tinymce_models.HTMLField(verbose_name='Text > Text')
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -131,11 +131,11 @@ class ServicesPage(SingletonModel):
 
 class WorkingInAustriaPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_text = tinymce_models.HTMLField(verbose_name='Text > Text')
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -146,20 +146,20 @@ class WorkingInAustriaPage(SingletonModel):
 
 class VideoResumePage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200)
-    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200)
-    text_text = tinymce_models.HTMLField(verbose_name='Text > Text')
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
-    benefits_left_title = models.CharField(verbose_name='Benefits > Title Left', max_length=200)
-    benefits_left_text = models.TextField(verbose_name='Benefits > Text Left')
-    benefits_right_title = models.CharField(verbose_name='Benefits > Title Right', max_length=200)
-    benefits_right_text = models.TextField(verbose_name='Benefits > Text Right')
+    benefits_left_title = models.CharField(verbose_name='Benefits > Title Left', max_length=200, blank=True)
+    benefits_left_text = models.TextField(verbose_name='Benefits > Text Left', blank=True)
+    benefits_right_title = models.CharField(verbose_name='Benefits > Title Right', max_length=200, blank=True)
+    benefits_right_text = models.TextField(verbose_name='Benefits > Text Right', blank=True)
     #
-    video_title = models.CharField(verbose_name='Video > Title', max_length=200)
+    video_title = models.CharField(verbose_name='Video > Title', max_length=200, blank=True)
     #
-    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=100)
+    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=100, blank=True)
     faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=100, blank=True)
     faq_answer_1 = models.TextField(verbose_name='FAQ > Answer 1', blank=True)
     faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=100, blank=True)
