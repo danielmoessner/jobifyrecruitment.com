@@ -94,7 +94,7 @@ class ContactView(BaseContext, TemplateView):
 
 
 class VideoResumeView(BaseContext, TemplateView):
-    template_name = 'video_resume/video_resume.html'
+    template_name = 'video_resume/index.html'
 
 
 ###
