@@ -2,9 +2,9 @@
 
 
 {% block main %}
-    {% include 'symbols/header.html' with title='Sie suchen neues Personal?' image='img/shake-hand-opt.jpeg' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/shake-hand-opt.jpeg' %}
 
-    {% include 'staffing_solutions/text.html' %}
+    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
 
     {% include 'staffing_solutions/categories.html' %}
 

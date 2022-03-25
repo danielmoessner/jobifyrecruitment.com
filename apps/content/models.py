@@ -8,8 +8,8 @@ from tinymce import models as tinymce_models
 ###
 class Service(models.Model):
     image = models.ImageField()
-    name = models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=1000)
+    title = models.CharField(max_length=1000)
     text = models.TextField()
     ordering = models.IntegerField(0)
     created = models.DateTimeField(auto_now_add=True)
@@ -26,7 +26,7 @@ class Service(models.Model):
 
 class StaffCategory(models.Model):
     image = models.ImageField()
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=1000)
     ordering = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -45,7 +45,7 @@ class StaffCategory(models.Model):
 ###
 class WhyToWorkWithUsPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
@@ -62,7 +62,7 @@ class WhyToWorkWithUsPage(SingletonModel):
 
 class SubmitReferralPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
@@ -70,18 +70,18 @@ class SubmitReferralPage(SingletonModel):
     text_right = tinymce_models.HTMLField(verbose_name='Text > Right', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
-    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=100)
-    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=100, blank=True)
+    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=1000)
+    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
     faq_answer_1 = models.TextField(verbose_name='FAQ > Answer 1', blank=True)
-    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=100, blank=True)
+    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=1000, blank=True)
     faq_answer_2 = models.TextField(verbose_name='FAQ > Answer 2', blank=True)
-    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=100, blank=True)
+    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=1000, blank=True)
     faq_answer_3 = models.TextField(verbose_name='FAQ > Answer 3', blank=True)
-    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=100, blank=True)
+    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=1000, blank=True)
     faq_answer_4 = models.TextField(verbose_name='FAQ > Answer 4', blank=True)
-    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=100, blank=True)
+    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=1000, blank=True)
     faq_answer_5 = models.TextField(verbose_name='FAQ > Answer 5', blank=True)
-    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=100, blank=True)
+    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=1000, blank=True)
     faq_answer_6 = models.TextField(verbose_name='FAQ > Answer 6', blank=True)
 
     def __str__(self):
@@ -93,19 +93,19 @@ class SubmitReferralPage(SingletonModel):
 
 class ApplicantsHowItWorksPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
-    plan_title = models.CharField(verbose_name='Plan > Title', max_length=100, blank=True)
+    plan_title = models.CharField(verbose_name='Plan > Title', max_length=1000, blank=True)
     plan_1 = models.TextField(verbose_name='Plan > Step 1', blank=True)
     plan_2 = models.TextField(verbose_name='Plan > Step 2', blank=True)
     plan_3 = models.TextField(verbose_name='Plan > Step 3', blank=True)
     plan_4 = models.TextField(verbose_name='Plan > Step 4', blank=True)
-    plan_button = models.CharField(verbose_name='Plan > Button', max_length=100, blank=True)
+    plan_button = models.CharField(verbose_name='Plan > Button', max_length=1000, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -116,7 +116,7 @@ class ApplicantsHowItWorksPage(SingletonModel):
 
 class ServicesPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
@@ -131,7 +131,7 @@ class ServicesPage(SingletonModel):
 
 class WorkingInAustriaPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
@@ -146,7 +146,7 @@ class WorkingInAustriaPage(SingletonModel):
 
 class VideoResumePage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
@@ -159,18 +159,18 @@ class VideoResumePage(SingletonModel):
     #
     video_title = models.CharField(verbose_name='Video > Title', max_length=200, blank=True)
     #
-    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=100, blank=True)
-    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=100, blank=True)
+    faq_title = models.CharField(verbose_name='FAQ > Title', max_length=1000, blank=True)
+    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
     faq_answer_1 = models.TextField(verbose_name='FAQ > Answer 1', blank=True)
-    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=100, blank=True)
+    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=1000, blank=True)
     faq_answer_2 = models.TextField(verbose_name='FAQ > Answer 2', blank=True)
-    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=100, blank=True)
+    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=1000, blank=True)
     faq_answer_3 = models.TextField(verbose_name='FAQ > Answer 3', blank=True)
-    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=100, blank=True)
+    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=1000, blank=True)
     faq_answer_4 = models.TextField(verbose_name='FAQ > Answer 4', blank=True)
-    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=100, blank=True)
+    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=1000, blank=True)
     faq_answer_5 = models.TextField(verbose_name='FAQ > Answer 5', blank=True)
-    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=100, blank=True)
+    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=1000, blank=True)
     faq_answer_6 = models.TextField(verbose_name='FAQ > Answer 6', blank=True)
 
     def __str__(self):
@@ -182,23 +182,23 @@ class VideoResumePage(SingletonModel):
 
 class EmployerFaqPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=100, blank=True)
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
-    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=100, blank=True)
+    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
     faq_answer_1 = models.TextField(verbose_name='FAQ > Answer 1', blank=True)
-    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=100, blank=True)
+    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=1000, blank=True)
     faq_answer_2 = models.TextField(verbose_name='FAQ > Answer 2', blank=True)
-    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=100, blank=True)
+    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=1000, blank=True)
     faq_answer_3 = models.TextField(verbose_name='FAQ > Answer 3', blank=True)
-    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=100, blank=True)
+    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=1000, blank=True)
     faq_answer_4 = models.TextField(verbose_name='FAQ > Answer 4', blank=True)
-    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=100, blank=True)
+    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=1000, blank=True)
     faq_answer_5 = models.TextField(verbose_name='FAQ > Answer 5', blank=True)
-    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=100, blank=True)
+    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=1000, blank=True)
     faq_answer_6 = models.TextField(verbose_name='FAQ > Answer 6', blank=True)
 
     def __str__(self):
@@ -206,3 +206,24 @@ class EmployerFaqPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Employer FAQ'
+
+
+class StaffingSolutionsPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    text_title = models.CharField(verbose_name='Text > Title', max_length=1000, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=1000, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    #
+    solutions_title = models.CharField(verbose_name='Solutions > Title', max_length=1000, blank=True)
+    #
+    cta_title = models.CharField(verbose_name='Cta > Sub', max_length=1000, blank=True)
+    cta_text = models.TextField(verbose_name='Cta > Text', blank=True)
+    cta_button = models.CharField(verbose_name='Cta > Button', max_length=1000, blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Staffing Solutions'
