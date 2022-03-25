@@ -1,3 +1,4 @@
+cd /home/jobifyrecruitment.com/ || exit
 echo CODE
 git reset --hard HEAD
 git pull
