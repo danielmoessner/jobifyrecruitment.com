@@ -3,20 +3,14 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-    {% include 'symbols/header.html' with title='Submit a position' image='img/service.jpg' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/placeholder-image.png' %}
 
     <section class="bg-gray-200 py-24">
         <div class="mx-auto max-w-4xl mx-auto py-5 px-5 bg-gray-100">
-            <h2 class="{% include 'symbols/h2.class' %} mb-4">Jetzt jemand einstellen</h2>
-            <p>
-                Wir arbeiten für Sie - wir bieten Ihnen maßgeschneiderte Lösungen, die sich an Ihrem Budget orientieren
-                und Ihren individuellen Geschäftsanforderungen entsprechen. Wir gehen über die Identifizierung von
-                Talenten hinaus - wir kümmern uns um die Suche, die Rekrutierung der Bewerber, die Vorstellungsgespräche
-                mit den Bewerbern und die Beschaffung von Visa für Ausländer.
-            </p>
-            <p>
-                <b>Bitte füllen Sie das folgende Formular aus, um eine offene Stelle zu melden.</b>
-            </p>
+            <h2 class="{% include 'symbols/h2.class' %} mb-4">{{ page.form_title}}</h2>
+            <div class="prose max-w-none w-full">
+                {{ page.form_text|safe }}
+            </div>
             <div class="">
                 {% crispy form %}
             </div>

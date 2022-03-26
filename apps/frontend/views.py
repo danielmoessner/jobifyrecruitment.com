@@ -6,7 +6,8 @@ from django.views.generic import TemplateView
 from apps.referrals.forms import ReferralForm
 from apps.companies.forms import CompanyForm
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
-    ApplicantsHowItWorksPage, WorkingInAustriaPage
+    ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
+    SubmitPositionPage, ServicesPage
 
 
 ###
@@ -44,17 +45,20 @@ class InitiativeApplicationView(BaseContext, FormMixin, TemplateView):
     form_class = ApplicantForm
 
 
-class ForCompaniesView(BaseContext, TemplateView):
+class StaffingSolutionsView(BaseContext, PageContext, TemplateView):
     template_name = 'staffing_solutions/index.html'
+    page = StaffingSolutionsPage
 
 
-class SubmitPositionView(BaseContext, FormMixin, TemplateView):
+class SubmitPositionView(BaseContext, FormMixin, PageContext, TemplateView):
     template_name = 'submit_a_position/index.html'
     form_class = CompanyForm
+    page = SubmitPositionPage
 
 
-class EmployerFaqsView(BaseContext, TemplateView):
+class EmployerFaqsView(BaseContext, PageContext, TemplateView):
     template_name = 'employer_faqs/index.html'
+    page = EmployerFaqPage
 
 
 class WhyWorkWithUsView(BaseContext, PageContext, TemplateView):
@@ -78,8 +82,9 @@ class WorkingInAustriaView(BaseContext, PageContext, TemplateView):
     page = WorkingInAustriaPage
 
 
-class ServicesView(BaseContext, TemplateView):
+class ServicesView(BaseContext, PageContext, TemplateView):
     template_name = 'services/index.html'
+    page = ServicesPage
 
 
 class PortalView(BaseContext, TemplateView):
@@ -93,8 +98,9 @@ class ContactView(BaseContext, TemplateView):
     template_name = 'contact/index.html'
 
 
-class VideoResumeView(BaseContext, TemplateView):
+class VideoResumeView(BaseContext, PageContext, TemplateView):
     template_name = 'video_resume/index.html'
+    page = VideoResumePage
 
 
 ###

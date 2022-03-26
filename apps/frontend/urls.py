@@ -15,7 +15,7 @@ urlpatterns = [
     path(_('working-in-austria/'), views.WorkingInAustriaView.as_view(), name='working_in_austria'),
     path(_('services/'), views.ServicesView.as_view(), name='services'),
     # employer or company
-    path(_('staffing-solutions/'), views.ForCompaniesView.as_view(), name='staffing_solutions'),
+    path(_('staffing-solutions/'), views.StaffingSolutionsView.as_view(), name='staffing_solutions'),
     path(_('submit-a-position/'), views.SubmitPositionView.as_view(), name='submit_a_position'),
     path(_('employer-faqs/'), views.EmployerFaqsView.as_view(), name='employer_faqs'),
     path(_('portal/'), views.PortalView.as_view(), name='portal'),

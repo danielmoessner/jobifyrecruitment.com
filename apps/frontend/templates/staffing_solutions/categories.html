@@ -1,9 +1,14 @@
 <div class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
     <div class="max-w-max lg:max-w-7xl mx-auto">
         <h2 class="{% include 'symbols/h2.class' %} text-center">{{ page.solutions_title }}</h2>
-        <div class="grid grid-cols-4 mt-16">
+        <div class="grid grid-cols-5 mt-16 gap-x-8 gap-y-16">
             {% for category in staff_categories %}
-                <img class="w-32 mx-auto" src="{{ category.image.url }}" alt="{{ category.name }} Icon">
+                <div>
+                    <img class="w-32 mx-auto" src="{{ category.image.url }}" alt="{{ category.name }} Icon">
+                    <h3 class="mt-5 text-lg font-bold text-center text-gray-700">
+                        {{ category.name }}
+                    </h3>
+                </div>
             {% endfor %}
         </div>
     </div>

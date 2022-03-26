@@ -49,8 +49,7 @@ class WhyToWorkWithUsPage(SingletonModel):
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
-    text_left = tinymce_models.HTMLField(verbose_name='Text > Left', blank=True)
-    text_right = tinymce_models.HTMLField(verbose_name='Text > Right', blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
 
     def __str__(self):
@@ -66,8 +65,7 @@ class SubmitReferralPage(SingletonModel):
     #
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
-    text_left = tinymce_models.HTMLField(verbose_name='Text > Left', blank=True)
-    text_right = tinymce_models.HTMLField(verbose_name='Text > Right', blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
     faq_title = models.CharField(verbose_name='FAQ > Title', max_length=1000)
@@ -218,7 +216,7 @@ class StaffingSolutionsPage(SingletonModel):
     #
     solutions_title = models.CharField(verbose_name='Solutions > Title', max_length=1000, blank=True)
     #
-    cta_title = models.CharField(verbose_name='Cta > Sub', max_length=1000, blank=True)
+    cta_title = models.CharField(verbose_name='Cta > Title', max_length=1000, blank=True)
     cta_text = models.TextField(verbose_name='Cta > Text', blank=True)
     cta_button = models.CharField(verbose_name='Cta > Button', max_length=1000, blank=True)
 
@@ -227,3 +225,17 @@ class StaffingSolutionsPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Staffing Solutions'
+
+
+class SubmitPositionPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
+    form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Submit A Position'

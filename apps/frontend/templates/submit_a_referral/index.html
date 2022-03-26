@@ -5,7 +5,7 @@
 {% block main %}
     {% include 'symbols/header.html' with title=page.header_title image='img/hands-opt.jpeg' %}
 
-    {% include 'submit_a_referral/text.html' %}
+    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
 
      <section class="bg-gray-200 py-24">
         <div class="mx-auto max-w-4xl mx-auto py-5 px-5 bg-gray-100">

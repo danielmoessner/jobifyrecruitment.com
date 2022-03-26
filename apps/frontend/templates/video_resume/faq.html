@@ -5,12 +5,12 @@
                 {{ page.faq_title }}
             </h2>
             <dl class="mt-6 space-y-6 divide-y divide-gray-200">
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_1 answer=page.faq_question_1 %}
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_2 answer=page.faq_question_2 %}
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_3 answer=page.faq_question_3 %}
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_4 answer=page.faq_question_4 %}
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_5 answer=page.faq_question_5 %}
-                {% include 'submit_a_referral/faq_item.html' with question=page.faq_question_6 answer=page.faq_question_6 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_1 answer=page.faq_answer_1 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_2 answer=page.faq_answer_2 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_3 answer=page.faq_answer_3 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_4 answer=page.faq_answer_4 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_5 answer=page.faq_answer_5 %}
+                {% include 'symbols/faq_item.html' with question=page.faq_question_6 answer=page.faq_answer_6 %}
             </dl>
         </div>
     </div>
