@@ -1,4 +1,3 @@
-tmp/db.old1.sqlite3
 tmp/secrets.json
 tmp/venv/*
 node_modules/*
