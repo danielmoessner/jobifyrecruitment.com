@@ -1,4 +1,4 @@
-tmp/db.sqlite3
+tmp/db.old1.sqlite3
 tmp/secrets.json
 tmp/venv/*
 node_modules/*
@@ -10,3 +10,4 @@ tmp/static/*
 __pycache__
 .DS_STORE
 tmp/other/
+*.sqlite3

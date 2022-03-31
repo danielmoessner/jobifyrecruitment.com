@@ -48,7 +48,7 @@
             {{ text|safe }}
             {% if button %}
                 <div class="mt-8 inline-flex rounded-md shadow not-prose">
-                    <a href="{% url href %}"
+                    <a href="{% if href %}{% url href %}{% endif %}{{ params }}"
                        class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
                         {{ button }}
                     </a>

@@ -13,16 +13,16 @@
             </p>
             <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
                 <div class="rounded-md shadow">
-                    <a href="#"
-                       class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                    <a href="{% url 'frontend:initiative_application' %}"
+                       class="{% include 'symbols/button_white.class' %}">
                         Zur Initiativbewerbung
 
                     </a>
                 </div>
                 <div class="rounded-md shadow mt-3 sm:mt-0 sm:ml-3">
                     <a href="#"
-                       class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10">
-                        Zum Bewerberportal
+                       class="{% include 'symbols/button_gray.class' %}">
+                        Zum Bewerberportal (todo)
                     </a>
                 </div>
             </div>
