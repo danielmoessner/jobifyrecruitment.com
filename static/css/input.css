@@ -47,8 +47,20 @@
     /*@apply hover:border-gray-400;*/
 }
 
+.djangoform input[type='datetime-local'] {
+    @apply h-[42px];
+}
+
+.djangoform input[type='submit'] {
+    @apply cursor-pointer text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700;
+}
+
 .djangoform input[type='checkbox'], .djangoform label.checkbox {
     cursor: pointer;
+}
+
+.djangoform .help-inline, .djangoform .help-inline strong {
+    @apply text-red-700 font-normal;
 }
 
 .djangoform .controls label {

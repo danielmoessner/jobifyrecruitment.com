@@ -1,6 +1,6 @@
 from apps.companies.models import Company
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Row
+from crispy_forms.layout import Submit, Layout, Row, Field, HTML
 from django import forms
 
 
@@ -11,10 +11,15 @@ class CompanyForm(forms.ModelForm):
     privacy_label = 'Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt und erst nach ' \
                     'Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich mit den Datenschutzbestimmungen ' \
                     'einverstanden.'
+    job_start = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
 
     class Meta:
         model = Company
         fields = '__all__'
+        widgets = {
+            'job_duration': forms.TextInput(attrs={'type': 'duration'}),
+            'job_start': forms.DateTimeInput()
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -28,5 +33,6 @@ class CompanyForm(forms.ModelForm):
             Row('company_name', 'company_email'),
             Row('company_phone', 'job'),
             Row('job_duration', 'job_start'),
-            'job_description'
+            'job_description',
+            Field('privacy', css_class='w-6 h-6 mr-2 flex-shrink-0'),
         )

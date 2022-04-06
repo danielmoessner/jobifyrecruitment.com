@@ -12,6 +12,9 @@ class ApplicantForm(forms.ModelForm):
     privacy_label = 'Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt und erst nach ' \
                     'Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich mit den Datenschutzbestimmungen ' \
                     'einverstanden.'
+    birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
+    from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
+    until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
 
     class Meta:
         model = Applicant

@@ -35,12 +35,12 @@ class Applicant(models.Model):
     # language skills
     language1 = models.CharField(max_length=50)
     language1knowledge = models.CharField(max_length=20)
-    language2 = models.CharField(max_length=50)
-    language2knowledge = models.CharField(max_length=20)
-    language3 = models.CharField(max_length=50)
-    language3knowledge = models.CharField(max_length=20)
-    language4 = models.CharField(max_length=50)
-    language4knowledge = models.CharField(max_length=20)
+    language2 = models.CharField(max_length=50, blank=True)
+    language2knowledge = models.CharField(max_length=20, blank=True)
+    language3 = models.CharField(max_length=50, blank=True)
+    language3knowledge = models.CharField(max_length=20, blank=True)
+    language4 = models.CharField(max_length=50, blank=True)
+    language4knowledge = models.CharField(max_length=20, blank=True)
     # career
     position = models.CharField(max_length=50)
     employer = models.CharField(max_length=50)
@@ -48,7 +48,7 @@ class Applicant(models.Model):
     until_date = models.DateField()
     # cv
     cv = models.FileField(upload_to='applicants/applicant/cv/')
-    more = models.FileField(upload_to='applicants/applicant/more/')
+    more = models.FileField(upload_to='applicants/applicant/more/', blank=True)
     # other
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

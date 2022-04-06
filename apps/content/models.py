@@ -89,6 +89,14 @@ class SubmitReferralPage(SingletonModel):
         verbose_name = 'Page > Submit A Referral'
 
 
+class SubmitReferralThanksPage(SingletonModel):
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Submit A Referral Thanks'
+
+
 class ApplicantsHowItWorksPage(SingletonModel):
     #
     header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
@@ -239,3 +247,19 @@ class SubmitPositionPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Submit A Position'
+
+
+class SubmitPositionThanksPage(SingletonModel):
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Submit A Position Thanks'
+
+
+class InitiativeApplicationThanksPage(SingletonModel):
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Initiative Application Thanks'

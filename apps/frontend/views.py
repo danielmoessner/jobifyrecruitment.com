@@ -1,18 +1,25 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import FormMixin
+from django.urls import reverse_lazy
+from django.views.generic.edit import FormMixin, CreateView
 from django.utils.translation import gettext_lazy as _
 from apps.applicants.forms import ApplicantForm
 from django.views.generic import TemplateView
+
+from apps.applicants.models import Applicant
+from apps.companies.models import Company
 from apps.referrals.forms import ReferralForm
 from apps.companies.forms import CompanyForm
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
-    SubmitPositionPage, ServicesPage
-
+    SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
+    SubmitPositionThanksPage
 
 ###
 # context
 ###
+from apps.referrals.models import Referral
+
+
 class BaseContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -40,9 +47,16 @@ class IndexView(BaseContext, LoginRequiredMixin, TemplateView):
         return context
 
 
-class InitiativeApplicationView(BaseContext, FormMixin, TemplateView):
+class InitiativeApplicationView(BaseContext, CreateView):
     template_name = 'initiative_application/initiative_application.html'
     form_class = ApplicantForm
+    model = Applicant
+    success_url = reverse_lazy('frontend:initiative_application_thanks')
+
+
+class InitiativeApplicationThanksView(BaseContext, PageContext, TemplateView):
+    template_name = 'initiative_application/thanks.html'
+    page = InitiativeApplicationThanksPage
 
 
 class StaffingSolutionsView(BaseContext, PageContext, TemplateView):
@@ -50,10 +64,17 @@ class StaffingSolutionsView(BaseContext, PageContext, TemplateView):
     page = StaffingSolutionsPage
 
 
-class SubmitPositionView(BaseContext, FormMixin, PageContext, TemplateView):
+class SubmitPositionView(BaseContext, PageContext, CreateView):
     template_name = 'submit_a_position/index.html'
     form_class = CompanyForm
     page = SubmitPositionPage
+    model = Company
+    success_url = reverse_lazy('frontend:submit_a_position_thanks')
+
+
+class SubmitPositionThanksView(BaseContext, PageContext, TemplateView):
+    template_name = 'submit_a_position/thanks.html'
+    page = SubmitPositionThanksPage
 
 
 class EmployerFaqsView(BaseContext, PageContext, TemplateView):
@@ -66,10 +87,17 @@ class WhyWorkWithUsView(BaseContext, PageContext, TemplateView):
     page = WhyToWorkWithUsPage
 
 
-class SubmitReferralView(BaseContext, PageContext, FormMixin, TemplateView):
+class SubmitReferralView(BaseContext, PageContext, CreateView):
     template_name = 'submit_a_referral/index.html'
     form_class = ReferralForm
     page = SubmitReferralPage
+    model = Referral
+    success_url = reverse_lazy('frontend:submit_a_referral_thanks')
+
+
+class SubmitReferralThanksView(BaseContext, PageContext, TemplateView):
+    template_name = 'submit_a_referral/thanks.html'
+    page = SubmitReferralThanksPage
 
 
 class ApplicantsHowItWorksView(BaseContext, PageContext, TemplateView):
