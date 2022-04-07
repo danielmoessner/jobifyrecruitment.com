@@ -31,7 +31,8 @@ class CompanyForm(forms.ModelForm):
         self.helper.layout = Layout(
             'manager_name',
             Row('company_name', 'company_email'),
-            Row('company_phone', 'job'),
+            'job',
+            Row('looking_for', 'job_position'),
             Row('job_duration', 'job_start'),
             'job_description',
             Field('privacy'),
