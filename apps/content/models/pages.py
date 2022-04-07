@@ -3,46 +3,6 @@ from django.db import models
 from tinymce import models as tinymce_models
 
 
-###
-# other
-###
-class Service(models.Model):
-    image = models.ImageField()
-    name = models.CharField(max_length=1000)
-    title = models.CharField(max_length=1000)
-    text = models.TextField()
-    ordering = models.IntegerField(default=0)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Service'
-        verbose_name_plural = 'Services'
-        ordering = ['ordering']
-
-
-class StaffCategory(models.Model):
-    image = models.ImageField()
-    name = models.CharField(max_length=1000)
-    ordering = models.IntegerField(default=0)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Staff Category'
-        verbose_name_plural = 'Staff Categories'
-        ordering = ['ordering']
-
-
-###
-# pages
-###
 class WhyToWorkWithUsPage(SingletonModel):
     #
     header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)

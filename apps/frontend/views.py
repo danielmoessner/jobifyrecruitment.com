@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
-    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral
+    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm
 
@@ -127,6 +127,11 @@ class VideoResumeView(BaseContext, PageContext, TemplateView):
 class AboutView(BaseContext, PageContext, TemplateView):
     template_name = 'about/index.html'
     page = AboutPage
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['member_categories'] = MemberCategory.objects.all()
+        return context
 
 
 ###

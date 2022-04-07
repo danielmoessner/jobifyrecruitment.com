@@ -1,8 +1,10 @@
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import gettext_lazy as _
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
-    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User
+    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -31,12 +33,19 @@ class UserAdmin(DjangoUserAdmin):
     )
 
 
+# unregister
+admin.site.unregister(Site)
+admin.site.unregister(Group)
+# register
+admin.site.register(Member)
+admin.site.register(MemberCategory)
 admin.site.register(User, UserAdmin)
 admin.site.register(Referral)
 admin.site.register(Company)
 admin.site.register(Applicant)
 admin.site.register(Service)
 admin.site.register(StaffCategory)
+# register pages
 admin.site.register(SubmitReferralPage, SingletonModelAdmin)
 admin.site.register(WhyToWorkWithUsPage, SingletonModelAdmin)
 admin.site.register(ApplicantsHowItWorksPage, SingletonModelAdmin)
