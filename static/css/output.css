@@ -1385,10 +1385,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -1425,16 +1421,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .max-h-12 {
   max-height: 3rem;
 }
 
 .min-h-\[50vh\] {
   min-height: 50vh;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-56 {
@@ -1471,6 +1467,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-auto {
   width: auto;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-screen {
@@ -1705,12 +1705,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1721,6 +1715,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
@@ -2010,11 +2010,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2040,6 +2035,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -2053,6 +2053,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 500;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -2063,10 +2067,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-normal {
-  font-weight: 400;
 }
 
 .uppercase {
@@ -2105,24 +2105,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: 0.025em;
 }
 
-.text-gray-500 {
+.text-gray-600 {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -2135,6 +2125,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -2143,6 +2138,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -2410,7 +2410,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
-.djangoform input[type='checkbox'], .djangoform label.checkbox {
+.djangoform input[type='checkbox'] {
+  margin-right: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
@@ -2494,14 +2498,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.hover\:text-gray-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-100:hover {

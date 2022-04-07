@@ -1,7 +1,7 @@
 from modeltranslation.translator import translator, TranslationOptions
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
-    SubmitPositionPage, ServicesPage, AboutPage, MemberCategory, Member
+    SubmitPositionPage, ServicesPage, AboutPage, MemberCategory, Member, PortalPage
 
 
 def get_fields_from_model_class(model_class):
@@ -35,6 +35,7 @@ translator.register(Member, MemberTranslateOptionsOptions)
 translator.register(Service, AllFields(Service))
 translator.register(StaffCategory, AllFields(StaffCategory))
 # page
+translator.register(PortalPage, AllFields(PortalPage))
 translator.register(WhyToWorkWithUsPage, AllFields(WhyToWorkWithUsPage))
 translator.register(SubmitReferralPage, AllFields(SubmitReferralPage))
 translator.register(ApplicantsHowItWorksPage, AllFields(ApplicantsHowItWorksPage))

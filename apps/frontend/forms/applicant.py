@@ -48,5 +48,5 @@ class ApplicantForm(forms.ModelForm):
             'cv',
             'more',
             HTML('<h2 class="mt-16">Privacy</h2>'),
-            Field('privacy', css_class='w-6 h-6 mr-2 flex-shrink-0'),
+            Field('privacy'),
         )

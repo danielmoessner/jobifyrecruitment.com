@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
-    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory
+    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm
 
@@ -108,8 +108,14 @@ class ServicesView(BaseContext, PageContext, TemplateView):
     page = ServicesPage
 
 
-class PortalView(BaseContext, TemplateView):
-    template_name = 'portal/portal.html'
+class PortalView(BaseContext, PageContext, TemplateView):
+    template_name = 'portal/index.html'
+    page = PortalPage
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['applicants'] = Applicant.objects.all()
+        return context
 
 
 ###

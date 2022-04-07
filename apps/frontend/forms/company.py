@@ -34,5 +34,5 @@ class CompanyForm(forms.ModelForm):
             Row('company_phone', 'job'),
             Row('job_duration', 'job_start'),
             'job_description',
-            Field('privacy', css_class='w-6 h-6 mr-2 flex-shrink-0'),
+            Field('privacy'),
         )

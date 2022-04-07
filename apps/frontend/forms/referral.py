@@ -31,5 +31,5 @@ class ReferralForm(forms.ModelForm):
             'referral_phone',
             'referral_job',
             'referral_resume',
-            Field('privacy', css_class='w-6 h-6 mr-2 flex-shrink-0'),
+            Field('privacy'),
         )

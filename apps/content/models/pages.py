@@ -238,3 +238,14 @@ class AboutPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > About'
+
+
+class PortalPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Portal'

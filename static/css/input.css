@@ -55,7 +55,8 @@
     @apply cursor-pointer text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700;
 }
 
-.djangoform input[type='checkbox'], .djangoform label.checkbox {
+.djangoform input[type='checkbox'] {
+    @apply w-6 h-6 mr-2 flex-shrink-0;
     cursor: pointer;
 }
 
