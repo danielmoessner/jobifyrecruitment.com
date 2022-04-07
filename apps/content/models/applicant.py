@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 
@@ -59,3 +60,11 @@ class Applicant(models.Model):
 
     def __str__(self):
         return '{} {}'.format(self.firstname, self.lastname)
+
+    @property
+    def name(self):
+        return '{} {}'.format(self.firstname, self.lastname)
+
+    @property
+    def age(self):
+        return int((timezone.now().date() - self.birthday).days / 365.25)
