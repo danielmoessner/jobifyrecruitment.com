@@ -263,3 +263,18 @@ class InitiativeApplicationThanksPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Initiative Application Thanks'
+
+
+class AboutPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > About'

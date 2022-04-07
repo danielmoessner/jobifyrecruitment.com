@@ -30,9 +30,9 @@
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
                     {% include 'symbols/navigation/job_seeker.html' %}
                     {% include 'symbols/navigation/employer.html' %}
-                    <a href=""
+                    <a href="{% url 'frontend:about' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Über uns (todo)
+                        Über uns
                     </a>
                     <a href="{% url 'frontend:contact' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">

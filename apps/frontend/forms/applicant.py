@@ -1,7 +1,6 @@
+from crispy_forms.layout import Layout, Row, Submit, HTML, Field
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Row, Submit, HTML, Field, Fieldset
-
-from apps.applicants.models import Applicant
+from apps.content.models import Applicant
 from django import forms
 
 

@@ -33,11 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'apps.users',
     'apps.frontend',
-    'apps.applicants',
-    'apps.companies',
-    'apps.referrals',
     'apps.content',
     'crispy_forms',
     'tinymce',
@@ -138,7 +134,7 @@ LOCALE_PATHS = [
 
 # Authentication
 # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-AUTH_USER_MODEL
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "content.User"
 
 # Login
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-user-model

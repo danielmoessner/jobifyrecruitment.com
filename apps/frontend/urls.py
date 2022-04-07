@@ -24,6 +24,7 @@ urlpatterns = [
     path(_('employer-faqs/'), views.EmployerFaqsView.as_view(), name='employer_faqs'),
     path(_('portal/'), views.PortalView.as_view(), name='portal'),
     # both
+    path(_('about/'), views.AboutView.as_view(), name='about'),
     path(_('contact/'), views.ContactView.as_view(), name='contact'),
     path(_('video-resume/'), views.VideoResumeView.as_view(), name='video_resume'),
     # other

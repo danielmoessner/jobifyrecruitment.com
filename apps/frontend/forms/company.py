@@ -1,6 +1,6 @@
-from apps.companies.models import Company
+from crispy_forms.layout import Submit, Layout, Row, Field
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Row, Field, HTML
+from apps.content.models import Company
 from django import forms
 
 

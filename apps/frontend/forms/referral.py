@@ -1,6 +1,6 @@
-from apps.referrals.models import Referral
-from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Field
+from crispy_forms.helper import FormHelper
+from apps.content.models import Referral
 from django import forms
 
 
