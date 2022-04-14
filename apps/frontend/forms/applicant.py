@@ -1,5 +1,8 @@
 from crispy_forms.layout import Layout, Row, Submit, HTML, Field
 from crispy_forms.helper import FormHelper
+from django_countries.fields import CountryField
+from django_countries.widgets import CountrySelectWidget
+
 from apps.content.models import Applicant
 from django import forms
 
@@ -14,6 +17,11 @@ class ApplicantForm(forms.ModelForm):
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
+    country = CountryField().formfield()
+    language1 = CountryField().formfield()
+    language2 = CountryField().formfield()
+    language3 = CountryField().formfield()
+    language4 = CountryField().formfield()
 
     class Meta:
         model = Applicant
@@ -42,6 +50,7 @@ class ApplicantForm(forms.ModelForm):
             Row('language3', 'language3knowledge'),
             Row('language4', 'language4knowledge'),
             HTML('<h2 class="mt-16">Professional career</h2>'),
+            'area_of_expertise',
             Row('position', 'employer'),
             Row('from_date', 'until_date'),
             HTML('<h2 class="mt-16">Additional information</h2>'),

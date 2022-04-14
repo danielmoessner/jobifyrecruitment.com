@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 // tailwind.config.js
 module.exports = {
@@ -16,6 +17,9 @@ module.exports = {
       yellow: colors.yellow
     },
     extend: {
+      fontFamily: {
+        'sans': ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
       spacing: {
         '1/2': '50%',
         '1/3': '33.333333%',

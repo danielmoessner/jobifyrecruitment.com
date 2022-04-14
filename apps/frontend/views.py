@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
-    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage
+    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage, \
+    ImprintPage, ContactThanksPage
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 
@@ -129,8 +130,9 @@ class ContactView(BaseContext, PageContext, FormView):
     success_url = reverse_lazy('frontend:contact_thanks')
 
 
-class ContactThanksView(BaseContext, TemplateView):
+class ContactThanksView(BaseContext, PageContext, TemplateView):
     template_name = 'contact/thanks.html'
+    page = ContactThanksPage
 
 
 class VideoResumeView(BaseContext, PageContext, TemplateView):
@@ -151,8 +153,9 @@ class AboutView(BaseContext, PageContext, TemplateView):
 ###
 # other
 ###
-class ImprintView(BaseContext, TemplateView):
-    template_name = 'imprint/imprint.html'
+class ImprintView(BaseContext, PageContext, TemplateView):
+    template_name = 'imprint/index.html'
+    page = ImprintPage
 
 
 class PrivacyView(BaseContext, TemplateView):

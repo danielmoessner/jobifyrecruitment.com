@@ -17,6 +17,10 @@ class Applicant(models.Model):
         ('MARRIED', _('Verheiratet')),
         ('WIDOWED', _('Verwitwet'))
     )
+    LANGUAGE_KNOWLEDGE_CHOICES = (
+        ('MOTHER', _('Mother tongue')),
+        ('FLUENT', _('Fluent'))
+    )
     # contact details
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
     salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)
@@ -35,14 +39,15 @@ class Applicant(models.Model):
     marital_status = models.CharField(max_length=20, choices=MARITAL_STATUS_CHOICES)
     # language skills
     language1 = models.CharField(max_length=50)
-    language1knowledge = models.CharField(max_length=20)
+    language1knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES)
     language2 = models.CharField(max_length=50, blank=True)
-    language2knowledge = models.CharField(max_length=20, blank=True)
+    language2knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
     language3 = models.CharField(max_length=50, blank=True)
-    language3knowledge = models.CharField(max_length=20, blank=True)
+    language3knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
     language4 = models.CharField(max_length=50, blank=True)
-    language4knowledge = models.CharField(max_length=20, blank=True)
+    language4knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
     # career
+    area_of_expertise = models.CharField(max_length=200)
     position = models.CharField(max_length=50)
     employer = models.CharField(max_length=50)
     from_date = models.DateField()

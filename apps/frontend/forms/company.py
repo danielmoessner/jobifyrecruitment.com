@@ -17,7 +17,6 @@ class CompanyForm(forms.ModelForm):
         model = Company
         fields = '__all__'
         widgets = {
-            'job_duration': forms.TextInput(attrs={'type': 'duration'}),
             'job_start': forms.DateTimeInput()
         }
 

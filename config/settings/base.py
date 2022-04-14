@@ -25,6 +25,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # Application definition
 # https://docs.djangoproject.com/en/dev/ref/applications/
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,12 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django_countries',
     'apps.frontend',
     'apps.content',
     'crispy_forms',
     'tinymce',
     'solo',
-    'modeltranslation'
+
 ]
 
 # Middleware

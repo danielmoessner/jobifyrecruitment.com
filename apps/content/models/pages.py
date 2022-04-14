@@ -50,6 +50,10 @@ class SubmitReferralPage(SingletonModel):
 
 
 class SubmitReferralThanksPage(SingletonModel):
+    thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
+    thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
+    thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
+
     def __str__(self):
         return self._meta.verbose_name
 
@@ -72,6 +76,9 @@ class ApplicantsHowItWorksPage(SingletonModel):
     plan_3 = models.TextField(verbose_name='Plan > Step 3', blank=True)
     plan_4 = models.TextField(verbose_name='Plan > Step 4', blank=True)
     plan_button = models.CharField(verbose_name='Plan > Button', max_length=1000, blank=True)
+    #
+    quote_quote = models.CharField(verbose_name='Quote > Quote', max_length=1000, blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -87,6 +94,9 @@ class ServicesPage(SingletonModel):
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    #
+    quote_quote = models.CharField(verbose_name='Quote > Quote', max_length=1000, blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -210,6 +220,10 @@ class SubmitPositionPage(SingletonModel):
 
 
 class SubmitPositionThanksPage(SingletonModel):
+    thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
+    thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
+    thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
+
     def __str__(self):
         return self._meta.verbose_name
 
@@ -218,6 +232,10 @@ class SubmitPositionThanksPage(SingletonModel):
 
 
 class InitiativeApplicationThanksPage(SingletonModel):
+    thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
+    thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
+    thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
+
     def __str__(self):
         return self._meta.verbose_name
 
@@ -263,3 +281,28 @@ class ContactPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Contact'
+
+
+class ContactThanksPage(SingletonModel):
+    #
+    thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
+    thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
+    thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Contact Thanks'
+
+
+class ImprintPage(SingletonModel):
+    pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
+    title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
+    text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Imprint'

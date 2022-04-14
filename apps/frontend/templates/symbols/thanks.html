@@ -1,0 +1,26 @@
+<div class="bg-white md:min-h-[calc(100vh-256px)] px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+    <div class="max-w-max mx-auto">
+        <main class="sm:flex">
+            <p class="text-4xl font-extrabold text-indigo-600 sm:text-5xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+            </p>
+            <div class="sm:ml-6">
+                <div class="sm:border-l sm:border-gray-200 sm:pl-6">
+                    <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">{{ title }}</h1>
+                    <p class="mt-1 text-base text-gray-500">
+                        {{ text|linebreaksbr }}
+                    </p>
+                </div>
+                <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
+                    <a href="{% url 'frontend:index' %}"
+                       class="{% include 'symbols/button_gray.class' %}">
+                        {{ button|default:'Zur Startseite' }}
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
