@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
 
-{% block main %}
-    {% include 'symbols/subheader.html' with title='Kontakt' text='Wir freuen uns auf Ihre Nachricht' %}
+{% load crispy_forms_tags %}
 
-    {% include 'contact/contact.html' %}
+{% block main %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/placeholder-image.png' %}
+
+    <section class="bg-gray-200 py-24">
+        <div class="mx-auto max-w-4xl mx-auto py-5 px-5 bg-gray-100">
+            <h2 class="{% include 'symbols/h2.class' %} mb-4">{{ page.form_title }}</h2>
+            <div class="prose max-w-none w-full">
+                {{ page.form_text|safe }}
+            </div>
+            <div class="">
+                {% crispy form %}
+            </div>
+        </div>
+    </section>
 {% endblock %}

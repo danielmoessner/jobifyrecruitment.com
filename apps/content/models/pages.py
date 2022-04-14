@@ -249,3 +249,17 @@ class PortalPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Portal'
+
+
+class ContactPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
+    form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Contact'

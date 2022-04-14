@@ -1,13 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, FormView
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
-    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage
+    SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage
 from django.urls import reverse_lazy
-from .forms import ApplicantForm, CompanyForm, ReferralForm
+from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 
 
 ###
@@ -122,8 +122,15 @@ class PortalView(BaseContext, PageContext, TemplateView):
 ###
 # both
 ###
-class ContactView(BaseContext, TemplateView):
+class ContactView(BaseContext, PageContext, FormView):
     template_name = 'contact/index.html'
+    page = ContactPage
+    form_class = ContactForm
+    success_url = reverse_lazy('frontend:contact_thanks')
+
+
+class ContactThanksView(BaseContext, TemplateView):
+    template_name = 'contact/thanks.html'
 
 
 class VideoResumeView(BaseContext, PageContext, TemplateView):

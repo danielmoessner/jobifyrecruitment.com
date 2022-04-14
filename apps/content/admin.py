@@ -4,7 +4,8 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import gettext_lazy as _
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
-    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, PortalPage
+    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, PortalPage, \
+    ContactPage
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -57,3 +58,4 @@ admin.site.register(StaffingSolutionsPage, SingletonModelAdmin)
 admin.site.register(SubmitPositionPage, SingletonModelAdmin)
 admin.site.register(ServicesPage, SingletonModelAdmin)
 admin.site.register(AboutPage, SingletonModelAdmin)
+admin.site.register(ContactPage, SingletonModelAdmin)

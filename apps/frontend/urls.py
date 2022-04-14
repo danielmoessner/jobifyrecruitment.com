@@ -26,6 +26,7 @@ urlpatterns = [
     # both
     path(_('about/'), views.AboutView.as_view(), name='about'),
     path(_('contact/'), views.ContactView.as_view(), name='contact'),
+    path(_('contact/thanks/'), views.ContactThanksView.as_view(), name='contact_thanks'),
     path(_('video-resume/'), views.VideoResumeView.as_view(), name='video_resume'),
     # other
     path(_('imprint/'), views.ImprintView.as_view(), name='imprint'),
