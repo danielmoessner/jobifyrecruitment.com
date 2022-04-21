@@ -22,3 +22,5 @@
 ## fragen
 - area of expertise beziehen auf die staff categories?
 - jobportal wonach filtern können?
+- welcher link
+- employer how it works raus?
