@@ -117,6 +117,7 @@ class PortalView(BaseContext, PageContext, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['applicants'] = Applicant.objects.all()
+        context['experience_choices'] = Applicant.EXPERIENCE_CHOICES
         return context
 
 

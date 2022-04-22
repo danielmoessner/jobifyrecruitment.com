@@ -2,6 +2,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 
+from apps.content.models import StaffCategory
+
 
 class Applicant(models.Model):
     # choices
@@ -19,7 +21,15 @@ class Applicant(models.Model):
     )
     LANGUAGE_KNOWLEDGE_CHOICES = (
         ('MOTHER', _('Mother tongue')),
-        ('FLUENT', _('Fluent'))
+        ('FLUENT', _('Fluent')),
+        ('GOOD', _('Good')),
+        ('BASIC', _('Basic')),
+    )
+    EXPERIENCE_CHOICES = (
+        ('1', _('1 Year')),
+        ('5', _('1 to 5 Years')),
+        ('10', _('5 to 10 Years')),
+        ('MAX', _('More Than 10 Years')),
     )
     # contact details
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
@@ -47,7 +57,8 @@ class Applicant(models.Model):
     language4 = models.CharField(max_length=50, blank=True)
     language4knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
     # career
-    area_of_expertise = models.CharField(max_length=200)
+    department = models.ForeignKey(StaffCategory, on_delete=models.PROTECT, related_name='applicants')
+    experience = models.CharField(choices=EXPERIENCE_CHOICES, max_length=100)
     position = models.CharField(max_length=50)
     employer = models.CharField(max_length=50)
     from_date = models.DateField()
