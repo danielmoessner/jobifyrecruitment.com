@@ -50,7 +50,7 @@ class ApplicantForm(forms.ModelForm):
             Row('language3', 'language3knowledge'),
             Row('language4', 'language4knowledge'),
             HTML('<h2 class="mt-16">Professional career</h2>'),
-            'area_of_expertise',
+            Row('department', 'experience'),
             Row('position', 'employer'),
             Row('from_date', 'until_date'),
             HTML('<h2 class="mt-16">Additional information</h2>'),

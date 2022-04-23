@@ -66,6 +66,11 @@ class SubmitPositionView(BaseContext, PageContext, CreateView):
     model = Company
     success_url = reverse_lazy('frontend:submit_a_position_thanks')
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update(initial={'looking_for': self.request.GET.get('expertise')})
+        return kwargs
+
 
 class SubmitPositionThanksView(BaseContext, PageContext, TemplateView):
     template_name = 'submit_a_position/thanks.html'

@@ -1,16 +1,14 @@
 {% load static %}
-<header class="lg:relative">
-    <div class="bg-yellow-500 hidden lg:block lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2 lg:h-full">
-    </div>
-    <div class="bg-yellow-500 relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-32 lg:text-left">
-        <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+<header class="lg:relative bg-yellow-500">
+    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-32 lg:text-left">
+        <div class="px-4 lg:w-3/4 sm:px-8 xl:pr-16">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-                <span class="block xl:inline">{{ title }}</span>
+                {{ title }}
             </h1>
         </div>
     </div>
-    <div class="bg-yellow-500 relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-        <img class="absolute right-0 w-auto h-full"
+    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+        <img class="lg:absolute lg:right-0 mx-auto w-auto h-full"
              src="{% static image %}"
              alt="{{ title }}">
     </div>
