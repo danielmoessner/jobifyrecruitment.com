@@ -1,18 +1,20 @@
 {% load static %}
 <section class="pb-8 pt-20 bg-white">
     <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="sr-only">A better way to send money.</h2>
+        <h2 class="sr-only">Services</h2>
         <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
             <div class="flex flex-col items-center">
                 <dt>
                     <div class="flex items-center justify-center h-20 w-20">
                         <img src="{% static 'icon/find-a-job.png' %}" alt="Find a job icon." class="grayscale">
                     </div>
-                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Find a job</p>
+                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">{{ page.services_left }}</p>
                 </dt>
                 <dd class="mt-2 text-base text-gray-500 block">
                     <p>
-                        <a href="{% url 'frontend:initiative_application' %}" class="{% include 'symbols/button_gray.class' %}">Apply now</a>
+                        <a href="{% url 'frontend:initiative_application' %}" class="{% include 'symbols/button_gray.class' %}">
+                            {{ page.services_button_left }}
+                        </a>
                     </p>
                 </dd>
             </div>
@@ -21,10 +23,12 @@
                     <div class="flex items-center justify-center h-20 w-20">
                         <img src="{% static 'icon/hire-someone.png' %}" alt="Hire someone." class="grayscale">
                     </div>
-                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Hire someone</p>
+                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">{{ page.services_center }}</p>
                 </dt>
                 <dd class="mt-2 text-base text-gray-500">
-                    <a href="{% url 'frontend:submit_a_position' %}" class="{% include 'symbols/button_gray.class' %}">Submit request</a>
+                    <a href="{% url 'frontend:submit_a_position' %}" class="{% include 'symbols/button_gray.class' %}">
+                        {{ page.services_button_center }}
+                    </a>
                 </dd>
             </div>
             <div class="flex flex-col items-center">
@@ -32,10 +36,12 @@
                     <div class="flex items-center justify-center h-20 w-20">
                         <img src="{% static 'icon/refer-a-friend.png' %}" alt="Refer a friend." class="grayscale">
                     </div>
-                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Refer a friend</p>
+                    <p class="mt-5 text-lg leading-6 font-medium text-gray-900">{{ page.services_right }}</p>
                 </dt>
                 <dd class="mt-2 text-base text-gray-500">
-                    <a href="{% url 'frontend:submit_a_referral' %}" class="{% include 'symbols/button_gray.class' %}">Fill out the form</a>
+                    <a href="{% url 'frontend:submit_a_referral' %}" class="{% include 'symbols/button_gray.class' %}">
+                        {{ page.services_button_right }}
+                    </a>
                 </dd>
             </div>
         </dl>

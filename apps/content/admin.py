@@ -1,13 +1,12 @@
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
-from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TranslationAdmin
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
     SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, PortalPage, \
     ContactPage, ImprintPage, ContactThanksPage, SubmitReferralThanksPage, SubmitPositionThanksPage, \
-    InitiativeApplicationThanksPage
+    InitiativeApplicationThanksPage, IndexPage, InitiativeApplicationPage, JobSeekerFaqPage, Navigation
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -15,7 +14,7 @@ from solo.admin import SingletonModelAdmin
 class UserAdmin(DjangoUserAdmin):
     fieldsets = (
         (None, {"fields": ("email", "password")}),
-        (_("Personal info"), {"fields": ("name",)}),
+        ("Personal Information", {"fields": ("name",)}),
     )
     add_fieldsets = (
         (
@@ -56,6 +55,7 @@ admin.site.register(Company)
 admin.site.register(Applicant)
 admin.site.register(Service, GroupedTranslationAdmin)
 admin.site.register(StaffCategory, GroupedTranslationAdmin)
+admin.site.register(Navigation, PageAdmin)
 # register pages
 admin.site.register(PortalPage, PageAdmin)
 admin.site.register(SubmitReferralPage, PageAdmin)
@@ -73,5 +73,7 @@ admin.site.register(ImprintPage, PageAdmin)
 admin.site.register(ContactThanksPage, PageAdmin)
 admin.site.register(SubmitReferralThanksPage, PageAdmin)
 admin.site.register(SubmitPositionThanksPage, PageAdmin)
-# admin.site.register(InitiativeApplicationPage, PageAdmin)
+admin.site.register(InitiativeApplicationPage, PageAdmin)
 admin.site.register(InitiativeApplicationThanksPage, PageAdmin)
+admin.site.register(IndexPage, PageAdmin)
+admin.site.register(JobSeekerFaqPage, PageAdmin)

@@ -32,23 +32,23 @@
                     {% include 'symbols/navigation/employer.html' %}
                     <a href="{% url 'frontend:about' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Über uns
+                        {{ navigation.about }}
                     </a>
                     <a href="{% url 'frontend:contact' %}"
                        class="text-base font-medium text-gray-200 hover:text-gray-100">
-                        Kontakt
+                        {{ navigation.contact }}
                     </a>
                 </div>
                 <div class="flex items-center xl:ml-12 space-x-1">
                     {% language 'de' %}
-                        <a href="{% url 'frontend:index' %}"
+                        <a href="{{ request.get_full_path }}"
                            class="block text-base font-medium text-gray-200 hover:text-gray-100">
                             DE
                         </a>
                     {% endlanguage %}
                     <div class="text-gray-200">/</div>
                     {% language 'en' %}
-                        <a href="{% url 'frontend:index' %}"
+                        <a href="{{ request.get_full_path }}"
                            class="block text-base font-medium text-gray-200 hover:text-gray-100">
                             EN
                         </a>

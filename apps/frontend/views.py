@@ -6,7 +6,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
     SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage, \
-    ImprintPage, ContactThanksPage
+    ImprintPage, ContactThanksPage, InitiativeApplicationPage, IndexPage, JobSeekerFaqPage, Navigation
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 
@@ -19,6 +19,7 @@ class BaseContext:
         context = super().get_context_data(**kwargs)
         context['services'] = Service.objects.all()
         context['staff_categories'] = StaffCategory.objects.all()
+        context['navigation'] = Navigation.get_solo()
         return context
 
 
@@ -32,8 +33,9 @@ class PageContext:
 ###
 # views
 ###
-class IndexView(BaseContext, LoginRequiredMixin, TemplateView):
+class IndexView(BaseContext, LoginRequiredMixin, PageContext, TemplateView):
     template_name = 'index/index.html'
+    page = IndexPage
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -42,10 +44,11 @@ class IndexView(BaseContext, LoginRequiredMixin, TemplateView):
         return context
 
 
-class InitiativeApplicationView(BaseContext, CreateView):
-    template_name = 'initiative_application/initiative_application.html'
+class InitiativeApplicationView(BaseContext, PageContext, CreateView):
+    template_name = 'initiative_application/index.html'
     form_class = ApplicantForm
     model = Applicant
+    page = InitiativeApplicationPage
     success_url = reverse_lazy('frontend:initiative_application_thanks')
 
 
@@ -77,7 +80,12 @@ class SubmitPositionThanksView(BaseContext, PageContext, TemplateView):
     page = SubmitPositionThanksPage
 
 
-class EmployerFaqsView(BaseContext, PageContext, TemplateView):
+class JobSeekerFaqView(BaseContext, PageContext, TemplateView):
+    template_name = 'job_seeker_faqs/index.html'
+    page = JobSeekerFaqPage
+
+
+class EmployerFaqView(BaseContext, PageContext, TemplateView):
     template_name = 'employer_faqs/index.html'
     page = EmployerFaqPage
 

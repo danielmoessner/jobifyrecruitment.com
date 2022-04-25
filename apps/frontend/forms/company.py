@@ -1,17 +1,14 @@
+from django.utils.translation import gettext_lazy as _
 from crispy_forms.layout import Submit, Layout, Row, Field
+from apps.content.static import PRIVACY_LABEL
 from crispy_forms.helper import FormHelper
 from apps.content.models import Company
 from django import forms
 
 
 class CompanyForm(forms.ModelForm):
-    privacy = forms.BooleanField(label='Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt '
-                                       'und erst nach Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich '
-                                       'mit den Datenschutzbestimmungen einverstanden.')
-    privacy_label = 'Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt und erst nach ' \
-                    'Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich mit den Datenschutzbestimmungen ' \
-                    'einverstanden.'
-    job_start = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}))
+    privacy = forms.BooleanField(label=PRIVACY_LABEL)
+    job_start = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Job Start'))
 
     class Meta:
         model = Company
@@ -26,7 +23,7 @@ class CompanyForm(forms.ModelForm):
         self.helper.form_class = 'djangoform'
         self.helper.form_method = 'post'
         self.helper.attrs = {'novalidate': True}
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', _('Submit')))
         self.helper.layout = Layout(
             'manager_name',
             Row('company_name', 'company_email'),

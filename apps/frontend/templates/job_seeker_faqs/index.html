@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+    {% include 'symbols/header.html' with title=page.header_title image='img/faq-opt.jpeg' %}
+
+    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
+
+    {% include 'employer_faqs/faq.html' %}
+{% endblock %}

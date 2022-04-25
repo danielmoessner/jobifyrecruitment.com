@@ -1,35 +1,32 @@
+from django.utils.translation import gettext_lazy as _
 from crispy_forms.layout import Submit, Layout, Row, Field
+from apps.content.static import PRIVACY_LABEL
 from crispy_forms.helper import FormHelper
 from django import forms
 
 
 class ContactForm(forms.Form):
-    firstname = forms.CharField()
-    lastname = forms.CharField()
-    email = forms.EmailField()
-    phone = forms.CharField()
-    company = forms.CharField()
-    street = forms.CharField()
-    postal_code = forms.CharField()
-    city = forms.CharField()
+    firstname = forms.CharField(label=_('Firstname'))
+    lastname = forms.CharField(label=_('Lastname'))
+    email = forms.EmailField(label=_('E-Mail'))
+    phone = forms.CharField(label=_('Phone'))
+    company = forms.CharField(label=_('Company'))
+    street = forms.CharField(label=_('Street'))
+    postal_code = forms.CharField(label=_('Postal Code'))
+    city = forms.CharField(label=_('City'))
     INTEREST_CHOICES = (
-        ('JOB_FIND', 'Job finden'),
-        ('JOB_SEARCH', 'Job suchen'),
-        ('REFERRAL_PROGRAM', 'Empfehlungsprogramm'),
-        ('EDUCATION', 'Weiterbildungen / Webinaren'),
-        ('RECRUITING', 'Internationaler Rekrutierung'),
-        ('VIDEO', 'Video-Recruiting'),
-        ('PARTNER', 'Partner werden'),
-        ('LEGAL', 'Rechtliches')
+        ('JOB_FIND', _('Find a job')),
+        ('APPLICANT_FIND', _('Find a applicant')),
+        ('REFERRAL_PROGRAM', _('Referral Program')),
+        ('EDUCATION', _('Further training / webinars')),
+        ('RECRUITING', _('International recruiting')),
+        ('VIDEO', _('Video-Recruiting')),
+        ('PARTNER', _('Become a partner')),
+        ('LEGAL', _('Legal'))
     )
-    interest = forms.ChoiceField(choices=INTEREST_CHOICES)
-    message = forms.CharField(widget=forms.Textarea())
-    privacy = forms.BooleanField(label='Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt '
-                                       'und erst nach Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich '
-                                       'mit den Datenschutzbestimmungen einverstanden.')
-    privacy_label = 'Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt und erst nach ' \
-                    'Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich mit den Datenschutzbestimmungen ' \
-                    'einverstanden.'
+    interest = forms.ChoiceField(choices=INTEREST_CHOICES, label=_('Interest'))
+    message = forms.CharField(widget=forms.Textarea(), label=_('Message'))
+    privacy = forms.BooleanField(label=PRIVACY_LABEL)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -37,7 +34,7 @@ class ContactForm(forms.Form):
         self.helper.form_class = 'djangoform'
         self.helper.form_method = 'post'
         self.helper.attrs = {'novalidate': True}
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', _('Submit')))
         self.helper.layout = Layout(
             Row('firstname', 'lastname'),
             Row('email', 'phone'),

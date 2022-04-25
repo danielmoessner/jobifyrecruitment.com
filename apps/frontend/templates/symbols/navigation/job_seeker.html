@@ -4,7 +4,7 @@
             class="group rounded-md inline-flex items-center text-base font-medium hover:text-gray-100 focus:outline-none focus:ring-0 text-gray-200"
             :class="{ 'text-gray-100': open, 'text-gray-200': !(open) }" @click="toggle"
             @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
-        <span>Job Seeker</span>
+        <span>{{ navigation.job_seeker }}</span>
         <svg x-state:on="Item active" x-state:off="Item inactive"
              class="ml-2 h-5 w-5 group-hover:text-gray-200 transition ease-in-out duration-150 text-gray-300"
              :class="{ '!text-gray-100': open, '!text-gray-200': !(open) }"
@@ -29,13 +29,13 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Search Jobs</span>
+                        <span class="block text-lg font-bold">{{ navigation.job_seeker_column_1 }}</span>
                     </div>
                     <a href="{% url 'frontend:why_work_with_us' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Why work with us
+                                {{ navigation.job_seeker_why_work_with_us }}
                             </p>
                         </div>
                     </a>
@@ -44,7 +44,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Submit a Referral
+                                {{ navigation.job_seeker_submit_a_referral }}
                             </p>
                         </div>
                     </a>
@@ -53,7 +53,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                How it works
+                                {{ navigation.job_seeker_how_it_works }}
                             </p>
                         </div>
                     </a>
@@ -61,7 +61,7 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Managed Services</span>
+                        <span class="block text-lg font-bold">{{ navigation.job_seeker_column_2 }}</span>
                     </div>
                     {% for service in services %}
                         <a href="{% url 'frontend:services' %}#service-{{ service.pk }}"
@@ -77,13 +77,13 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Resources</span>
+                        <span class="block text-lg font-bold">{{ navigation.job_seeker_column_3 }}</span>
                     </div>
                     <a href="{% url 'frontend:working_in_austria' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Working in Austria
+                                {{ navigation.job_seeker_working_in_austria }}
                             </p>
                         </div>
                     </a>
@@ -92,16 +92,16 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                2022 Salary Guides (todo)
+                                {{ navigation.job_seeker_salary_guides }}
                             </p>
                         </div>
                     </a>
 
-                    <a href="#"
+                    <a href="{% url 'frontend:job_seeker_faqs' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                FAQs (todo)
+                                {{ navigation.job_seeker_faqs }}
                             </p>
                         </div>
                     </a>
@@ -110,7 +110,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                What's a video resume
+                                {{ navigation.job_seeker_video_resume }}
                             </p>
                         </div>
                     </a>

@@ -4,7 +4,7 @@
             class="group rounded-md inline-flex items-center text-base font-medium hover:text-gray-100 focus:outline-none focus:ring-0 text-gray-200"
             :class="{ 'text-gray-100': open, 'text-gray-200': !(open) }" @click="toggle"
             @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
-        <span>Employer</span>
+        <span>{{ navigation.employer }}</span>
         <svg x-state:on="Item active" x-state:off="Item inactive"
              class="ml-2 h-5 w-5 group-hover:text-gray-200 transition ease-in-out duration-150 text-gray-300"
              :class="{ '!text-gray-100': open, '!text-gray-200': !(open) }"
@@ -29,7 +29,7 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Staffing Solutions</span>
+                        <span class="block text-lg font-bold">{{ navigation.employer_column_1 }}</span>
                     </div>
                     {% for category in staff_categories %}
                         <a href="{% url 'frontend:staffing_solutions' %}"
@@ -45,13 +45,13 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Open Role?</span>
+                        <span class="block text-lg font-bold">{{ navigation.employer_column_2 }}</span>
                     </div>
                     <a href="{% url 'frontend:submit_a_position' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Submit a position
+                                {{ navigation.employer_submit_a_position }}
                             </p>
                         </div>
                     </a>
@@ -60,7 +60,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                How it works (todo)
+                                {{ navigation.employer_how_it_works }}
                             </p>
                         </div>
                     </a>
@@ -68,13 +68,13 @@
 
                 <div class="flex flex-col space-y-1">
                     <div class="pb-3">
-                        <span class="block text-lg font-bold">Resources</span>
+                        <span class="block text-lg font-bold">{{ navigation.employer_column_3 }}</span>
                     </div>
                     <a href="{% url 'frontend:video_resume' %}"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                What's a video resume
+                                {{ navigation.employer_video_resume }}
                             </p>
                         </div>
                     </a>
@@ -83,7 +83,7 @@
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">
-                                Employer FAQs
+                                {{ navigation.employer_faqs }}
                             </p>
                         </div>
                     </a>

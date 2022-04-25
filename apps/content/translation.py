@@ -2,7 +2,8 @@ from modeltranslation.translator import translator, TranslationOptions
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
     SubmitPositionPage, ServicesPage, AboutPage, MemberCategory, Member, PortalPage, ContactPage, ImprintPage, \
-    ContactThanksPage, InitiativeApplicationThanksPage, SubmitPositionThanksPage, SubmitReferralThanksPage
+    ContactThanksPage, InitiativeApplicationThanksPage, SubmitPositionThanksPage, SubmitReferralThanksPage, IndexPage, \
+    InitiativeApplicationPage, JobSeekerFaqPage, Navigation
 
 
 def get_fields_from_model_class(model_class):
@@ -35,6 +36,7 @@ translator.register(MemberCategory, MemberCategoryTranslateOptions)
 translator.register(Member, MemberTranslateOptionsOptions)
 translator.register(Service, AllFields(Service))
 translator.register(StaffCategory, AllFields(StaffCategory))
+translator.register(Navigation, AllFields(Navigation))
 # page
 translator.register(PortalPage, AllFields(PortalPage))
 translator.register(WhyToWorkWithUsPage, AllFields(WhyToWorkWithUsPage))
@@ -53,3 +55,6 @@ translator.register(SubmitReferralThanksPage, AllFields(SubmitReferralThanksPage
 translator.register(SubmitPositionThanksPage, AllFields(SubmitPositionThanksPage))
 translator.register(InitiativeApplicationThanksPage, AllFields(InitiativeApplicationThanksPage))
 translator.register(ImprintPage, AllFields(ImprintPage))
+translator.register(IndexPage, AllFields(IndexPage))
+translator.register(InitiativeApplicationPage, AllFields(InitiativeApplicationPage))
+translator.register(JobSeekerFaqPage, AllFields(JobSeekerFaqPage))

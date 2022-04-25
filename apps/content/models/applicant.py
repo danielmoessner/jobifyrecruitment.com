@@ -1,8 +1,7 @@
-from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from django.db import models
-
 from apps.content.models import StaffCategory
+from django.utils import timezone
+from django.db import models
 
 
 class Applicant(models.Model):
@@ -34,19 +33,19 @@ class Applicant(models.Model):
     # contact details
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
     salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    street = models.CharField(max_length=100)
-    number = models.CharField(max_length=10)
-    postal = models.CharField(max_length=10)
-    city = models.CharField(max_length=50)
-    country = models.CharField(max_length=100)
-    phone = models.CharField(max_length=20)
-    email = models.EmailField()
+    firstname = models.CharField(_('Firstname'), max_length=100)
+    lastname = models.CharField(_('Lastname'), max_length=100)
+    street = models.CharField(_('Street'), max_length=100)
+    number = models.CharField(_('Number'), max_length=10)
+    postal = models.CharField(_('Postal Code'), max_length=10)
+    city = models.CharField(_('City'), max_length=50)
+    country = models.CharField(_('Country'), max_length=100)
+    phone = models.CharField(_('Phone'), max_length=20)
+    email = models.EmailField(_('E-Mail'))
     # personal information
-    birthday = models.DateField()
-    nationality = models.CharField(max_length=100)
-    marital_status = models.CharField(max_length=20, choices=MARITAL_STATUS_CHOICES)
+    birthday = models.DateField(verbose_name=_('Birthday'))
+    nationality = models.CharField(_('Nationality'), max_length=100)
+    marital_status = models.CharField(_('Marital Status'), max_length=20, choices=MARITAL_STATUS_CHOICES)
     # language skills
     language1 = models.CharField(max_length=50)
     language1knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES)
@@ -57,15 +56,16 @@ class Applicant(models.Model):
     language4 = models.CharField(max_length=50, blank=True)
     language4knowledge = models.CharField(max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
     # career
-    department = models.ForeignKey(StaffCategory, on_delete=models.PROTECT, related_name='applicants')
-    experience = models.CharField(choices=EXPERIENCE_CHOICES, max_length=100)
-    position = models.CharField(max_length=50)
-    employer = models.CharField(max_length=50)
-    from_date = models.DateField()
-    until_date = models.DateField()
+    department = models.ForeignKey(StaffCategory, verbose_name=_('Department'), on_delete=models.PROTECT,
+                                   related_name='applicants')
+    experience = models.CharField(_('Experience'), choices=EXPERIENCE_CHOICES, max_length=100)
+    position = models.CharField(_('Position'), max_length=50)
+    employer = models.CharField(_('Employer'), max_length=50)
+    from_date = models.DateField(_('From Date'))
+    until_date = models.DateField(_('Until Date'))
     # cv
-    cv = models.FileField(upload_to='applicants/applicant/cv/')
-    more = models.FileField(upload_to='applicants/applicant/more/', blank=True)
+    cv = models.FileField(_('CV'), upload_to='applicants/applicant/cv/')
+    more = models.FileField(_('More'), upload_to='applicants/applicant/more/', blank=True)
     # other
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

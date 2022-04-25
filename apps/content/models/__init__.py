@@ -1,4 +1,5 @@
 from .staff_category import *
+from .structures import *
 from .applicant import *
 from .referral import *
 from .service import *

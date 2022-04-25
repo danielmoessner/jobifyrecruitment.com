@@ -4,7 +4,7 @@
 
 {% block main %}
 
-    {% include 'symbols/header.html' with title='Initiativbewerbung' image='img/placeholder-image.png' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/placeholder-image.png' %}
 
     <section class="bg-gray-200 py-24">
         <div class="mx-auto max-w-4xl mx-auto py-5 px-5 bg-gray-100">
@@ -12,11 +12,6 @@
                 {% crispy form %}
             </div>
         </div>
-
-        <script>
-            document.querySelector('#id_looking_for').value =
-        </script>
-
     </section>
 
 {% endblock %}
