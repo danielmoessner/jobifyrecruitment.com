@@ -477,13 +477,13 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
-.aspect-w-3 {
+.aspect-w-2 {
   position: relative;
   padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 3;
+  --tw-aspect-w: 2;
 }
 
-.aspect-w-3 > * {
+.aspect-w-2 > * {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -493,8 +493,8 @@ html {
   left: 0;
 }
 
-.aspect-h-2 {
-  --tw-aspect-h: 2;
+.aspect-h-3 {
+  --tw-aspect-h: 3;
 }
 
 .prose {
@@ -1664,10 +1664,6 @@ html {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scroll-mt-16 {
-  scroll-margin-top: 4rem;
 }
 
 .scroll-mt-32 {
@@ -3132,10 +3128,6 @@ html {
     width: 58.333333%;
   }
 
-  .lg\:w-5\/12 {
-    width: 41.666667%;
-  }
-
   .lg\:max-w-3xl {
     max-width: 48rem;
   }
@@ -3301,10 +3293,6 @@ html {
     display: none;
   }
 
-  .xl\:w-3\/4 {
-    width: 75%;
-  }
-
   .xl\:w-6\/12 {
     width: 50%;
   }
@@ -3363,14 +3351,6 @@ html {
 @media (min-width: 1536px) {
   .\32xl\:flex {
     display: flex;
-  }
-
-  .\32xl\:h-16 {
-    height: 4rem;
-  }
-
-  .\32xl\:h-32 {
-    height: 8rem;
   }
 
   .\32xl\:h-\[120px\] {
