@@ -2,14 +2,20 @@
 
 
 ## todo
+- header alle gleich hoch
+- mobil
+- working in austria faq einbauen und darauf basierend den text
+- navigation managed services anpassen
+- job seeker faq von oben bis unten
+- bei sprachen nur die wichtigsten
+- mobil
+- haken im admin bereich bei applicant ob er auf der seite angezeigt werden soll
 
+- formular anpassen
 
 ## easy todos
-- working in austria text anpassen
 - texte verschönern ohne abstände
-- alle teammitglieder einstellen
 - datenschutz text
-- faq seite texte einstellen
 
 
 ## blocked
@@ -35,7 +41,9 @@
 ## fragen
 - language select ist zu groß. was wollen wir da machen?
 
+
 ## erledigt
+- deutsch englisch galog thai
 - startseite in admin
 - initiativbewerbung in admin mit gelbem header
 - automatische auswahl des hire someone now formular bezogen auf das angeklickte icon
@@ -45,6 +53,9 @@
 - section überschrift bischen breiter
 - navigation in admin
 - formulare übersetzen
+- alle teammitglieder einstellen
+- working in austria text anpassen
+- faq seite texte einstellen
 
 
 ## unbekannt
