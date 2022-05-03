@@ -4,7 +4,7 @@
 ## todo
 - working in austria faq einbauen und darauf basierend den text
 - navigation managed services anpassen
-- job seeker faq von oben bis unten
+- job seeker faq items einbauen von oben bis unten
 - mobil
 - formular anpassen
 
@@ -20,7 +20,6 @@
 ## seiten vorlagen benötigt: 
 - link salary guides (einer von drei)
 - employer how it works
-- position bekomme ich eine liste als select
 - danke text der emails für die besucher
 - eligibility requirements pdf
 - puzzle bild für das zitat
