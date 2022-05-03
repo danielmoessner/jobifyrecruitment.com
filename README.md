@@ -2,11 +2,9 @@
 
 
 ## todo
-- header alle gleich hoch
 - working in austria faq einbauen und darauf basierend den text
 - navigation managed services anpassen
 - job seeker faq von oben bis unten
-- bei sprachen nur die wichtigsten
 - mobil
 - formular anpassen
 
@@ -39,6 +37,8 @@
 
 
 ## erledigt
+- header alle gleich hoch
+- bei sprachen nur die wichtigsten
 - länder ersetzen mit sprachen
 - haken im admin bereich bei applicant ob er auf der seite angezeigt werden soll
 - deutsch englisch galog thai

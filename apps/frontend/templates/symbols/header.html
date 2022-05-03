@@ -1,13 +1,13 @@
 {% load static %}
 <header class="lg:relative bg-yellow-500">
-    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-32 lg:text-left">
-        <div class="px-4 sm:px-8 lg:w-7/12 xl:w-6/12 2xl:w-3/4 2xl:h-[120px] 2xl:flex 2xl:items-center">
+    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-20 lg:text-left">
+        <div class="px-4 sm:px-8 lg:w-7/12 xl:w-6/12 xl:h-[120px] xl:flex xl:items-center 2xl:w-3/4">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
                 {{ title }}
             </h1>
         </div>
     </div>
-    <div class="relative w-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+    <div class="hidden lg:block relative w-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
         <img class="lg:absolute lg:right-0 mx-auto w-auto h-full"
              src="{% static image %}"
              alt="{{ title }}">

@@ -477,26 +477,6 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
-.aspect-w-2 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 2;
-}
-
-.aspect-w-2 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.aspect-h-3 {
-  --tw-aspect-h: 3;
-}
-
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -1478,6 +1458,10 @@ html {
   min-height: 50vh;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1520,10 +1504,6 @@ html {
 
 .w-10 {
   width: 2.5rem;
-}
-
-.w-32 {
-  width: 8rem;
 }
 
 .w-16 {
@@ -3293,6 +3273,10 @@ html {
     display: none;
   }
 
+  .xl\:h-\[120px\] {
+    height: 120px;
+  }
+
   .xl\:w-6\/12 {
     width: 50%;
   }
@@ -3349,19 +3333,7 @@ html {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:flex {
-    display: flex;
-  }
-
-  .\32xl\:h-\[120px\] {
-    height: 120px;
-  }
-
   .\32xl\:w-3\/4 {
     width: 75%;
-  }
-
-  .\32xl\:items-center {
-    align-items: center;
   }
 }
