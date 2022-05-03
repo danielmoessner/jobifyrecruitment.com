@@ -3,15 +3,13 @@
 
 ## todo
 - header alle gleich hoch
-- mobil
 - working in austria faq einbauen und darauf basierend den text
 - navigation managed services anpassen
 - job seeker faq von oben bis unten
 - bei sprachen nur die wichtigsten
 - mobil
-- haken im admin bereich bei applicant ob er auf der seite angezeigt werden soll
-
 - formular anpassen
+
 
 ## easy todos
 - texte verschönern ohne abstände
@@ -19,7 +17,6 @@
 
 
 ## blocked
-- länder ersetzen mit sprachen
 
 
 ## seiten vorlagen benötigt: 
@@ -39,10 +36,11 @@
 
 
 ## fragen
-- language select ist zu groß. was wollen wir da machen?
 
 
 ## erledigt
+- länder ersetzen mit sprachen
+- haken im admin bereich bei applicant ob er auf der seite angezeigt werden soll
 - deutsch englisch galog thai
 - startseite in admin
 - initiativbewerbung in admin mit gelbem header

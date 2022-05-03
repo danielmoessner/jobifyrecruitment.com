@@ -4,8 +4,8 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from modeltranslation.admin import TranslationAdmin
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
-    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, PortalPage, \
-    ContactPage, ImprintPage, ContactThanksPage, SubmitReferralThanksPage, SubmitPositionThanksPage, \
+    SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, \
+    PortalPage, ContactPage, ImprintPage, ContactThanksPage, SubmitReferralThanksPage, SubmitPositionThanksPage, \
     InitiativeApplicationThanksPage, IndexPage, InitiativeApplicationPage, JobSeekerFaqPage, Navigation
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin

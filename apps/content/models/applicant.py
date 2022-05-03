@@ -30,6 +30,8 @@ class Applicant(models.Model):
         ('10', _('5 to 10 Years')),
         ('MAX', _('More Than 10 Years')),
     )
+    # admin
+    show = models.BooleanField(default=False)
     # contact details
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
     salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)

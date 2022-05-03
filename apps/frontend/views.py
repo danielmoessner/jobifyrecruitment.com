@@ -40,7 +40,7 @@ class IndexView(BaseContext, LoginRequiredMixin, PageContext, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = _('English')
-        context['applicants'] = Applicant.objects.all()
+        context['applicants'] = Applicant.objects.filter(show=True)
         return context
 
 
@@ -129,7 +129,7 @@ class PortalView(BaseContext, PageContext, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['applicants'] = Applicant.objects.all()
+        context['applicants'] = Applicant.objects.filter(show=True)
         context['experience_choices'] = Applicant.EXPERIENCE_CHOICES
         return context
 

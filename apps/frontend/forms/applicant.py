@@ -13,15 +13,14 @@ class ApplicantForm(forms.ModelForm):
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
     country = CountryField().formfield(label=_('Country'))
-    # language1 = CountryField().formfield()
     language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
-    language2 = CountryField().formfield()
-    language3 = CountryField().formfield()
-    language4 = CountryField().formfield()
+    language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
+    language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
+    language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
 
     class Meta:
         model = Applicant
-        fields = '__all__'
+        exclude = ['show']
         labels = {
             'country': _('Country')
         }
