@@ -18,10 +18,12 @@
 
 
 ## seiten vorlagen benötigt: 
-- link salary guides
+- link salary guides (einer von drei)
 - employer how it works
 - position bekomme ich eine liste als select
 - danke text der emails für die besucher
+- eligibility requirements pdf
+- puzzle bild für das zitat
 
 
 ## schritte
@@ -37,6 +39,10 @@
 
 
 ## erledigt
+- email anpassungen
+- header text zentriert
+- calc(1216px_-_var(--scrollbar-width)_/_2_-_(420px_-_((100vw_-_1216px)_/_2)))
+- calc(188px - var(--scrollbar-width) / 2 + 50vw)
 - header alle gleich hoch
 - bei sprachen nur die wichtigsten
 - länder ersetzen mit sprachen

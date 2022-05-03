@@ -5,4 +5,6 @@
     {% include 'symbols/header.html' with title=page.header_title image='img/placeholder-image.png' %}
 
     {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
+
+    {% include 'symbols/quote.html' with quote=page.quote_text author=page.quote_author %}
 {% endblock %}

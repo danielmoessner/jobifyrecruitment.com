@@ -1,10 +1,12 @@
 {% load static %}
 <header class="lg:relative bg-yellow-500">
-    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-20 lg:text-left">
-        <div class="px-4 sm:px-8 lg:w-7/12 xl:w-6/12 xl:h-[120px] xl:flex xl:items-center 2xl:w-3/4">
-            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-                {{ title }}
-            </h1>
+    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-20">
+        <div class="px-4 sm:px-8">
+            <div class="lg:w-[calc(100vw_-_var(--scrollbar-width)_-_312px_-_32px)] xl:h-[120px] xl:flex xl:items-center xl:justify-center xl:w-[calc(1216px_-_var(--scrollbar-width)_/_2_-_(420px_-_((100vw_-_1216px)_/_2)))]">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                    {{ title }}
+                </h1>
+            </div>
         </div>
     </div>
     <div class="hidden lg:block relative w-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
