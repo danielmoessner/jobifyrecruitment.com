@@ -8,7 +8,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
 
 def get_fields_from_model_class(model_class):
     fields = model_class._meta.fields
-    fields = [f.name for f in fields]
+    fields = [f.name for f in fields if not f.many_to_one and not f.many_to_many]
     for name in ['id', 'created', 'updated', 'image', 'ordering']:
         if name in fields:
             fields.remove(name)

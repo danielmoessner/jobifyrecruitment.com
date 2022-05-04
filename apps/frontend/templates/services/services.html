@@ -1,6 +1,6 @@
-<section class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+<section class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden" id="services">
     <div class="lg:max-w-2xl lg:text-lg mx-auto w-full">
-        <ul>
+        <ul class="space-y-8">
             {% for service in services %}
                 <li class="flex space-x-5 items-center scroll-mt-32" id="service-{{ service.pk }}">
                     <img class="max-w-full w-64" src="{{ service.image.url }}" alt="{{ service.name }}">

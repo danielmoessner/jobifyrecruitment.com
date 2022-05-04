@@ -12,6 +12,14 @@ class Navigation(SingletonModel):
                                                     max_length=200)
     job_seeker_how_it_works = models.CharField(verbose_name='Job Seeker > How It Works', blank=True, max_length=200)
     job_seeker_column_2 = models.CharField(verbose_name='Job Seeker > Column 2', blank=True, max_length=200)
+    job_seeker_service_1 = models.ForeignKey('Service', verbose_name='Job Seeker > Service 1', blank=True, null=True,
+                                             on_delete=models.SET_NULL, related_name='navigation_1')
+    job_seeker_service_2 = models.ForeignKey('Service', verbose_name='Job Seeker > Service 2', blank=True, null=True,
+                                             on_delete=models.SET_NULL, related_name='navigation_2')
+    job_seeker_service_3 = models.ForeignKey('Service', verbose_name='Job Seeker > Service 3', blank=True, null=True,
+                                             on_delete=models.SET_NULL, related_name='navigation_3')
+    job_seeker_service_4 = models.ForeignKey('Service', verbose_name='Job Seeker > Service 4', blank=True, null=True,
+                                             on_delete=models.SET_NULL, related_name='navigation_4')
     job_seeker_column_3 = models.CharField(verbose_name='Job Seeker > Column 3', blank=True, max_length=200)
     job_seeker_working_in_austria = models.CharField(verbose_name='Job Seeker > Working In Austria', blank=True,
                                                      max_length=200)

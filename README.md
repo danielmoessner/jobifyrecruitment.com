@@ -2,7 +2,6 @@
 
 
 ## todo
-- navigation managed services anpassen
 - mobil
 - formular anpassen
 
@@ -36,6 +35,7 @@
 
 
 ## erledigt
+- navigation managed services anpassen
 - working in austria faq einbauen und darauf basierend den text
 - job seeker faq items einbauen von oben bis unten
 - email anpassungen

@@ -63,16 +63,18 @@
                     <div class="pb-3">
                         <span class="block text-lg font-bold">{{ navigation.job_seeker_column_2 }}</span>
                     </div>
-                    {% for service in services %}
-                        <a href="{% url 'frontend:services' %}#service-{{ service.pk }}"
-                           class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
-                            <div class="">
-                                <p class="text-base font-medium text-gray-900">
-                                    {{ service.name }}
-                                </p>
-                            </div>
-                        </a>
-                    {% endfor %}
+                    <a href="{% url 'frontend:services' %}#services"
+                       class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
+                        <div class="">
+                            <p class="text-base font-medium text-gray-900">
+                                Career Coaching
+                            </p>
+                        </div>
+                    </a>
+                    {% include 'symbols/navigation/job_seeker_service_link.html' with service=navigation.job_seeker_service_1 %}
+                    {% include 'symbols/navigation/job_seeker_service_link.html' with service=navigation.job_seeker_service_2 %}
+                    {% include 'symbols/navigation/job_seeker_service_link.html' with service=navigation.job_seeker_service_3 %}
+                    {% include 'symbols/navigation/job_seeker_service_link.html' with service=navigation.job_seeker_service_4 %}
                 </div>
 
                 <div class="flex flex-col space-y-1">
