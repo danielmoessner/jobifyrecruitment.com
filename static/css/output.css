@@ -2131,6 +2131,10 @@ html {
   padding-bottom: 0.75rem;
 }
 
+.pr-0 {
+  padding-right: 0px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3127,6 +3131,10 @@ html {
 
   .lg\:max-w-prose {
     max-width: 65ch;
+  }
+
+  .lg\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .lg\:flex-shrink-0 {

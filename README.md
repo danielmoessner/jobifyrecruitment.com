@@ -2,7 +2,6 @@
 
 
 ## todo
-- working in austria faq einbauen und darauf basierend den text
 - navigation managed services anpassen
 - mobil
 - formular anpassen
@@ -37,6 +36,7 @@
 
 
 ## erledigt
+- working in austria faq einbauen und darauf basierend den text
 - job seeker faq items einbauen von oben bis unten
 - email anpassungen
 - header text zentriert
