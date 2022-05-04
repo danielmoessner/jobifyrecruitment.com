@@ -4,7 +4,6 @@
 ## todo
 - working in austria faq einbauen und darauf basierend den text
 - navigation managed services anpassen
-- job seeker faq items einbauen von oben bis unten
 - mobil
 - formular anpassen
 
@@ -38,6 +37,7 @@
 
 
 ## erledigt
+- job seeker faq items einbauen von oben bis unten
 - email anpassungen
 - header text zentriert
 - calc(1216px_-_var(--scrollbar-width)_/_2_-_(420px_-_((100vw_-_1216px)_/_2)))
