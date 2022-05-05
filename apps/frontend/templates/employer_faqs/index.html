@@ -9,4 +9,6 @@
     {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
 
     {% include 'employer_faqs/faq.html' %}
+
+    {% include 'symbols/quote.html' with quote=page.quote_text author=page.quote_author %}
 {% endblock %}

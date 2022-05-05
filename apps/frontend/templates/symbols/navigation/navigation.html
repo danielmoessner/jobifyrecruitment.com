@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load custom_tags %}
 
 <nav class="relative w-full xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
      :class="[{{ fixed|default:0 }} ? 'xl:fixed' : 'bg-gray-800 xl:sticky']"
@@ -40,19 +41,15 @@
                     </a>
                 </div>
                 <div class="flex items-center xl:ml-12 space-x-1">
-                    {% language 'de' %}
-                        <a href="{% url 'frontend:index' %}"
-                           class="block text-base font-medium text-gray-200 hover:text-gray-100">
-                            DE
-                        </a>
-                    {% endlanguage %}
+                    <a href="{% translate_url request 'de' %}"
+                       class="block text-base font-medium text-gray-200 hover:text-gray-100">
+                        DE
+                    </a>
                     <div class="text-gray-200">/</div>
-                    {% language 'en' %}
-                        <a href="{% url 'frontend:index' %}"
-                           class="block text-base font-medium text-gray-200 hover:text-gray-100">
-                            EN
-                        </a>
-                    {% endlanguage %}
+                    <a href="{% translate_url request 'en' %}"
+                       class="block text-base font-medium text-gray-200 hover:text-gray-100">
+                        EN
+                    </a>
                 </div>
             </div>
         </div>
@@ -112,17 +109,13 @@
                 </div>
                 <div class="mt-6">
                     <div class="mt-6 flex items-center justify-end space-x-2 text-base font-medium text-gray-500">
-                        {% language 'de' %}
-                            <a href="{% url 'frontend:index' %}" class="text-indigo-600 hover:text-indigo-500">
-                                DE
-                            </a>
-                        {% endlanguage %}
+                        <a href="{% translate_url request 'de' %}" class="text-indigo-600 hover:text-indigo-500">
+                            DE
+                        </a>
                         <div>/</div>
-                        {% language 'en' %}
-                            <a href="{% url 'frontend:index' %}" class="text-indigo-600 hover:text-indigo-500">
-                                EN
-                            </a>
-                        {% endlanguage %}
+                        <a href="{% translate_url request 'en' %}" class="text-indigo-600 hover:text-indigo-500">
+                            EN
+                        </a>
                     </div>
                 </div>
             </div>

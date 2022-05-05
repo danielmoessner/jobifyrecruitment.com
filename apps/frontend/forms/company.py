@@ -25,11 +25,10 @@ class CompanyForm(forms.ModelForm):
         self.helper.attrs = {'novalidate': True}
         self.helper.add_input(Submit('submit', _('Submit')))
         self.helper.layout = Layout(
-            'manager_name',
-            Row('company_name', 'company_email'),
-            'job',
-            Row('looking_for', 'job_position'),
-            Row('job_duration', 'job_start'),
+            Row('manager_name', 'company_name'),
+            Row('company_email', 'looking_for'),
+            Row('job_position', 'job_duration'),
+            Row('job_start', 'accommodation'),
             'job_description',
             Field('privacy'),
         )

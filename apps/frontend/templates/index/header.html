@@ -1,5 +1,5 @@
 {% load static %}
-<header class="lg:relative bg-gray-800 pt-16 pb-20 lg:pt-64 lg:pb-40">
+<header class="lg:relative bg-gray-800 pt-16 pb-20 lg:pt-48 lg:pb-8">
     <div class="relative z-10 mx-auto max-w-7xl w-full text-center lg:text-left">
         <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
             <h1 class="text-2xl tracking-tight font-extrabold text-gray-100 sm:text-5xl md:text-6xl lg:text-5xl xl:text-4xl">
@@ -33,7 +33,7 @@
                 <dd class="mt-2 text-base text-gray-500 block">
                     <p>
                         <a href="{% url 'frontend:initiative_application' %}"
-                           class="{% include 'symbols/button_gray.class' %}">
+                           class="{% include 'symbols/button_white.class' %}">
                             {{ page.services_button_left }}
                         </a>
                     </p>
@@ -47,7 +47,7 @@
                     <p class="mt-5 text-lg leading-6 font-medium text-gray-100">{{ page.services_center }}</p>
                 </dt>
                 <dd class="mt-2 text-base text-gray-500">
-                    <a href="{% url 'frontend:submit_a_position' %}" class="{% include 'symbols/button_gray.class' %}">
+                    <a href="{% url 'frontend:submit_a_position' %}" class="{% include 'symbols/button_white.class' %}">
                         {{ page.services_button_center }}
                     </a>
                 </dd>
@@ -60,7 +60,7 @@
                     <p class="mt-5 text-lg leading-6 font-medium text-gray-100">{{ page.services_right }}</p>
                 </dt>
                 <dd class="mt-2 text-base text-gray-500">
-                    <a href="{% url 'frontend:submit_a_referral' %}" class="{% include 'symbols/button_gray.class' %}">
+                    <a href="{% url 'frontend:submit_a_referral' %}" class="{% include 'symbols/button_white.class' %}">
                         {{ page.services_button_right }}
                     </a>
                 </dd>

@@ -149,9 +149,6 @@ class WorkingInAustriaPage(SingletonModel):
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
-    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
-    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
-    #
     faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
     faq_answer_1 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 1', blank=True)
     faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=1000, blank=True)
@@ -192,6 +189,9 @@ class WorkingInAustriaPage(SingletonModel):
     faq_answer_19 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 19', blank=True)
     faq_question_20 = models.CharField(verbose_name='FAQ > Question 20', max_length=1000, blank=True)
     faq_answer_20 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 20', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -259,6 +259,9 @@ class EmployerFaqPage(SingletonModel):
     faq_answer_5 = models.TextField(verbose_name='FAQ > Answer 5', blank=True)
     faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=1000, blank=True)
     faq_answer_6 = models.TextField(verbose_name='FAQ > Answer 6', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -307,6 +310,9 @@ class JobSeekerFaqPage(SingletonModel):
     faq_answer_15 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 15', blank=True)
     faq_question_16 = models.CharField(verbose_name='FAQ > Question 16', max_length=1000, blank=True)
     faq_answer_16 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 16', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -328,6 +334,9 @@ class StaffingSolutionsPage(SingletonModel):
     cta_title = models.CharField(verbose_name='Cta > Title', max_length=1000, blank=True)
     cta_text = models.TextField(verbose_name='Cta > Text', blank=True)
     cta_button = models.CharField(verbose_name='Cta > Button', max_length=1000, blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -342,6 +351,9 @@ class SubmitPositionPage(SingletonModel):
     #
     form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
     form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -364,6 +376,9 @@ class SubmitPositionThanksPage(SingletonModel):
 
 class InitiativeApplicationPage(SingletonModel):
     header_title = models.CharField(verbose_name='Header > Title', max_length=200, blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -391,6 +406,9 @@ class AboutPage(SingletonModel):
     text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -402,6 +420,9 @@ class AboutPage(SingletonModel):
 class PortalPage(SingletonModel):
     #
     header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -416,6 +437,9 @@ class ContactPage(SingletonModel):
     #
     form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
     form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
         return self._meta.verbose_name

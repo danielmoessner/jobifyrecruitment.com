@@ -12,6 +12,10 @@ class Company(models.Model):
         ('12', '12 Months'),
         ('PERMANENT', 'Permanent'),
     )
+    YES_NO_CHOICES = (
+        ('Y', _('Yes')),
+        ('N', _('No')),
+    )
     #
     manager_name = models.CharField(_('Manager Name'), max_length=200)
     company_name = models.CharField(_('Company Name'), max_length=200)
@@ -22,6 +26,7 @@ class Company(models.Model):
     job_duration = models.CharField(_('Job Duration'), choices=JOB_DURATION_CHOICES, max_length=100)
     job_start = models.DateField(_('Job Start'))
     job_description = models.TextField(_('Job Description'))
+    accommodation = models.CharField(choices=YES_NO_CHOICES, max_length=10)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

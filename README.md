@@ -4,7 +4,10 @@
 ## todo
 - mobil
 - formular anpassen
-
+- agb
+- animationen
+- wo fehlen die texte schicken
+- footer in admin
 
 ## easy todos
 - texte verschönern ohne abstände
@@ -19,7 +22,7 @@
 - employer how it works
 - danke text der emails für die besucher
 - eligibility requirements pdf
-- puzzle bild für das zitat
+- agb inhalt
 
 
 ## schritte
