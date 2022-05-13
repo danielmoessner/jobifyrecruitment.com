@@ -3,13 +3,11 @@
 
 ## todo
 - mobil
-- agb
-- animationen
-- wo fehlen die texte schicken
-- footer in admin
 
 
 ## easy todos
+- wo fehlen die texte schicken
+- footer in admin
 - texte verschönern ohne abstände
 - datenschutz text
 
@@ -18,12 +16,8 @@
 - formular anpassen (https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/)
 
 
-## seiten vorlagen benötigt: 
-- link salary guides (einer von drei)
-- employer how it works
-- danke text der emails für die besucher
+## seiten vorlagen benötigt:
 - eligibility requirements pdf
-- agb inhalt
 
 
 ## schritte
@@ -39,6 +33,10 @@
 
 
 ## erledigt
+- danke text der emails für die besucher
+- agb inhalt
+- animationen
+- agb
 - navigation managed services anpassen
 - working in austria faq einbauen und darauf basierend den text
 - job seeker faq items einbauen von oben bis unten
