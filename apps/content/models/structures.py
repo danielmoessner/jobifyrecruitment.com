@@ -23,7 +23,6 @@ class Navigation(SingletonModel):
     job_seeker_column_3 = models.CharField(verbose_name='Job Seeker > Column 3', blank=True, max_length=200)
     job_seeker_working_in_austria = models.CharField(verbose_name='Job Seeker > Working In Austria', blank=True,
                                                      max_length=200)
-    job_seeker_salary_guides = models.CharField(verbose_name='Job Seeker > Salary Guides', blank=True, max_length=200)
     job_seeker_faqs = models.CharField(verbose_name='Job Seeker > FAQs', blank=True, max_length=200)
     job_seeker_video_resume = models.CharField(verbose_name='Job Seeker > Video Resume', blank=True, max_length=200)
     #

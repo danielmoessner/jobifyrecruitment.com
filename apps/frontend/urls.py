@@ -23,6 +23,7 @@ urlpatterns = [
     path(_('submit-a-position/'), views.SubmitPositionView.as_view(), name='submit_a_position'),
     path(_('submit-a-position/thanks/'), views.SubmitPositionThanksView.as_view(), name='submit_a_position_thanks'),
     path(_('employer-faqs/'), views.EmployerFaqView.as_view(), name='employer_faqs'),
+    path(_('employer-how-it-works/'), views.EmployerHowItWorksView.as_view(), name='employer_how_it_works'),
     path(_('portal/'), views.PortalView.as_view(), name='portal'),
     # both
     path(_('about/'), views.AboutView.as_view(), name='about'),
@@ -32,4 +33,5 @@ urlpatterns = [
     # other
     path(_('imprint/'), views.ImprintView.as_view(), name='imprint'),
     path(_('privacy/'), views.PrivacyView.as_view(), name='privacy'),
+    path(_('agb/'), views.AgbView.as_view(), name='agb'),
 ]

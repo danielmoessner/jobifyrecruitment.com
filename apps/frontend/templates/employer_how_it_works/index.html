@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/team-member-opt.jpeg' %}
+
+    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button params='#plan' %}
+
+    {% include 'employer_how_it_works/plan.html' %}
+
+    {% include 'symbols/quote.html' with quote=page.quote_text author=page.quote_author %}
+{% endblock %}

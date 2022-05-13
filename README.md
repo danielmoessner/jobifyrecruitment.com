@@ -3,11 +3,11 @@
 
 ## todo
 - mobil
-- formular anpassen
 - agb
 - animationen
 - wo fehlen die texte schicken
 - footer in admin
+
 
 ## easy todos
 - texte verschönern ohne abstände
@@ -15,6 +15,7 @@
 
 
 ## blocked
+- formular anpassen (https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/)
 
 
 ## seiten vorlagen benötigt: 
@@ -62,7 +63,3 @@
 - alle teammitglieder einstellen
 - working in austria text anpassen
 - faq seite texte einstellen
-
-
-## unbekannt
-- area of expertise selber reinschreiben

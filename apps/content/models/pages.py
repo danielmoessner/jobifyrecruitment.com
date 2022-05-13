@@ -42,6 +42,27 @@ class WhyToWorkWithUsPage(SingletonModel):
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
+    faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
+    faq_answer_1 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 1', blank=True)
+    faq_question_2 = models.CharField(verbose_name='FAQ > Question 2', max_length=1000, blank=True)
+    faq_answer_2 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 2', blank=True)
+    faq_question_3 = models.CharField(verbose_name='FAQ > Question 3', max_length=1000, blank=True)
+    faq_answer_3 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 3', blank=True)
+    faq_question_4 = models.CharField(verbose_name='FAQ > Question 4', max_length=1000, blank=True)
+    faq_answer_4 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 4', blank=True)
+    faq_question_5 = models.CharField(verbose_name='FAQ > Question 5', max_length=1000, blank=True)
+    faq_answer_5 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 5', blank=True)
+    faq_question_6 = models.CharField(verbose_name='FAQ > Question 6', max_length=1000, blank=True)
+    faq_answer_6 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 6', blank=True)
+    faq_question_7 = models.CharField(verbose_name='FAQ > Question 7', max_length=1000, blank=True)
+    faq_answer_7 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 7', blank=True)
+    faq_question_8 = models.CharField(verbose_name='FAQ > Question 8', max_length=1000, blank=True)
+    faq_answer_8 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 8', blank=True)
+    faq_question_9 = models.CharField(verbose_name='FAQ > Question 9', max_length=1000, blank=True)
+    faq_answer_9 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 9', blank=True)
+    faq_question_10 = models.CharField(verbose_name='FAQ > Question 10', max_length=1000, blank=True)
+    faq_answer_10 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 10', blank=True)
+    #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
 
@@ -123,6 +144,33 @@ class ApplicantsHowItWorksPage(SingletonModel):
         verbose_name = 'Page > Applicants How It Works'
 
 
+class EmployerHowItWorksPage(SingletonModel):
+    #
+    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    #
+    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
+    text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
+    #
+    plan_title = models.CharField(verbose_name='Plan > Title', max_length=1000, blank=True)
+    plan_1 = models.TextField(verbose_name='Plan > Step 1', blank=True)
+    plan_2 = models.TextField(verbose_name='Plan > Step 2', blank=True)
+    plan_3 = models.TextField(verbose_name='Plan > Step 3', blank=True)
+    plan_4 = models.TextField(verbose_name='Plan > Step 4', blank=True)
+    plan_5 = models.TextField(verbose_name='Plan > Step 5', blank=True)
+    plan_button = models.CharField(verbose_name='Plan > Button', max_length=1000, blank=True)
+    #
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
+    quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Employer How It Works'
+
+
 class ServicesPage(SingletonModel):
     #
     header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
@@ -131,7 +179,7 @@ class ServicesPage(SingletonModel):
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
-    quote_quote = models.CharField(verbose_name='Quote > Quote', max_length=1000, blank=True)
+    quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
 
     def __str__(self):
@@ -354,6 +402,10 @@ class SubmitPositionPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    #
+    email_subject = models.CharField(verbose_name='Mail > Subject', max_length=300, blank=True)
+    email_text = models.TextField(verbose_name='Mail > Text', blank=True)
+    email_html = tinymce_models.HTMLField(verbose_name='Mail > Rich Text', blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -471,3 +523,27 @@ class ImprintPage(SingletonModel):
 
     class Meta:
         verbose_name = 'Page > Imprint'
+
+
+class AgbPage(SingletonModel):
+    pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
+    title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
+    text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Agb'
+
+
+class PrivacyPage(SingletonModel):
+    pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
+    title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
+    text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Page > Privacy'

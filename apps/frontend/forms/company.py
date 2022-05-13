@@ -1,5 +1,5 @@
 from django.utils.translation import gettext_lazy as _
-from crispy_forms.layout import Submit, Layout, Row, Field
+from crispy_forms.layout import Submit, Layout, Row, Field, HTML
 from apps.content.static import PRIVACY_LABEL
 from crispy_forms.helper import FormHelper
 from apps.content.models import Company
@@ -25,6 +25,7 @@ class CompanyForm(forms.ModelForm):
         self.helper.attrs = {'novalidate': True}
         self.helper.add_input(Submit('submit', _('Submit')))
         self.helper.layout = Layout(
+            HTML('<h2 class="mt-10">{}</h2>'.format(_('Please complete the form below to submit an open position'))),
             Row('manager_name', 'company_name'),
             Row('company_email', 'looking_for'),
             Row('job_position', 'job_duration'),

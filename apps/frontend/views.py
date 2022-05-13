@@ -6,7 +6,9 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
     SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage, \
-    ImprintPage, ContactThanksPage, InitiativeApplicationPage, IndexPage, JobSeekerFaqPage, Navigation
+    ImprintPage, ContactThanksPage, InitiativeApplicationPage, IndexPage, JobSeekerFaqPage, Navigation, AgbPage, \
+    PrivacyPage, EmployerHowItWorksPage
+from django.core.mail import EmailMultiAlternatives
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 
@@ -74,6 +76,24 @@ class SubmitPositionView(BaseContext, PageContext, CreateView):
         kwargs.update(initial={'looking_for': self.request.GET.get('expertise')})
         return kwargs
 
+    def form_valid(self, form):
+        ret = super().form_valid(form)
+        self.send_mail(form.cleaned_data)
+        return ret
+
+    def send_mail(self, data):
+        from_email, to = 'website@jobifyrecruitment.com', data['company_email']
+
+        page = self.page.get_solo()
+        subject = page.email_subject
+        text_content = page.email_text
+        html_content = page.email_html
+
+        msg = EmailMultiAlternatives(subject=subject, body=text_content, from_email=from_email, to=[to],
+                                     bcc=['info@jobifyrecruitment.com'], reply_to=['info@jobifyrecruitment.com'])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
 
 class SubmitPositionThanksView(BaseContext, PageContext, TemplateView):
     template_name = 'submit_a_position/thanks.html'
@@ -111,6 +131,11 @@ class SubmitReferralThanksView(BaseContext, PageContext, TemplateView):
 class ApplicantsHowItWorksView(BaseContext, PageContext, TemplateView):
     template_name = 'applicants_how_it_works/index.html'
     page = ApplicantsHowItWorksPage
+
+
+class EmployerHowItWorksView(BaseContext, PageContext, TemplateView):
+    template_name = 'employer_how_it_works/index.html'
+    page = EmployerHowItWorksPage
 
 
 class WorkingInAustriaView(BaseContext, PageContext, TemplateView):
@@ -172,5 +197,11 @@ class ImprintView(BaseContext, PageContext, TemplateView):
     page = ImprintPage
 
 
-class PrivacyView(BaseContext, TemplateView):
+class PrivacyView(BaseContext, PageContext, TemplateView):
     template_name = 'privacy/privacy.html'
+    page = PrivacyPage
+
+
+class AgbView(BaseContext, PageContext, TemplateView):
+    template_name = 'agb/index.html'
+    page = AgbPage

@@ -3,7 +3,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     ApplicantsHowItWorksPage, WorkingInAustriaPage, VideoResumePage, EmployerFaqPage, StaffingSolutionsPage, \
     SubmitPositionPage, ServicesPage, AboutPage, MemberCategory, Member, PortalPage, ContactPage, ImprintPage, \
     ContactThanksPage, InitiativeApplicationThanksPage, SubmitPositionThanksPage, SubmitReferralThanksPage, IndexPage, \
-    InitiativeApplicationPage, JobSeekerFaqPage, Navigation
+    InitiativeApplicationPage, JobSeekerFaqPage, Navigation, AgbPage, PrivacyPage, EmployerHowItWorksPage
 
 
 def get_fields_from_model_class(model_class):
@@ -58,3 +58,6 @@ translator.register(ImprintPage, AllFields(ImprintPage))
 translator.register(IndexPage, AllFields(IndexPage))
 translator.register(InitiativeApplicationPage, AllFields(InitiativeApplicationPage))
 translator.register(JobSeekerFaqPage, AllFields(JobSeekerFaqPage))
+translator.register(AgbPage, AllFields(AgbPage))
+translator.register(PrivacyPage, AllFields(PrivacyPage))
+translator.register(EmployerHowItWorksPage, AllFields(EmployerHowItWorksPage))
