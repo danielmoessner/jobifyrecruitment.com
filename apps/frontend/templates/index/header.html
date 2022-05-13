@@ -1,8 +1,18 @@
 {% load static %}
-<header class="lg:relative bg-gray-800 pt-16 pb-20 lg:pt-48 lg:pb-8" x-data="{ show: false }">
-    <div class="relative z-10 mx-auto max-w-7xl w-full text-center lg:text-left">
+<header class="lg:relative bg-gray-800 pb-20 lg:pt-48 lg:pb-8" x-data>
+     <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:z-0">
+        <video class="absolute inset-0 w-full h-full object-cover brightness-50" autoplay loop muted>
+            <source src="{% static 'video/intro-video.webm' %}" type="video/webm">
+            <source src="{% static 'video/intro-video.ogv' %}" type="video/ogg">
+            <source src="{% static 'video/intro-video.wmv' %}" type="video/wmv">
+            <source src="{% static 'video/intro-video.mp4' %}" type="video/mp4">
+            <source src="{% static 'video/intro-video.avi' %}" type="video/avi">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="relative z-10 mx-auto max-w-7xl w-full pt-12 text-center lg:pt-0 lg:text-left">
         <div
-                class="opacity-0 transition duration-1000 delay-[5000ms]"
+                class="lg:opacity-0 lg:transition lg:duration-1000 lg:delay-[5000ms]"
                 x-intersect="$el.classList.add('!opacity-100')"
         >
             <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
@@ -15,26 +25,17 @@
             </div>
         </div>
     </div>
-    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:z-0">
-        <video class="absolute inset-0 w-full h-full object-cover brightness-50" autoplay loop muted>
-            <source src="{% static 'video/intro-video.webm' %}" type="video/webm">
-            <source src="{% static 'video/intro-video.ogv' %}" type="video/ogg">
-            <source src="{% static 'video/intro-video.wmv' %}" type="video/wmv">
-            <source src="{% static 'video/intro-video.mp4' %}" type="video/mp4">
-            <source src="{% static 'video/intro-video.avi' %}" type="video/avi">
-            Your browser does not support the video tag.
-        </video>
-    </div>
 
-    <div class="relative z-10 mt-20 max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+
+    <div class="relative z-10 mt-20 mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8"
 
     >
         <div
-                class="opacity-0 transition duration-1000 delay-[3500ms]"
+                class="lg:opacity-0 transition lg:duration-1000 lg:delay-[3500ms]"
                 x-intersect="$el.classList.add('!opacity-100')"
         >
             <h2 class="sr-only">Services</h2>
-            <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+            <dl class="grid gap-16 sm:gap-4 sm:grid-cols-3 sm:gap-0 lg:gap-8">
                 <div class="flex flex-col items-center">
                     <dt>
                         <div class="flex items-center justify-center h-20 w-20">
@@ -85,5 +86,4 @@
             </dl>
         </div>
     </div>
-    <button class="relative z-50" @click="show = !show">test</button>
 </header>

@@ -1,21 +1,21 @@
 {% load i18n %}
 {% load custom_tags %}
 
-<nav class="relative w-full xl:top-0 xl:z-40" x-data="Components.popover({ open: false, focus: false })"
-     :class="[{{ fixed|default:0 }} ? 'xl:fixed' : 'bg-gray-800 xl:sticky']"
+<nav class="relative w-full lg:top-0 lg:z-40" x-data="Components.popover({ open: false, focus: false })"
+     :class="[{{ fixed|default:0 }} ? 'lg:fixed' : 'bg-gray-800 lg:sticky']"
      x-init="init()"
      @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
     <div class="relative z-20">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 xl:px-8 xl:justify-start xl:space-x-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 lg:justify-start lg:space-x-10">
             <div>
                 <a href="{% url 'frontend:index' %}" class="flex">
                     <span class="sr-only">JobifyRecruitment</span>
                     {% include 'symbols/logo.html' with class='h-10 w-auto sm:h-12 invert' %}
                 </a>
             </div>
-            <div class="-mr-2 -my-2 xl:hidden">
+            <div class="-mr-2 -my-2 lg:hidden">
                 <button type="button"
-                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+                        class="bg-gray-800 border-2 border-gray-600 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-300 hover:border-gray-500 focus:outline-none focus:border-gray-300"
                         @click="toggle" @mousedown="if (open) $event.preventDefault()" aria-expanded="false"
                         :aria-expanded="open.toString()">
                     <span class="sr-only">Open menu</span>
@@ -27,7 +27,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
+            <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
                 <div class="flex space-x-10" x-data="Components.popoverGroup()" x-init="init()">
                     {% include 'symbols/navigation/job_seeker.html' %}
                     {% include 'symbols/navigation/employer.html' %}
@@ -40,7 +40,7 @@
                         {{ navigation.contact }}
                     </a>
                 </div>
-                <div class="flex items-center xl:ml-12 space-x-1">
+                <div class="flex items-center lg:ml-12 space-x-1">
                     <a href="{% translate_url request 'de' %}"
                        class="block text-base font-medium text-gray-200 hover:text-gray-100">
                         DE
@@ -60,7 +60,7 @@
          x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
          x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
          x-description="Mobile menu, show/hide based on mobile menu state."
-         class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden" x-ref="panel"
+         class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden" x-ref="panel"
          @click.away="open = false" style="display: none;">
         <div class="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
             <div class="pt-5 px-5">
@@ -86,36 +86,87 @@
             </div>
             <div class="py-6 px-5 divide-y-2 divide-gray-50">
                 <div class="grid grid-cols-2 gap-4">
-                    <a href="{% url 'frontend:staffing_solutions' %}"
-                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Staffing Solutions
-                    </a>
-                    <a href="{% url 'frontend:applicants_how_it_works' %}"
-                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Für Bewerber
-                    </a>
-                    <a href="{% url 'frontend:portal' %}"
-                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Bewerberportal
-                    </a>
-                    <a href="{% url 'frontend:initiative_application' %}"
-                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Initiativbewerbung
-                    </a>
-                    <a href="{% url 'frontend:contact' %}"
-                       class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                        Kontakt
-                    </a>
+                    <div class="space-y-4 flex flex-col">
+                        <div class="font-bold text-gray-800 text-lg">
+                            Job Seeker
+                        </div>
+                        <a href="{% url 'frontend:why_work_with_us' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Why to work with us
+                        </a>
+                        <a href="{% url 'frontend:applicants_how_it_works' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            How it works
+                        </a>
+                        <a href="{% url 'frontend:initiative_application' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Initiative Application
+                        </a>
+                        <a href="{% url 'frontend:services' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Managed Services
+                        </a>
+                        <a href="{% url 'frontend:working_in_austria' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Working in Austria
+                        </a>
+                        <a href="{% url 'frontend:job_seeker_faqs' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            FAQs
+                        </a>
+                        <a href="{% url 'frontend:submit_a_referral' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Submit a referral
+                        </a>
+                    </div>
+                    <div class="space-y-4 flex flex-col">
+                        <div class="font-bold text-gray-800 text-lg">
+                            Employer
+                        </div>
+                        <a href="{% url 'frontend:staffing_solutions' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Staffing Solutions
+                        </a>
+                        <a href="{% url 'frontend:employer_how_it_works' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            How It Works
+                        </a>
+                        <a href="{% url 'frontend:submit_a_position' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            Submit a position
+                        </a>
+                        <a href="{% url 'frontend:employer_faqs' %}"
+                           class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                            FAQs
+                        </a>
+                    </div>
+
                 </div>
                 <div class="mt-6">
-                    <div class="mt-6 flex items-center justify-end space-x-2 text-base font-medium text-gray-500">
-                        <a href="{% translate_url request 'de' %}" class="text-indigo-600 hover:text-indigo-500">
-                            DE
-                        </a>
-                        <div>/</div>
-                        <a href="{% translate_url request 'en' %}" class="text-indigo-600 hover:text-indigo-500">
-                            EN
-                        </a>
+                    <div class="w-full mt-6 flex items-center justify-between text-base font-medium text-gray-500">
+                        <div class="flex space-x-6">
+                            <a href="{% url 'frontend:video_resume' %}"
+                               class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                                Video Resume
+                            </a>
+                            <a href="{% url 'frontend:about' %}"
+                               class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                                About
+                            </a>
+                            <a href="{% url 'frontend:contact' %}"
+                               class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                                Contact
+                            </a>
+                        </div>
+                        <div class="space-x-2 flex items-center">
+                            <a href="{% translate_url request 'de' %}" class="text-indigo-600 hover:text-indigo-500">
+                                DE
+                            </a>
+                            <div>/</div>
+                            <a href="{% translate_url request 'en' %}" class="text-indigo-600 hover:text-indigo-500">
+                                EN
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

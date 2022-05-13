@@ -2,7 +2,6 @@
 
 
 ## todo
-- mobil
 
 
 ## easy todos
@@ -13,6 +12,7 @@
 
 
 ## blocked
+- änderungen
 - formular anpassen (https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/)
 
 
@@ -33,6 +33,7 @@
 
 
 ## erledigt
+- mobil
 - danke text der emails für die besucher
 - agb inhalt
 - animationen
