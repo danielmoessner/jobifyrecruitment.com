@@ -12,11 +12,12 @@ class ApplicantForm(forms.ModelForm):
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Birthday'))
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+    nationality = CountryField().formfield(label=_('Nationality'))
     country = CountryField().formfield(label=_('Country'))
-    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
-    language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
-    language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
-    language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES)
+    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
+    language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
+    language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
+    language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
 
     class Meta:
         model = Applicant
@@ -33,20 +34,32 @@ class ApplicantForm(forms.ModelForm):
         self.helper.attrs = {'novalidate': True}
         self.helper.add_input(Submit('submit', _('Submit')))
         self.helper.layout = Layout(
-            HTML('<h2>{}</h2>'.format(_('Contact details'))),
-            'photo',
-            Row('salutation', 'firstname', 'lastname'),
-            Row('street', 'number'),
-            Row('postal', 'city'),
-            'country',
+            HTML('<h2>{}</h2>'.format(_('Personal details'))),
+            Row('wanted_job_title', 'photo'),
+
+            HTML('<h2 class="mt-16">{}</h2><p>{}</p>'.format(_("What's the best way for employers to contact you?"),
+                                               _("We suggest including an email and phone number."))),
+            Row('firstname', 'lastname'),
+            'profession',
+            Row('city', 'state_province', 'postal'),
+
             Row('email', 'phone'),
+
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Personal Information'))),
             Row('birthday', 'nationality', 'marital_status'),
+
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Language skill'))),
             Row('language1', 'language1knowledge'),
             Row('language2', 'language2knowledge'),
             Row('language3', 'language3knowledge'),
             Row('language4', 'language4knowledge'),
+
+            HTML('<h2 class="mt-16">{}</h2>'.format(_('Tell us about your education'))),
+            Row('school_name', 'school_location'),
+            'degree',
+            Row('field_of_study', 'graduation_start_date', 'graduation_end_date'),
+            'currently_attend_school',
+
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Professional career'))),
             Row('department', 'experience'),
             Row('position', 'employer'),
