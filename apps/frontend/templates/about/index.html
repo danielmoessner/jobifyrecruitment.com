@@ -2,9 +2,9 @@
 
 
 {% block main %}
-    {% include 'symbols/header.html' with title=page.header_title image='img/placeholder-image.png' %}
+    {% include 'symbols/header.html' with title=page.header_title image='img/team-opt.jpeg' %}
 
-    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button %}
+    {% include 'symbols/text/index.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button %}
 
     {% include 'about/team.html' %}
 

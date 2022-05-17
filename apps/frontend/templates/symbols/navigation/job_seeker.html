@@ -64,6 +64,7 @@
                         <span class="block text-lg font-bold">{{ navigation.job_seeker_column_2 }}</span>
                     </div>
                     <a href="{% url 'frontend:services' %}#services"
+                       @click="open = false"
                        class="-m-2 p-2 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                         <div class="">
                             <p class="text-base font-medium text-gray-900">

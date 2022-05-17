@@ -26,7 +26,7 @@ class Company(models.Model):
     job_duration = models.CharField(_('Job Duration'), choices=JOB_DURATION_CHOICES, max_length=100)
     job_start = models.DateField(_('Job Start'))
     job_description = models.TextField(_('Job Description'))
-    accommodation = models.CharField(choices=YES_NO_CHOICES, max_length=10)
+    accommodation = models.CharField(_('Accomodation provided'), choices=YES_NO_CHOICES, max_length=10)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

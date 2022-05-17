@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
+from apps.content.static import LANGUAGE_CHOICES, PRIVACY_LABEL, NATIONALITY_CHOICES
 from crispy_forms.layout import Layout, Row, Submit, HTML, Field
-from apps.content.static import LANGUAGE_CHOICES, PRIVACY_LABEL
 from crispy_forms.helper import FormHelper
 from apps.content.models import Applicant
 from django import forms
@@ -12,12 +12,12 @@ class ApplicantForm(forms.ModelForm):
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Birthday'))
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
-    nationality = CountryField().formfield(label=_('Nationality'))
+    nationality = forms.ChoiceField(choices=NATIONALITY_CHOICES, label=_('Nationality'))
     country = CountryField().formfield(label=_('Country'))
-    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
-    language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
-    language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
-    language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False)
+    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
+    language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
+    language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
+    language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
 
     class Meta:
         model = Applicant

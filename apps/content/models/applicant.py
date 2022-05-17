@@ -20,9 +20,9 @@ class Applicant(models.Model):
     )
     LANGUAGE_KNOWLEDGE_CHOICES = (
         ('MOTHER', _('Mother tongue')),
-        ('FLUENT', _('Fluent')),
-        ('GOOD', _('Good')),
-        ('BASIC', _('Basic')),
+        ('FLUENT', _('Fluent in spoken and written')),
+        ('GOOD', _('Good knowledge written and spoken')),
+        ('BASIC', _('Basic knowledge')),
     )
     EXPERIENCE_CHOICES = (
         ('1', _('1 Year')),

@@ -4,7 +4,7 @@
 {% block main %}
     {% include 'symbols/header.html' with title=page.header_title image='img/video-opt.png' %}
 
-    {% include 'symbols/text.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
+    {% include 'symbols/text/index.html' with title=page.text_title sub=page.text_sub text=page.text_text button=page.text_button href='frontend:index' %}
 
     {% include 'video_resume/benefits.html' %}
 
