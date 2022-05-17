@@ -4,7 +4,7 @@ from tinymce import models as tinymce_models
 
 
 class IndexPage(SingletonModel):
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     header_text = models.TextField(verbose_name='Header > Text', blank=True)
     header_button_left = models.CharField(verbose_name='Header > Button Left', max_length=100, blank=True)
     header_button_right = models.CharField(verbose_name='Header > Button Right', max_length=100, blank=True)
@@ -16,7 +16,7 @@ class IndexPage(SingletonModel):
     services_right = models.CharField(verbose_name='Services > Right', max_length=300, blank=True)
     services_button_right = models.CharField(verbose_name='Services > Button Right', max_length=100, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=1000, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=1000, blank=True)
     text_text = models.TextField(verbose_name='Text > Text', blank=True)
     #
     applicants_title = models.CharField(verbose_name='Applicants > Title', max_length=1000, blank=True)
@@ -35,9 +35,9 @@ class IndexPage(SingletonModel):
 
 class WhyToWorkWithUsPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
@@ -75,9 +75,9 @@ class WhyToWorkWithUsPage(SingletonModel):
 
 class SubmitReferralPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
@@ -120,9 +120,9 @@ class SubmitReferralThanksPage(SingletonModel):
 
 class ApplicantsHowItWorksPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
@@ -146,9 +146,9 @@ class ApplicantsHowItWorksPage(SingletonModel):
 
 class EmployerHowItWorksPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
@@ -173,9 +173,9 @@ class EmployerHowItWorksPage(SingletonModel):
 
 class ServicesPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -191,9 +191,9 @@ class ServicesPage(SingletonModel):
 
 class WorkingInAustriaPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -250,9 +250,9 @@ class WorkingInAustriaPage(SingletonModel):
 
 class VideoResumePage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -289,11 +289,12 @@ class VideoResumePage(SingletonModel):
 
 class EmployerFaqPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
+    text_button = models.CharField(verbose_name='Text > Button', max_length=200, blank=True)
     #
     faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)
     faq_answer_1 = tinymce_models.HTMLField(verbose_name='FAQ > Answer 1', blank=True)
@@ -320,9 +321,9 @@ class EmployerFaqPage(SingletonModel):
 
 class JobSeekerFaqPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -371,9 +372,9 @@ class JobSeekerFaqPage(SingletonModel):
 
 class StaffingSolutionsPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=1000, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=1000, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=1000, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -395,7 +396,7 @@ class StaffingSolutionsPage(SingletonModel):
 
 class SubmitPositionPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
     form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)
@@ -427,10 +428,15 @@ class SubmitPositionThanksPage(SingletonModel):
 
 
 class InitiativeApplicationPage(SingletonModel):
-    header_title = models.CharField(verbose_name='Header > Title', max_length=200, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=200, blank=True)
+    header_text = models.TextField(verbose_name='Header > Text', blank=True)
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    #
+    email_subject = models.CharField(verbose_name='Mail > Subject', max_length=300, blank=True)
+    email_text = models.TextField(verbose_name='Mail > Text', blank=True)
+    email_html = tinymce_models.HTMLField(verbose_name='Mail > Rich Text', blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -453,9 +459,9 @@ class InitiativeApplicationThanksPage(SingletonModel):
 
 class AboutPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
-    text_title = models.CharField(verbose_name='Text > Title', max_length=200, blank=True)
+    text_title = models.TextField(verbose_name='Text > Title', max_length=200, blank=True)
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
@@ -471,7 +477,7 @@ class AboutPage(SingletonModel):
 
 class PortalPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
@@ -485,7 +491,7 @@ class PortalPage(SingletonModel):
 
 class ContactPage(SingletonModel):
     #
-    header_title = models.CharField(verbose_name='Header > Title', max_length=1000, blank=True)
+    header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
     form_title = models.CharField(verbose_name='Form > Title', max_length=1000, blank=True)
     form_text = tinymce_models.HTMLField(verbose_name='Form > Text', blank=True)

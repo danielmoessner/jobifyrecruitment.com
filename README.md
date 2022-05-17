@@ -2,22 +2,19 @@
 
 
 ## todo
+- footer in admin
 
 
 ## easy todos
 - wo fehlen die texte schicken
-- footer in admin
 - texte verschönern ohne abstände
 - datenschutz text
 
 
 ## blocked
-- änderungen
-- formular anpassen (https://css-tricks.com/snippets/css/custom-file-input-styling-webkitblink/)
 
 
 ## seiten vorlagen benötigt:
-- eligibility requirements pdf
 
 
 ## schritte

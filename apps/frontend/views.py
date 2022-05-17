@@ -53,6 +53,24 @@ class InitiativeApplicationView(BaseContext, PageContext, CreateView):
     page = InitiativeApplicationPage
     success_url = reverse_lazy('frontend:initiative_application_thanks')
 
+    def form_valid(self, form):
+        ret = super().form_valid(form)
+        self.send_mail(form.cleaned_data)
+        return ret
+
+    def send_mail(self, data):
+        from_email, to = 'website@jobifyrecruitment.com', data['email']
+
+        page = self.page.get_solo()
+        subject = page.email_subject
+        text_content = page.email_text
+        html_content = page.email_html
+
+        msg = EmailMultiAlternatives(subject=subject, body=text_content, from_email=from_email, to=[to],
+                                     bcc=['info@jobifyrecruitment.com'], reply_to=['info@jobifyrecruitment.com'])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
 
 class InitiativeApplicationThanksView(BaseContext, PageContext, TemplateView):
     template_name = 'initiative_application/thanks.html'

@@ -1,9 +1,9 @@
 <section class="py-16 sm:pt-20 sm:pb-32">
     <div class="{% include 'symbols/container.class' %}">
-        <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            {{ page.text_title }}
+        <h2 class="text-center text-3xl font-extrabold text-gray-900 max-w-4xl mx-auto sm:text-4xl">
+            {{ page.text_title|linebreaksbr }}
         </h2>
-        <p class="text-center mt-4 text-xl leading-6 text-gray-700 max-w-3xl mx-auto">
+        <p class="text-center mt-4 text-xl leading-6 text-gray-700 max-w-4xl mx-auto">
             {{ page.text_text }}
         </p>
     </div>

@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 // tailwind.config.js
 module.exports = {
-  content: ['./templates/**/*.html', './apps/*/templates/**/*.html', './apps/applicants/forms.py'],
+  content: ['./templates/**/*.html', './apps/*/templates/**/*.html', './apps/frontend/forms/applicant.py'],
   theme: {
     colors: {
       transparent: 'transparent',

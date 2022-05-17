@@ -12,8 +12,12 @@ class ApplicantForm(forms.ModelForm):
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Birthday'))
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+    graduation_start_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
+                                            label=_('Graduation Start Date'))
+    graduation_end_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
+                                          label=_('Graduation End Date'))
     nationality = forms.ChoiceField(choices=NATIONALITY_CHOICES, label=_('Nationality'))
-    country = CountryField().formfield(label=_('Country'))
+    # country = CountryField().formfield(label=_('Country'))
     language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
@@ -33,15 +37,37 @@ class ApplicantForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.attrs = {'novalidate': True}
         self.helper.add_input(Submit('submit', _('Submit')))
+
+        error = """
+        <span class="text-red-700">
+        {% for error in form.errors.photo %}
+            {{ error }}
+        {% endfor %}
+        </span>
+        """
+
+        photo_input = HTML("""
+        <div>
+        <div class="control-group flex items-end justify-start">
+            <input type="file" name="photo" accept="image/*" class="!sr-only" required="" id="id_photo">
+            <label for="id_photo" class="!flex items-center space-x-2 cursor-pointer">
+                <img src="/static/icon/photo-input.jpg" alt="Icon" class="w-16 h-16" />
+                <span class="text-gray-700">{text}</span>
+            </label>
+        </div>
+            {error}
+        </div>
+        """.format(text=_('Upload photo'), error=error))
+
         self.helper.layout = Layout(
             HTML('<h2>{}</h2>'.format(_('Personal details'))),
-            Row('wanted_job_title', 'photo'),
+            Row('wanted_job_title', photo_input),
 
             HTML('<h2 class="mt-16">{}</h2><p>{}</p>'.format(_("What's the best way for employers to contact you?"),
-                                               _("We suggest including an email and phone number."))),
+                                                             _("We suggest including an email and phone number."))),
             Row('firstname', 'lastname'),
             'profession',
-            Row('city', 'state_province', 'postal'),
+            # Row('city', 'state_province', 'postal'),
 
             Row('email', 'phone'),
 

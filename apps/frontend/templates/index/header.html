@@ -1,6 +1,6 @@
 {% load static %}
-<header class="lg:relative bg-gray-800 pb-20 lg:pt-48 lg:pb-8" x-data>
-     <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:z-0">
+<header class="lg:relative bg-gray-800 pb-20 lg:pt-20 lg:pb-8" x-data>
+     <div class="relative w-full lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:z-0">
         <video class="absolute inset-0 w-full h-full object-cover brightness-50" autoplay loop muted>
             <source src="{% static 'video/intro-video.webm' %}" type="video/webm">
             <source src="{% static 'video/intro-video.ogv' %}" type="video/ogg">
@@ -10,13 +10,13 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <div class="relative z-10 mx-auto max-w-7xl w-full pt-12 text-center lg:pt-0 lg:text-left">
+    <div class="relative z-10 mx-auto max-w-7xl w-full pt-4 text-center lg:pt-0 lg:text-left">
         <div
                 class="lg:opacity-0 lg:transition lg:duration-1000 lg:delay-[5000ms]"
                 x-intersect="$el.classList.add('!opacity-100')"
         >
             <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-                <h1 class="text-2xl tracking-tight font-extrabold text-gray-100 sm:text-5xl md:text-6xl lg:text-5xl xl:text-4xl">
+                <h1 class="text-2xl tracking-tight font-extrabold text-gray-100 sm:text-3xl xl:text-4xl">
                     {{ page.header_title }}
                 </h1>
                 <p class="mt-3 max-w-md mx-auto text-lg text-gray-300 sm:text-xl md:mt-5 md:max-w-3xl">
