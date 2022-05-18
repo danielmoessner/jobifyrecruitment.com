@@ -1,19 +1,46 @@
-<section class="py-16 xl:py-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden" id="services">
-    <div class="lg:max-w-2xl lg:text-lg mx-auto w-full">
-        <ul class="space-y-8">
-            {% for service in services %}
-                <li class="flex space-x-5 items-center scroll-mt-32" id="service-{{ service.pk }}">
-                    <img class="max-w-full w-64" src="{{ service.image.url }}" alt="{{ service.name }}">
-                    <div>
-                        <h3 class="text-3xl font-bold text-gray-800">
-                            {{ service.title }}
-                        </h3>
-                        <p class="text-lg mt-3">
-                            {{ service.text }}
-                        </p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+<section class="py-16 xl:pb-36" id="services">
+    <div class="max-w-3xl mx-auto lg:max-w-7xl">
+        <div class="{% include 'symbols/wrapper.class' %}">
+            <div class="lg:text-lg w-full">
+                <ul class="grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 lg:gap-y-6">
+                    {% for service in services %}
+                        <li>
+                            <div class="scroll-mt-32 border border-yellow-500 border-2 shadow"
+                                 id="service-{{ service.pk }}" x-data="{ open: false }">
+                                <button class="w-full" @click="open = !open" type="button" aria-expanded="false"
+                                        x-bind:aria-expanded="open.toString()">
+                                    <img class="max-w-full mx-auto sm:h-64 object-cover" src="{{ service.image.url }}"
+                                         alt="{{ service.name }}"/>
+                                </button>
+                                <div class="mt-4 px-4 pb-4">
+                                    <button type="button" x-description="Expand/collapse question button"
+                                            class="text-left w-full flex justify-between items-center text-gray-400"
+                                            aria-controls="faq-2" @click="open = !open" aria-expanded="false"
+                                            x-bind:aria-expanded="open.toString()">
+                                        <h3 class="text-xl font-bold text-gray-800">
+                                            {{ service.title }}
+                                        </h3>
+                                        <div class="ml-6 h-7 flex items-center">
+                                            <svg class="h-6 w-6 transform rotate-0 text-gray-700" x-state:on="Open"
+                                                 x-state:off="Closed"
+                                                 :class="{ '-rotate-180': open, 'rotate-0': !(open) }"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                 aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <p class="text-lg mt-3" x-show="open">
+                                        {{ service.text }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 </section>

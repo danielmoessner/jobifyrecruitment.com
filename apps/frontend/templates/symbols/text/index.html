@@ -1,7 +1,9 @@
 <section class="relative py-16 bg-white overflow-hidden">
     {% include 'symbols/text/patterns.html' %}
-    <div class="relative px-4 sm:px-6 lg:px-8">
-        {% include 'symbols/text/top.html' %}
-        {% include 'symbols/text/body.html' %}
+    <div class="max-w-4xl mx-auto">
+        <div class="relative {% include 'symbols/wrapper.class' %}">
+            {% include 'symbols/text/top.html' %}
+            {% include 'symbols/text/body.html' %}
+        </div>
     </div>
 </section>
