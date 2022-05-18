@@ -2,6 +2,12 @@ from solo.models import SingletonModel
 from django.db import models
 from tinymce import models as tinymce_models
 
+SIZE_CHOICES = (
+    ('SMALL', 'Small'),
+    ('NORMAL', 'Normal'),
+    ('LARGE', 'Large'),
+)
+
 
 class IndexPage(SingletonModel):
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
@@ -25,6 +31,8 @@ class IndexPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -65,6 +73,8 @@ class WhyToWorkWithUsPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -98,6 +108,8 @@ class SubmitReferralPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -136,6 +148,8 @@ class ApplicantsHowItWorksPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -163,6 +177,8 @@ class EmployerHowItWorksPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -181,6 +197,8 @@ class ServicesPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -240,6 +258,8 @@ class WorkingInAustriaPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -281,6 +301,8 @@ class VideoResumePage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -313,6 +335,8 @@ class EmployerFaqPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -364,6 +388,8 @@ class JobSeekerFaqPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -388,6 +414,8 @@ class StaffingSolutionsPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -405,6 +433,8 @@ class SubmitPositionPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
     #
     email_subject = models.CharField(verbose_name='Mail > Subject', max_length=300, blank=True)
     email_text = models.TextField(verbose_name='Mail > Text', blank=True)
@@ -435,6 +465,8 @@ class InitiativeApplicationPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
     #
     email_subject = models.CharField(verbose_name='Mail > Subject', max_length=300, blank=True)
     email_text = models.TextField(verbose_name='Mail > Text', blank=True)
@@ -469,6 +501,8 @@ class AboutPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -483,6 +517,8 @@ class PortalPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name
@@ -500,6 +536,8 @@ class ContactPage(SingletonModel):
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
+    quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
+                                  blank=True)
 
     def __str__(self):
         return self._meta.verbose_name

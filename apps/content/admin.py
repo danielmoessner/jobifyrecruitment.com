@@ -57,32 +57,22 @@ class PageAdmin(SingletonModelAdmin, TranslationAdmin):
             # Create a fieldset to group each translated field's localized fields
             fields = sorted((f for f in self.opts.get_fields() if f.concrete))
             untranslated_fields = [
-                f.name
+                f
                 for f in fields
                 if (
                     # Exclude the primary key field
-                    f is not self.opts.auto_field
-                    # Exclude non-editable fields
-                    and f.editable
-                    # Exclude the translation fields
-                    and not hasattr(f, 'translated_field')
-                    # Honour field arguments. We rely on the fact that the
-                    # passed fieldsets argument is already fully filtered
-                    # and takes options like exclude into account.
-                    and f.name in flattened_fieldsets
+                        f is not self.opts.auto_field
+                        # Exclude non-editable fields
+                        and f.editable
+                        # Exclude the translation fields
+                        and not hasattr(f, 'translated_field')
+                        # Honour field arguments. We rely on the fact that the
+                        # passed fieldsets argument is already fully filtered
+                        # and takes options like exclude into account.
+                        and f.name in flattened_fieldsets
                 )
             ]
-            fieldsets = (
-                [
-                    (
-                        '',
-                        {'fields': untranslated_fields, 'classes': ('collapse', )},
-
-                    )
-                ]
-                if untranslated_fields
-                else []
-            )
+            fieldsets = []
 
             temp_fieldsets = {}
             for orig_field, trans_fields in self.trans_opts.fields.items():
@@ -104,6 +94,13 @@ class PageAdmin(SingletonModelAdmin, TranslationAdmin):
             )
             for field_name in fields_order:
                 fieldsets.append(temp_fieldsets.pop(field_name))
+
+            for field in untranslated_fields:
+                fieldsets.append((
+                    field.verbose_name,
+                    {'fields': [field.name], 'classes': ('mt-fieldset collapse',)},
+                ))
+
             assert not temp_fieldsets  # cleaned
 
         return fieldsets
