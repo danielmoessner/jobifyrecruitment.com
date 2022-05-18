@@ -258,6 +258,8 @@ class VideoResumePage(SingletonModel):
     #
     benefits_left_title = models.CharField(verbose_name='Benefits > Title Left', max_length=200, blank=True)
     benefits_left_text = models.TextField(verbose_name='Benefits > Text Left', blank=True)
+    benefits_center_title = models.CharField(verbose_name='Benefits > Title Center', max_length=200, blank=True)
+    benefits_center_text = models.TextField(verbose_name='Benefits > Text Center', blank=True)
     benefits_right_title = models.CharField(verbose_name='Benefits > Title Right', max_length=200, blank=True)
     benefits_right_text = models.TextField(verbose_name='Benefits > Text Right', blank=True)
     #
