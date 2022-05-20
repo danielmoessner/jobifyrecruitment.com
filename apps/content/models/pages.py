@@ -283,7 +283,17 @@ class VideoResumePage(SingletonModel):
     benefits_right_title = models.CharField(verbose_name='Benefits > Title Right', max_length=200, blank=True)
     benefits_right_text = models.TextField(verbose_name='Benefits > Text Right', blank=True)
     #
-    video_title = models.CharField(verbose_name='Video > Title', max_length=200, blank=True)
+    advantages_title = models.CharField(verbose_name='Advantages > Title', max_length=200, blank=True)
+    advantages_title_1 = models.CharField(verbose_name='Advantages > Title 1', max_length=200, blank=True)
+    advantages_text_1 = models.TextField(verbose_name='Advantages > Text 1', blank=True)
+    advantages_title_2 = models.CharField(verbose_name='Advantages > Title 2', max_length=200, blank=True)
+    advantages_text_2 = models.TextField(verbose_name='Advantages > Text 2', blank=True)
+    advantages_title_3 = models.CharField(verbose_name='Advantages > Title 3', max_length=200, blank=True)
+    advantages_text_3 = models.TextField(verbose_name='Advantages > Text 3', blank=True)
+    advantages_title_4 = models.CharField(verbose_name='Advantages > Title 4', max_length=200, blank=True)
+    advantages_text_4 = models.TextField(verbose_name='Advantages > Text 4', blank=True)
+    advantages_title_5 = models.CharField(verbose_name='Advantages > Title 5', max_length=200, blank=True)
+    advantages_text_5 = models.TextField(verbose_name='Advantages > Text 5', blank=True)
     #
     faq_title = models.CharField(verbose_name='FAQ > Title', max_length=1000, blank=True)
     faq_question_1 = models.CharField(verbose_name='FAQ > Question 1', max_length=1000, blank=True)

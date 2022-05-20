@@ -1,34 +1,38 @@
-<section class="bg-blue-100">
+{% load static %}
+<section class="bg-blue-00">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div class="">
             <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-12">
                 <div>
-                    <dt class="text-lg leading-6 font-medium text-blue-900">
-                        <h2 class="text-2xl font-extrabold text-blue-900 text-left">
+                    <dt class="text-lg leading-6 font-medium text-gray-800">
+                        <img class="w-16 h-auto" src="{% static 'icon/faster-hiring-process.png' %}" alt="{{ page.benefits_left_title }} Icon">
+                        <h2 class="text-2xl font-extrabold text-yellow-500 text-left mt-4">
                             {{ page.benefits_left_title }}
                         </h2>
                     </dt>
-                    <dd class="mt-2 text-base text-blue-900">
+                    <dd class="mt-2 text-base text-gray-800">
                         {{ page.benefits_left_text|linebreaksbr }}
                     </dd>
                 </div>
                 <div>
-                    <dt class="text-lg leading-6 font-medium text-blue-900">
-                        <h2 class="text-2xl font-extrabold text-blue-900 text-left">
+                    <dt class="text-lg leading-6 font-medium text-gray-800">
+                        <img class="w-16 h-auto" src="{% static 'icon/better-candidate-experience.png' %}" alt="{{ page.benefits_center_title }} Icon">
+                        <h2 class="text-2xl font-extrabold text-yellow-500 text-left mt-4">
                             {{ page.benefits_center_title }}
                         </h2>
                     </dt>
-                    <dd class="mt-2 text-base text-blue-900">
+                    <dd class="mt-2 text-base text-gray-800">
                         {{ page.benefits_center_text|linebreaksbr }}
                     </dd>
                 </div>
                 <div>
-                    <dt class="text-lg leading-6 font-medium text-blue-900">
-                        <h2 class="text-2xl font-extrabold text-blue-900 text-left">
+                    <dt class="text-lg leading-6 font-medium text-gray-800">
+                        <img class="w-16 h-auto" src="{% static 'icon/for-the-first-impression.png' %}" alt="{{ page.benefits_right_title }} Icon">
+                        <h2 class="text-2xl font-extrabold text-yellow-500 text-left mt-4">
                             {{ page.benefits_right_title }}
                         </h2>
                     </dt>
-                    <dd class="mt-2 text-base text-blue-900">
+                    <dd class="mt-2 text-base text-gray-800">
                         {{ page.benefits_right_text|linebreaksbr }}
                     </dd>
                 </div>
