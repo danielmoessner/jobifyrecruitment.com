@@ -416,7 +416,7 @@ class StaffingSolutionsPage(SingletonModel):
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=1000, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
-    solutions_title = models.CharField(verbose_name='Solutions > Title', max_length=1000, blank=True)
+    solutions_title = models.TextField(verbose_name='Solutions > Title', blank=True)
     #
     cta_title = models.CharField(verbose_name='Cta > Title', max_length=1000, blank=True)
     cta_text = models.TextField(verbose_name='Cta > Text', blank=True)
