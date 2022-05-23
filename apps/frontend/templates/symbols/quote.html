@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="bg-yellow-500">
+<div class="bg-yellow-500 py-3">
     <div class="{% include 'symbols/container.class' %}">
         <div class="w-full flex flex-col items-center justify-between md:flex-row">
             <blockquote class="w-full pt-8 sm:pb-8 lg:py-5 xl:py-0">
@@ -23,7 +23,7 @@
                     </footer>
                 {% endif %}
             </blockquote>
-            <img class="max-w-md w-full h-auto" src="{% static 'img/puzzle.png' %}"
+            <img class="max-w-md w-full h-auto lg:h-44 lg:w-auto" src="{% static image|default:'img/puzzle.png' %}"
                  alt="Bild das ein Puzzle Teil darstellt.">
         </div>
     </div>
