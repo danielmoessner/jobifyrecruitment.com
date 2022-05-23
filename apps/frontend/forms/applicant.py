@@ -1,5 +1,4 @@
 from django.utils.translation import gettext_lazy as _
-from django_countries.fields import CountryField
 from apps.content.static import LANGUAGE_CHOICES, PRIVACY_LABEL, NATIONALITY_CHOICES
 from crispy_forms.layout import Layout, Row, Submit, HTML, Field
 from crispy_forms.helper import FormHelper
@@ -12,12 +11,18 @@ class ApplicantForm(forms.ModelForm):
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Birthday'))
     from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
     until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+
+    from_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
+    until_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+
+    from_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
+    until_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+
     graduation_start_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
                                             label=_('Graduation Start Date'))
     graduation_end_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
                                           label=_('Graduation End Date'))
     nationality = forms.ChoiceField(choices=NATIONALITY_CHOICES, label=_('Nationality'))
-    # country = CountryField().formfield(label=_('Country'))
     language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
@@ -88,8 +93,19 @@ class ApplicantForm(forms.ModelForm):
 
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Professional career'))),
             Row('department', 'experience'),
-            Row('position', 'employer'),
+
+            HTML('<div class="h-4"></div>'),
             Row('from_date', 'until_date'),
+            Row('position', 'employer'),
+
+            HTML('<div class="h-4"></div>'),
+            Row('from_date_2', 'until_date_2'),
+            Row('position_2', 'employer_2'),
+
+            HTML('<div class="h-4"></div>'),
+            Row('from_date_3', 'until_date_3'),
+            Row('position_3', 'employer_3'),
+
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Additional information'))),
             'cv',
             'more',

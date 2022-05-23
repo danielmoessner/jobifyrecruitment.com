@@ -72,10 +72,19 @@ class Applicant(models.Model):
     department = models.ForeignKey(StaffCategory, verbose_name=_('Department'), on_delete=models.PROTECT,
                                    related_name='applicants')
     experience = models.CharField(_('Experience'), choices=EXPERIENCE_CHOICES, max_length=100)
+    #
     position = models.CharField(_('Position'), max_length=50)
     employer = models.CharField(_('Employer'), max_length=50)
     from_date = models.DateField(_('From Date'))
     until_date = models.DateField(_('Until Date'))
+    position_2 = models.CharField(_('Position'), max_length=50, null=True, blank=True)
+    employer_2 = models.CharField(_('Employer'), max_length=50, null=True, blank=True)
+    from_date_2 = models.DateField(_('From Date'), null=True, blank=True)
+    until_date_2 = models.DateField(_('Until Date'), null=True, blank=True)
+    position_3 = models.CharField(_('Position'), max_length=50, null=True, blank=True)
+    employer_3 = models.CharField(_('Employer'), max_length=50, null=True, blank=True)
+    from_date_3 = models.DateField(_('From Date'), null=True, blank=True)
+    until_date_3 = models.DateField(_('Until Date'), null=True, blank=True)
     # cv
     cv = models.FileField(_('CV'), upload_to='applicants/applicant/cv/')
     more = models.FileField(_('More'), upload_to='applicants/applicant/more/', blank=True)
