@@ -10,7 +10,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, \
     PortalPage, ContactPage, ImprintPage, ContactThanksPage, SubmitReferralThanksPage, SubmitPositionThanksPage, \
     InitiativeApplicationThanksPage, IndexPage, InitiativeApplicationPage, JobSeekerFaqPage, Navigation, AgbPage, \
-    PrivacyPage, EmployerHowItWorksPage
+    PrivacyPage, EmployerHowItWorksPage, Footer
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -119,6 +119,7 @@ admin.site.register(Applicant)
 admin.site.register(Service, GroupedTranslationAdmin)
 admin.site.register(StaffCategory, GroupedTranslationAdmin)
 admin.site.register(Navigation, PageAdmin)
+admin.site.register(Footer, PageAdmin)
 # register pages
 admin.site.register(PortalPage, PageAdmin)
 admin.site.register(SubmitReferralPage, PageAdmin)

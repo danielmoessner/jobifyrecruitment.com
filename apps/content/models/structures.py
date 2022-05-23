@@ -46,3 +46,28 @@ class Navigation(SingletonModel):
 
     class Meta:
         verbose_name = 'Navigation'
+
+
+class Footer(SingletonModel):
+    column_1_text = models.TextField('Column 1 > Text', blank=True)
+    column_1_phone = models.CharField('Column 1 > Phone', blank=True, max_length=1000)
+    column_1_mail = models.CharField('Column 1 > Mail', blank=True, max_length=1000)
+
+    column_2_title = models.CharField('Column 2 > Title', blank=True, max_length=1000)
+    column_2_text_1 = models.CharField('Column 2 > Text 1', blank=True, max_length=1000)
+    column_2_text_2 = models.CharField('Column 2 > Text 2', blank=True, max_length=1000)
+    column_2_text_3 = models.CharField('Column 2 > Text 3', blank=True, max_length=1000)
+
+    column_3_title = models.CharField('Column 3 > Title', blank=True, max_length=1000)
+    column_3_text_1 = models.CharField('Column 3 > Text 1', blank=True, max_length=1000)
+    column_3_text_2 = models.CharField('Column 3 > Text 2', blank=True, max_length=1000)
+    column_3_text_3 = models.CharField('Column 3 > Text 3', blank=True, max_length=1000)
+
+    column_4_title = models.CharField('Column 4 > Title', blank=True, max_length=1000)
+    column_4_text_1 = models.CharField('Column 4 > Text 1', blank=True, max_length=1000)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        verbose_name = 'Footer'

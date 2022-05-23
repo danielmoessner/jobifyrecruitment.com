@@ -7,7 +7,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
     SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage, \
     ImprintPage, ContactThanksPage, InitiativeApplicationPage, IndexPage, JobSeekerFaqPage, Navigation, AgbPage, \
-    PrivacyPage, EmployerHowItWorksPage
+    PrivacyPage, EmployerHowItWorksPage, Footer
 from django.core.mail import EmailMultiAlternatives
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
@@ -22,6 +22,7 @@ class BaseContext:
         context['services'] = Service.objects.all()
         context['staff_categories'] = StaffCategory.objects.all()
         context['navigation'] = Navigation.get_solo()
+        context['footer'] = Footer.get_solo()
         return context
 
 
