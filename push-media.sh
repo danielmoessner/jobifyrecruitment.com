@@ -1,0 +1,1 @@
+scp -r ./tmp/media root@212.227.176.114:/home/jobifyrecruitment.com/tmp/

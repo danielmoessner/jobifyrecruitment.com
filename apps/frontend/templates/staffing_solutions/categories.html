@@ -3,7 +3,7 @@
         <h2 class="{% include 'symbols/h2.class' %} text-center">{{ page.solutions_title|linebreaksbr }}</h2>
         <div class="grid grid-cols-5 mt-16 gap-x-8 gap-y-16">
             {% for category in staff_categories %}
-                <a href="{% url 'frontend:submit_a_position' %}" class="group">
+                <a href="{% url 'frontend:submit_a_position' %}?expertise={{ category.id }}" class="group">
                     <img class="h-32 w-auto mx-auto" src="{{ category.image.url }}" alt="{{ category.name }} Icon">
                     <h3 class="mt-5 text-lg font-bold text-center text-gray-700 group-hover:underline">
                         {{ category.name }}
