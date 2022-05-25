@@ -12,11 +12,11 @@ class Applicant(models.Model):
         ('D', _('Divers')),
     )
     MARITAL_STATUS_CHOICES = (
-        ('SINGLE', _('Ledig')),
-        ('DIVORCED', _('Geschieden')),
-        ('SEPERATED', _('Getrennt lebend')),
-        ('MARRIED', _('Verheiratet')),
-        ('WIDOWED', _('Verwitwet'))
+        ('SINGLE', _('Single')),
+        ('DIVORCED', _('Divorced')),
+        ('SEPERATED', _('Separated')),
+        ('MARRIED', _('Married')),
+        ('WIDOWED', _('Widowed'))
     )
     LANGUAGE_KNOWLEDGE_CHOICES = (
         ('MOTHER', _('Mother tongue')),

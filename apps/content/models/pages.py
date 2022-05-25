@@ -195,6 +195,9 @@ class ServicesPage(SingletonModel):
     text_sub = models.CharField(verbose_name='Text > Sub', max_length=200, blank=True)
     text_text = tinymce_models.HTMLField(verbose_name='Text > Text', blank=True)
     #
+    courses_title = models.CharField(verbose_name='Courses > Title', blank=True, max_length=200)
+    courses_text = models.TextField(verbose_name='Courses > Text', blank=True)
+    #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
@@ -471,7 +474,7 @@ class SubmitPositionThanksPage(SingletonModel):
 
 class InitiativeApplicationPage(SingletonModel):
     header_title = models.TextField(verbose_name='Header > Title', max_length=200, blank=True)
-    header_text = models.TextField(verbose_name='Header > Text', blank=True)
+    header_text = tinymce_models.HTMLField(verbose_name='Header > Text', blank=True)
     #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=200, blank=True)

@@ -1263,6 +1263,10 @@ html {
   margin: -0.5rem;
 }
 
+.-m-1 {
+  margin: -0.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1422,6 +1426,10 @@ html {
   height: 4rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1448,10 +1456,6 @@ html {
 
 .h-5 {
   height: 1.25rem;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .h-7 {
@@ -1566,6 +1570,10 @@ html {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
 }
 
 .flex-1 {
@@ -2012,6 +2020,10 @@ html {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .py-10 {
@@ -3073,6 +3085,22 @@ html {
     display: grid;
   }
 
+  .md\:h-16 {
+    height: 4rem;
+  }
+
+  .md\:h-44 {
+    height: 11rem;
+  }
+
+  .md\:h-8 {
+    height: 2rem;
+  }
+
+  .md\:h-32 {
+    height: 8rem;
+  }
+
   .md\:min-h-\[calc\(100vh-256px\)\] {
     min-height: calc(100vh - 256px);
   }
@@ -3083,6 +3111,10 @@ html {
 
   .md\:max-w-3xl {
     max-width: 48rem;
+  }
+
+  .md\:max-w-none {
+    max-width: none;
   }
 
   .md\:flex-grow {
@@ -3263,12 +3295,12 @@ html {
     height: 13rem;
   }
 
-  .lg\:h-64 {
-    height: 16rem;
-  }
-
   .lg\:h-44 {
     height: 11rem;
+  }
+
+  .lg\:h-16 {
+    height: 4rem;
   }
 
   .lg\:w-1\/2 {
@@ -3457,10 +3489,6 @@ html {
 
   .lg\:delay-\[5000ms\] {
     transition-delay: 5000ms;
-  }
-
-  .lg\:delay-\[3500ms\] {
-    transition-delay: 3500ms;
   }
 
   .lg\:delay-\[0ms\] {

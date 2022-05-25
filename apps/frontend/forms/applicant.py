@@ -87,8 +87,8 @@ class ApplicantForm(forms.ModelForm):
 
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Tell us about your education'))),
             Row('school_name', 'school_location'),
-            'degree',
-            Row('field_of_study', 'graduation_start_date', 'graduation_end_date'),
+            Row('degree', 'field_of_study'),
+            Row('graduation_start_date', 'graduation_end_date'),
             'currently_attend_school',
 
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Professional career'))),
