@@ -2,12 +2,10 @@
 
 
 ## todo
-- formular Employer Apply now:  Form sieht gut aus, bitte bei Punkt „Professional career” wie bei Kronen & Lorenz: Please start with your current position and then list 2 previous positions.  
+- favicon
 
 
 ## easy todos
-- wo fehlen die texte schicken
-- texte verschönern ohne abstände
 - datenschutz text
 
 
@@ -31,6 +29,7 @@
 
 ## erledigt
 - footer in admin
+- formular Employer Apply now:  Form sieht gut aus, bitte bei Punkt „Professional career” wie bei Kronen & Lorenz: Please start with your current position and then list 2 previous positions.
 - mobil
 - danke text der emails für die besucher
 - agb inhalt
