@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, FormView
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, get_language
 from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
@@ -19,6 +19,7 @@ from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 class BaseContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        print(get_language())
         context['services'] = Service.objects.all()
         context['staff_categories'] = StaffCategory.objects.all()
         context['navigation'] = Navigation.get_solo()
@@ -29,7 +30,10 @@ class BaseContext:
 class PageContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        print(get_language())
+        print(self.page.get_solo().header_title)
         context['page'] = self.page.get_solo()
+        print(context['page'].header_title)
         return context
 
 

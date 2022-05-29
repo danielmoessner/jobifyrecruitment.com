@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-25 13:40+0200\n"
+"POT-Creation-Date: 2022-05-29 02:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,23 +31,23 @@ msgid "Divers"
 msgstr ""
 
 #: apps/content/models/applicant.py:15
-msgid "Ledig"
+msgid "Single"
 msgstr ""
 
 #: apps/content/models/applicant.py:16
-msgid "Geschieden"
+msgid "Divorced"
 msgstr ""
 
 #: apps/content/models/applicant.py:17
-msgid "Getrennt lebend"
+msgid "Separated"
 msgstr ""
 
 #: apps/content/models/applicant.py:18
-msgid "Verheiratet"
-msgstr ""
+msgid "Married"
+msgstr "Verheiratet"
 
 #: apps/content/models/applicant.py:19
-msgid "Verwitwet"
+msgid "Widowed"
 msgstr ""
 
 #: apps/content/models/applicant.py:22
@@ -55,16 +55,16 @@ msgid "Mother tongue"
 msgstr "Muttersprache"
 
 #: apps/content/models/applicant.py:23
-msgid "Fluent"
-msgstr "Fließend"
+msgid "Fluent in spoken and written"
+msgstr "Flüssig (Schreiben und sprechen)"
 
 #: apps/content/models/applicant.py:24
-msgid "Good"
-msgstr "Gut"
+msgid "Good knowledge written and spoken"
+msgstr "Gut (Schreiben und sprechen)"
 
 #: apps/content/models/applicant.py:25
-msgid "Basic"
-msgstr "Einfach"
+msgid "Basic knowledge"
+msgstr "Grundlagen"
 
 #: apps/content/models/applicant.py:28
 msgid "1 Year"
@@ -82,201 +82,291 @@ msgstr "5 bis 10 Jahre"
 msgid "More Than 10 Years"
 msgstr "Mehr als 10 Jahre"
 
-#: apps/content/models/applicant.py:34
+#: apps/content/models/applicant.py:36
+msgid "Wanted Job Title"
+msgstr ""
+
+#: apps/content/models/applicant.py:37
 msgid "Photo"
 msgstr "Foto"
 
-#: apps/content/models/applicant.py:35
-msgid "Salutation"
-msgstr "Anrede"
-
-#: apps/content/models/applicant.py:36 apps/frontend/forms/contact.py:9
+#: apps/content/models/applicant.py:39 apps/frontend/forms/contact.py:8
 msgid "Firstname"
 msgstr "Vorname"
 
-#: apps/content/models/applicant.py:37 apps/frontend/forms/contact.py:10
+#: apps/content/models/applicant.py:40 apps/frontend/forms/contact.py:9
 msgid "Lastname"
 msgstr "Nachname"
 
-#: apps/content/models/applicant.py:38 apps/frontend/forms/contact.py:14
-msgid "Street"
-msgstr "Straße"
+#: apps/content/models/applicant.py:41
+msgid "Profession"
+msgstr "Beruf"
 
-#: apps/content/models/applicant.py:39
-msgid "Number"
-msgstr "Nummer"
-
-#: apps/content/models/applicant.py:40 apps/frontend/forms/contact.py:15
-msgid "Postal Code"
-msgstr "Postleitzahl"
-
-#: apps/content/models/applicant.py:41 apps/frontend/forms/contact.py:16
-msgid "City"
-msgstr "Stadt"
-
-#: apps/content/models/applicant.py:42 apps/frontend/forms/applicant.py:15
-#: apps/frontend/forms/applicant.py:26
-msgid "Country"
-msgstr "Land"
-
-#: apps/content/models/applicant.py:43 apps/frontend/forms/contact.py:12
+#: apps/content/models/applicant.py:48 apps/frontend/forms/contact.py:11
+#: apps/frontend/templates/symbols/footer.html:91
 msgid "Phone"
 msgstr "Telefon"
 
-#: apps/content/models/applicant.py:44 apps/frontend/forms/contact.py:11
+#: apps/content/models/applicant.py:49 apps/frontend/forms/contact.py:10
 msgid "E-Mail"
 msgstr ""
 
-#: apps/content/models/applicant.py:46 apps/frontend/forms/applicant.py:12
+#: apps/content/models/applicant.py:51 apps/frontend/forms/applicant.py:11
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: apps/content/models/applicant.py:47
+#: apps/content/models/applicant.py:52 apps/frontend/forms/applicant.py:25
 msgid "Nationality"
 msgstr "Nationalität"
 
-#: apps/content/models/applicant.py:48
+#: apps/content/models/applicant.py:53
 msgid "Marital Status"
 msgstr "Familienstand"
 
-#: apps/content/models/applicant.py:59
+#: apps/content/models/applicant.py:55 apps/content/models/applicant.py:57
+#: apps/content/models/applicant.py:59 apps/content/models/applicant.py:61
+#: apps/frontend/forms/applicant.py:26 apps/frontend/forms/applicant.py:27
+#: apps/frontend/forms/applicant.py:28 apps/frontend/forms/applicant.py:29
+msgid "Language"
+msgstr "Sprache"
+
+#: apps/content/models/applicant.py:56 apps/content/models/applicant.py:58
+#: apps/content/models/applicant.py:60 apps/content/models/applicant.py:62
+msgid "Knowledge"
+msgstr ""
+
+#: apps/content/models/applicant.py:64
+msgid "School Name"
+msgstr "Name der Schule"
+
+#: apps/content/models/applicant.py:65
+msgid "School Location"
+msgstr ""
+
+#: apps/content/models/applicant.py:66
+msgid "Degree"
+msgstr ""
+
+#: apps/content/models/applicant.py:67
+msgid "Field of Study"
+msgstr ""
+
+#: apps/content/models/applicant.py:68 apps/frontend/forms/applicant.py:22
+msgid "Graduation Start Date"
+msgstr ""
+
+#: apps/content/models/applicant.py:69 apps/frontend/forms/applicant.py:24
+msgid "Graduation End Date"
+msgstr ""
+
+#: apps/content/models/applicant.py:70
+msgid "I currently attend here"
+msgstr ""
+
+#: apps/content/models/applicant.py:72
 msgid "Department"
 msgstr "Abteilung"
 
-#: apps/content/models/applicant.py:61
+#: apps/content/models/applicant.py:74
 msgid "Experience"
 msgstr "Erfahrung"
 
-#: apps/content/models/applicant.py:62
+#: apps/content/models/applicant.py:76 apps/content/models/applicant.py:80
+#: apps/content/models/applicant.py:84
 msgid "Position"
 msgstr ""
 
-#: apps/content/models/applicant.py:63
+#: apps/content/models/applicant.py:77 apps/content/models/applicant.py:81
+#: apps/content/models/applicant.py:85
 msgid "Employer"
 msgstr "Arbeitgeber"
 
-#: apps/content/models/applicant.py:64 apps/frontend/forms/applicant.py:13
+#: apps/content/models/applicant.py:78 apps/content/models/applicant.py:82
+#: apps/content/models/applicant.py:86 apps/frontend/forms/applicant.py:12
+#: apps/frontend/forms/applicant.py:15 apps/frontend/forms/applicant.py:18
 msgid "From Date"
 msgstr "Von"
 
-#: apps/content/models/applicant.py:65 apps/frontend/forms/applicant.py:14
+#: apps/content/models/applicant.py:79 apps/content/models/applicant.py:83
+#: apps/content/models/applicant.py:87 apps/frontend/forms/applicant.py:13
+#: apps/frontend/forms/applicant.py:16 apps/frontend/forms/applicant.py:19
 msgid "Until Date"
 msgstr "Bis"
 
-#: apps/content/models/applicant.py:67
+#: apps/content/models/applicant.py:89
 msgid "CV"
 msgstr "Lebenslauf"
 
-#: apps/content/models/applicant.py:68
+#: apps/content/models/applicant.py:90
 msgid "More"
 msgstr "Mehr"
 
 #: apps/content/models/company.py:16
+#: tmp/venv/lib/python3.9/site-packages/django/forms/widgets.py:766
+msgid "Yes"
+msgstr ""
+
+#: apps/content/models/company.py:17
+#: tmp/venv/lib/python3.9/site-packages/django/forms/widgets.py:767
+msgid "No"
+msgstr ""
+
+#: apps/content/models/company.py:20
 msgid "Manager Name"
 msgstr "Manager Name"
 
-#: apps/content/models/company.py:17
+#: apps/content/models/company.py:21
 msgid "Company Name"
 msgstr "Unternehmen Name"
 
-#: apps/content/models/company.py:18
+#: apps/content/models/company.py:22
 msgid "Company E-Mail"
 msgstr "Unternehmen E-Mail"
 
-#: apps/content/models/company.py:19
+#: apps/content/models/company.py:23
 msgid "Company Phone"
 msgstr "Unternehmen Telefon"
 
-#: apps/content/models/company.py:20
+#: apps/content/models/company.py:24
 msgid "Looking for"
 msgstr "Auf der Suche nach"
 
-#: apps/content/models/company.py:21
+#: apps/content/models/company.py:25
 msgid "Job Position"
 msgstr "Job Position"
 
-#: apps/content/models/company.py:22
+#: apps/content/models/company.py:26
 msgid "Job Duration"
 msgstr "Job Dauer"
 
-#: apps/content/models/company.py:23 apps/frontend/forms/company.py:11
+#: apps/content/models/company.py:27 apps/frontend/forms/company.py:11
 msgid "Job Start"
 msgstr "Beginn des Jobs"
 
-#: apps/content/models/company.py:24
+#: apps/content/models/company.py:28
 msgid "Job Description"
 msgstr "Jobbeschreibung"
 
+#: apps/content/models/company.py:29
+msgid "Accomodation provided"
+msgstr ""
+
 #: apps/content/models/referral.py:6
 msgid "Your Name"
-msgstr "Ihr Name"
+msgstr "Dein Name"
 
 #: apps/content/models/referral.py:7
 msgid "Your E-Mail"
-msgstr "Ihre E-Mail"
+msgstr "Deine E-Mail"
 
 #: apps/content/models/referral.py:8
 msgid "Referral Name"
-msgstr "Empfehlung Name"
+msgstr "Name des empfohlenen Kandidaten"
 
 #: apps/content/models/referral.py:9
 msgid "Referral E-Mail"
-msgstr "Empfehlung E-Mail"
+msgstr "E-Mail des empfohlenen Kandidaten"
 
 #: apps/content/models/referral.py:10
 msgid "Referral Phone"
-msgstr "Empfehlung Telefon"
+msgstr "Telefonnummer des empfohlenen Kandidaten"
 
 #: apps/content/models/referral.py:11
 msgid "Referral Job"
-msgstr "Empfehlung Job"
+msgstr "Ich empfehle diesen Kandidaten für eine Position als"
 
 #: apps/content/models/referral.py:12
 msgid "Referral Resume"
-msgstr "Empfehlung Resume"
+msgstr "Lebenslauf des empfohlenen Kandidaten"
 
-#: apps/content/static.py:1922
+#: apps/content/static.py:176
 msgid ""
-"Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich "
-"behandelt und erst nach Ihrer Zustimmung an Dritte weitergegeben. Ja, ich "
-"erkläre mich mit den Datenschutzbestimmungen einverstanden."
+"Privacy: Of course, your data will be treated confidentially and only passed "
+"on to third parties after your consent. Yes, I agree to the data protection "
+"regulations."
 msgstr ""
-"Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich "
-"behandelt und erst nach Ihrer Zustimmung an Dritte weitergegeben. Ja, ich "
-"erkläre mich mit den Datenschutzbestimmungen einverstanden."
+"Datenschutz: Ihre Daten werden selbstverständlich vertraulich behandelt "
+"undnur mit Ihrer Zustimmung an Dritte weitergegeben. Ja, ich bin mit den "
+"Datenschutzbestimmungen einverstanden."
 
-#: apps/frontend/forms/applicant.py:35 apps/frontend/forms/company.py:26
-#: apps/frontend/forms/contact.py:37 apps/frontend/forms/referral.py:22
+#: apps/frontend/forms/applicant.py:35
+msgid "Country"
+msgstr "Land"
+
+#: apps/frontend/forms/applicant.py:44 apps/frontend/forms/company.py:26
+#: apps/frontend/forms/referral.py:22
 msgid "Submit"
 msgstr "Absenden"
 
-#: apps/frontend/forms/applicant.py:37
-msgid "Contact details"
-msgstr "Kontaktdaten"
+#: apps/frontend/forms/applicant.py:65
+msgid "Upload photo"
+msgstr ""
 
-#: apps/frontend/forms/applicant.py:44
+#: apps/frontend/forms/applicant.py:68
+msgid "Personal details"
+msgstr "Persönliche Daten"
+
+#: apps/frontend/forms/applicant.py:71
+msgid "What's the best way for employers to contact you?"
+msgstr ""
+
+#: apps/frontend/forms/applicant.py:72
+msgid "We suggest including an email and phone number."
+msgstr ""
+
+#: apps/frontend/forms/applicant.py:79
 msgid "Personal Information"
 msgstr "Persönliche Informationen"
 
-#: apps/frontend/forms/applicant.py:46
+#: apps/frontend/forms/applicant.py:82
 msgid "Language skill"
 msgstr "Sprache"
 
-#: apps/frontend/forms/applicant.py:51
+#: apps/frontend/forms/applicant.py:89
+msgid "Tell us about your education"
+msgstr ""
+
+#: apps/frontend/forms/applicant.py:90
+msgid "Please state your highest qualification or the one of equal rank."
+msgstr ""
+
+#: apps/frontend/forms/applicant.py:98
 msgid "Professional career"
 msgstr "Professionelle Karriere"
 
-#: apps/frontend/forms/applicant.py:55
+#: apps/frontend/forms/applicant.py:99
+msgid ""
+"Please start with your current position and then list 3 previous positions "
+"(if any)."
+msgstr ""
+
+#: apps/frontend/forms/applicant.py:115
 msgid "Additional information"
 msgstr "Weitere Informationen"
 
-#: apps/frontend/forms/applicant.py:58
+#: apps/frontend/forms/applicant.py:118
 msgid "Privacy"
 msgstr "Datenschutz"
 
-#: apps/frontend/forms/contact.py:13
+#: apps/frontend/forms/company.py:28
+msgid "Please complete the form below to submit an open position"
+msgstr ""
+
+#: apps/frontend/forms/contact.py:12
 msgid "Company"
 msgstr "Unternehmen"
+
+#: apps/frontend/forms/contact.py:13
+msgid "Street"
+msgstr "Straße"
+
+#: apps/frontend/forms/contact.py:14
+msgid "Zip Code"
+msgstr "PLZ"
+
+#: apps/frontend/forms/contact.py:15
+msgid "City"
+msgstr "Stadt"
 
 #: apps/frontend/forms/contact.py:18
 msgid "Find a job"
@@ -311,12 +401,37 @@ msgid "Legal"
 msgstr "Rechtliches"
 
 #: apps/frontend/forms/contact.py:27
+msgid "Your customer number (if available)"
+msgstr "Deine Kundennummer (falls vorhanden)"
+
+#: apps/frontend/forms/contact.py:28
 msgid "Interest"
 msgstr "Interesse"
 
-#: apps/frontend/forms/contact.py:28
-msgid "Message"
-msgstr "Nachricht"
+#: apps/frontend/forms/contact.py:29
+msgid "Your message"
+msgstr "Deine Nachricht"
+
+#: apps/frontend/forms/contact.py:30
+msgid ""
+"I have taken note of the privacy policy. I agree that my details and data "
+"are collected and stored electronically in order to respond to my inquiry."
+msgstr ""
+"Ich habe die Datenschutzerklärung zur Kenntnis genommen. Ich stimme zu, dass "
+"meine Angaben und Daten zur Beantwortung meiner Anfrage elektronisch erhoben "
+"und gespeichert werden."
+
+#: apps/frontend/forms/contact.py:40
+msgid "Send Request"
+msgstr "Anfrage senden"
+
+#: apps/frontend/templates/symbols/footer.html:100
+msgid "Mail"
+msgstr ""
+
+#: apps/frontend/templates/symbols/step.html:4
+msgid "Step"
+msgstr ""
 
 #: apps/frontend/urls.py:11
 msgid "initiative-application/"
@@ -371,34 +486,42 @@ msgid "employer-faqs/"
 msgstr "arbeitgeber-faqs/"
 
 #: apps/frontend/urls.py:26
+msgid "employer-how-it-works/"
+msgstr "unternehmen-wie-es-funktioniert/"
+
+#: apps/frontend/urls.py:27
 msgid "portal/"
 msgstr "bewerberportal/"
 
-#: apps/frontend/urls.py:28
+#: apps/frontend/urls.py:29
 msgid "about/"
 msgstr "ueber-uns/"
 
-#: apps/frontend/urls.py:29
+#: apps/frontend/urls.py:30
 msgid "contact/"
 msgstr "kontakt/"
 
-#: apps/frontend/urls.py:30
+#: apps/frontend/urls.py:31
 msgid "contact/thanks/"
 msgstr "kontakt/danke/"
 
-#: apps/frontend/urls.py:31
+#: apps/frontend/urls.py:32
 msgid "video-resume/"
 msgstr ""
 
-#: apps/frontend/urls.py:33
+#: apps/frontend/urls.py:34
 msgid "imprint/"
 msgstr "impressum/"
 
-#: apps/frontend/urls.py:34
+#: apps/frontend/urls.py:35
 msgid "privacy/"
 msgstr "datenschutz/"
 
-#: apps/frontend/views.py:42
+#: apps/frontend/urls.py:36
+msgid "agb/"
+msgstr ""
+
+#: apps/frontend/views.py:49
 msgid "English"
 msgstr "Deutsch"
 
@@ -1033,14 +1156,6 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: tmp/venv/lib/python3.9/site-packages/django/forms/widgets.py:766
-msgid "Yes"
-msgstr ""
-
-#: tmp/venv/lib/python3.9/site-packages/django/forms/widgets.py:767
-msgid "No"
-msgstr ""
-
 #. Translators: Please do not add spaces around commas.
 #: tmp/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:858
 msgid "yes,no,maybe"
@@ -1607,6 +1722,27 @@ msgstr ""
 #: tmp/venv/lib/python3.9/site-packages/modeltranslation/widgets.py:26
 msgid "None"
 msgstr ""
+
+#~ msgid "Fluent"
+#~ msgstr "Fließend"
+
+#~ msgid "Good"
+#~ msgstr "Gut"
+
+#~ msgid "Basic"
+#~ msgstr "Einfach"
+
+#~ msgid "Salutation"
+#~ msgstr "Anrede"
+
+#~ msgid "Number"
+#~ msgstr "Nummer"
+
+#~ msgid "Postal Code"
+#~ msgstr "Postleitzahl"
+
+#~ msgid "Message"
+#~ msgstr "Nachricht"
 
 #~ msgid "for-companies/"
 #~ msgstr "fuer-unternehmen/"

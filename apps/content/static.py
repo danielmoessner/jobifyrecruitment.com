@@ -173,9 +173,8 @@ LANGUAGE_CHOICES_RAW = [
 
 LANGUAGE_CHOICES = [('', '---------')] + list(map(lambda x: (x, x), LANGUAGE_CHOICES_RAW))
 
-PRIVACY_LABEL = _('Datenschutzhinweis: Selbstverständlich werden Ihre Daten vertraulich behandelt und erst nach ' \
-                  'Ihrer Zustimmung an Dritte weitergegeben. Ja, ich erkläre mich mit den Datenschutzbestimmungen ' \
-                  'einverstanden.')
+PRIVACY_LABEL = _('Privacy: Of course, your data will be treated confidentially and only passed on to third '
+                  'parties after your consent. Yes, I agree to the data protection regulations.')
 
 NATIONALITY_CHOICES_RAW = [
     "Afghan",

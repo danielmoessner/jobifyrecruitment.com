@@ -85,13 +85,19 @@ class ApplicantForm(forms.ModelForm):
             Row('language3', 'language3knowledge'),
             Row('language4', 'language4knowledge'),
 
-            HTML('<h2 class="mt-16">{}</h2>'.format(_('Tell us about your education'))),
+            HTML('<h2 class="mt-16">{}</h2><p>{}</p>'.format(
+                _('Tell us about your education'),
+                _('Please state your highest qualification or the one of equal rank.')
+            )),
             Row('school_name', 'school_location'),
             Row('degree', 'field_of_study'),
             Row('graduation_start_date', 'graduation_end_date'),
             'currently_attend_school',
 
-            HTML('<h2 class="mt-16">{}</h2>'.format(_('Professional career'))),
+            HTML('<h2 class="mt-16">{}</h2><p>{}</p>'.format(
+                _('Professional career'),
+                _('Please start with your current position and then list 3 previous positions (if any).')
+            )),
             Row('department', 'experience'),
 
             HTML('<div class="h-4"></div>'),

@@ -1,0 +1,36 @@
+{% load static %}
+<header class="lg:relative bg-yellow-500">
+    <div class="relative mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-0 lg:h-52 lg:flex lg:items-center">
+        <div class="px-4 sm:px-8">
+            <div class="lg:w-[calc(100vw_-_var(--scrollbar-width)_-_312px_-_32px)] xl:h-[120px] xl:flex xl:items-center xl:justify-center xl:w-[calc(1216px_-_var(--scrollbar-width)_/_2_-_(420px_-_((100vw_-_1216px)_/_2)))]">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                    {{ title|linebreaksbr }}
+                </h1>
+                <div class="lg:hidden mt-4">
+                    <div class="">
+                        <a class="text-2xl font-medium"
+                           href="tel:{{ footer.column_1_phone }}">{{ footer.column_1_phone }}</a>
+                    </div>
+                    <div class="mt-4">
+                        <a class="text-2xl font-medium"
+                           href="mailto:{{ footer.column_1_mail }}">{{ footer.column_1_mail }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden lg:block relative w-full lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+        <div class="lg:absolute lg:right-0 mx-auto w-auto h-full flex items-center justify-center text-center">
+            <div class="px-4">
+                <div>
+                    <a class="text-2xl font-medium"
+                       href="tel:{{ footer.column_1_phone }}">{{ footer.column_1_phone }}</a>
+                </div>
+                <div class="mt-4">
+                    <a class="text-2xl font-medium"
+                       href="mailto:{{ footer.column_1_mail }}">{{ footer.column_1_mail }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
