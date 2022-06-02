@@ -19,7 +19,6 @@ from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
 class BaseContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(get_language())
         context['services'] = Service.objects.all()
         context['staff_categories'] = StaffCategory.objects.all()
         context['navigation'] = Navigation.get_solo()
@@ -30,10 +29,7 @@ class BaseContext:
 class PageContext:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(get_language())
-        print(self.page.get_solo().header_title)
         context['page'] = self.page.get_solo()
-        print(context['page'].header_title)
         return context
 
 

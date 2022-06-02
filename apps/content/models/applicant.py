@@ -7,9 +7,9 @@ from django.db import models
 class Applicant(models.Model):
     # choices
     SALUTATION_CHOICES = (
-        ('M', _('Herr')),
-        ('F', _('Frau')),
-        ('D', _('Divers')),
+        ('M', _('Mr.')),
+        ('F', _('Mrs.')),
+        ('D', _('Diverse')),
     )
     MARITAL_STATUS_CHOICES = (
         ('SINGLE', _('Single')),
@@ -35,10 +35,11 @@ class Applicant(models.Model):
     # contact details
     wanted_job_title = models.CharField(_('Wanted Job Title'), max_length=200)
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
-    # salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)
+    salutation = models.CharField(verbose_name=_('Salutation'), choices=SALUTATION_CHOICES, max_length=1)
     firstname = models.CharField(_('Firstname'), max_length=100)
     lastname = models.CharField(_('Lastname'), max_length=100)
-    profession = models.CharField(_('Profession'), max_length=200)
+    country = models.CharField(_('Country'), max_length=100)
+    # profession = models.CharField(_('Profession'), max_length=200)
     # street = models.CharField(_('Street'), max_length=100)
     # number = models.CharField(_('Number'), max_length=10)
     # city = models.CharField(_('City'), max_length=50)

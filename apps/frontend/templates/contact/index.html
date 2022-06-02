@@ -3,7 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-    {% include 'contact/header.html' with title=page.header_title %}
+{#    {% include 'contact/header.html' with title=page.header_title %}#}
+    {% include 'symbols/header.html' with title=page.header_title image='icon/contact.png' %}
 
     <section class="bg-gray-200 py-24">
         <div class="mx-auto max-w-4xl mx-auto py-5 px-5 bg-gray-100">
