@@ -1672,6 +1672,10 @@ html {
   cursor: pointer;
 }
 
+.resize {
+  resize: both;
+}
+
 .scroll-mt-32 {
   scroll-margin-top: 8rem;
 }

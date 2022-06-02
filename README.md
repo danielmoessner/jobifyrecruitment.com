@@ -2,32 +2,26 @@
 
 
 ## todo
-- favicon
 
 
 ## easy todos
-- datenschutz text
 
 
 ## blocked
 
 
-## seiten vorlagen benötigt:
+## needed
 
 
-## schritte
-1. restlichen seiten
-2. emails versenden formulare
-3. design änderungen
-4. mobil
-5. animationen
-6. datenschutz
+## steps
 
 
-## fragen
+## questions
 
 
-## erledigt
+## done
+- favicon
+- datenschutz text
 - footer in admin
 - formular Employer Apply now:  Form sieht gut aus, bitte bei Punkt „Professional career” wie bei Kronen & Lorenz: Please start with your current position and then list 2 previous positions.
 - mobil

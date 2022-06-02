@@ -9,7 +9,18 @@ SIZE_CHOICES = (
 )
 
 
-class IndexPage(SingletonModel):
+class BasePage(SingletonModel):
+    meta_title = models.TextField(verbose_name='Meta > Title', blank=True)
+    meta_description = models.TextField(verbose_name='Meta > Description', blank=True)
+
+    def __str__(self):
+        return self._meta.verbose_name
+
+    class Meta:
+        abstract = True
+
+
+class IndexPage(BasePage):
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     header_text = models.TextField(verbose_name='Header > Text', blank=True)
     header_button_left = models.CharField(verbose_name='Header > Button Left', max_length=100, blank=True)
@@ -34,14 +45,11 @@ class IndexPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Home'
 
 
-class WhyToWorkWithUsPage(SingletonModel):
+class WhyToWorkWithUsPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -76,14 +84,11 @@ class WhyToWorkWithUsPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Why To Work With Us'
 
 
-class SubmitReferralPage(SingletonModel):
+class SubmitReferralPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -111,26 +116,20 @@ class SubmitReferralPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Submit A Referral'
 
 
-class SubmitReferralThanksPage(SingletonModel):
+class SubmitReferralThanksPage(BasePage):
     thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
     thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
     thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Submit A Referral Thanks'
 
 
-class ApplicantsHowItWorksPage(SingletonModel):
+class ApplicantsHowItWorksPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -151,14 +150,11 @@ class ApplicantsHowItWorksPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Applicants How It Works'
 
 
-class EmployerHowItWorksPage(SingletonModel):
+class EmployerHowItWorksPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -180,14 +176,11 @@ class EmployerHowItWorksPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Employer How It Works'
 
 
-class ServicesPage(SingletonModel):
+class ServicesPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -203,14 +196,11 @@ class ServicesPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Courses'
 
 
-class WorkingInAustriaPage(SingletonModel):
+class WorkingInAustriaPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -264,14 +254,11 @@ class WorkingInAustriaPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Working In Austria'
 
 
-class VideoResumePage(SingletonModel):
+class VideoResumePage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -317,14 +304,11 @@ class VideoResumePage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Video Resume'
 
 
-class EmployerFaqPage(SingletonModel):
+class EmployerFaqPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -351,14 +335,11 @@ class EmployerFaqPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Employer FAQ'
 
 
-class JobSeekerFaqPage(SingletonModel):
+class JobSeekerFaqPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -404,14 +385,11 @@ class JobSeekerFaqPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Job Seeker FAQ'
 
 
-class StaffingSolutionsPage(SingletonModel):
+class StaffingSolutionsPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -430,14 +408,11 @@ class StaffingSolutionsPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Staffing Solutions'
 
 
-class SubmitPositionPage(SingletonModel):
+class SubmitPositionPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -453,26 +428,20 @@ class SubmitPositionPage(SingletonModel):
     email_text = models.TextField(verbose_name='Mail > Text', blank=True)
     email_html = tinymce_models.HTMLField(verbose_name='Mail > Rich Text', blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Submit A Position'
 
 
-class SubmitPositionThanksPage(SingletonModel):
+class SubmitPositionThanksPage(BasePage):
     thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
     thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
     thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Submit A Position Thanks'
 
 
-class InitiativeApplicationPage(SingletonModel):
+class InitiativeApplicationPage(BasePage):
     header_title = models.TextField(verbose_name='Header > Title', max_length=200, blank=True)
     header_text = tinymce_models.HTMLField(verbose_name='Header > Text', blank=True)
     #
@@ -485,26 +454,20 @@ class InitiativeApplicationPage(SingletonModel):
     email_text = models.TextField(verbose_name='Mail > Text', blank=True)
     email_html = tinymce_models.HTMLField(verbose_name='Mail > Rich Text', blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Initiative Application'
 
 
-class InitiativeApplicationThanksPage(SingletonModel):
+class InitiativeApplicationThanksPage(BasePage):
     thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
     thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
     thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Initiative Application Thanks'
 
 
-class AboutPage(SingletonModel):
+class AboutPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -517,14 +480,11 @@ class AboutPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > About'
 
 
-class PortalPage(SingletonModel):
+class PortalPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -533,14 +493,11 @@ class PortalPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Portal'
 
 
-class ContactPage(SingletonModel):
+class ContactPage(BasePage):
     #
     header_title = models.TextField(verbose_name='Header > Title', max_length=1000, blank=True)
     #
@@ -552,57 +509,42 @@ class ContactPage(SingletonModel):
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Contact'
 
 
-class ContactThanksPage(SingletonModel):
+class ContactThanksPage(BasePage):
     #
     thanks_title = models.CharField(verbose_name='Thanks > Title', max_length=200, blank=True)
     thanks_text = models.TextField(verbose_name='Thanks > Text', blank=True)
     thanks_button = models.CharField(verbose_name='Thanks > Button', max_length=200, blank=True)
 
-    def __str__(self):
-        return self._meta.verbose_name
-
     class Meta:
         verbose_name = 'Page > Contact Thanks'
 
 
-class ImprintPage(SingletonModel):
+class ImprintPage(BasePage):
     pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
     title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
     text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Imprint'
 
 
-class AgbPage(SingletonModel):
+class AgbPage(BasePage):
     pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
     title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
     text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Agb'
 
 
-class PrivacyPage(SingletonModel):
+class PrivacyPage(BasePage):
     pre = models.CharField(verbose_name='Pre', max_length=1000, blank=True)
     title = models.CharField(verbose_name='Title', max_length=1000, blank=True)
     text = tinymce_models.HTMLField(verbose_name='Text', blank=True)
-
-    def __str__(self):
-        return self._meta.verbose_name
 
     class Meta:
         verbose_name = 'Page > Privacy'
