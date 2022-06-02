@@ -126,3 +126,30 @@ class ApplicantForm(forms.ModelForm):
             HTML('<h2 class="mt-16">{}</h2>'.format(_('Privacy'))),
             Field('privacy'),
         )
+
+    def _clean_date(self, name):
+        value = self.cleaned_data[name]
+        if value == '':
+            return None
+        return value
+
+    def clean_graduation_end_date(self):
+        return self._clean_date('graduation_end_date')
+
+    def clean_until_date(self):
+        return self._clean_date('until_date')
+
+    def clean_until_date_2(self):
+        return self._clean_date('until_date_2')
+
+    def clean_until_date_3(self):
+        return self._clean_date('until_date_3')
+
+    def clean_from_date(self):
+        return self._clean_date('from_date')
+
+    def clean_from_date_2(self):
+        return self._clean_date('from_date_2')
+
+    def clean_from_date_3(self):
+        return self._clean_date('from_date_3')

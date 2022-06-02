@@ -67,17 +67,17 @@ class Applicant(models.Model):
     degree = models.CharField(_('Degree'), max_length=200)
     field_of_study = models.CharField(_('Field of Study'), max_length=200)
     graduation_start_date = models.DateField(_('Graduation Start Date'))
-    graduation_end_date = models.DateField(_('Graduation End Date'), blank=True)
+    graduation_end_date = models.DateField(_('Graduation End Date'), blank=True, null=True)
     currently_attend_school = models.BooleanField(_('I currently attend here'))
     # career
     department = models.ForeignKey(StaffCategory, verbose_name=_('Department'), on_delete=models.PROTECT,
                                    related_name='applicants')
     experience = models.CharField(_('Experience'), choices=EXPERIENCE_CHOICES, max_length=100)
     #
-    position = models.CharField(_('Position'), max_length=50, blank=True)
-    employer = models.CharField(_('Employer'), max_length=50, blank=True)
-    from_date = models.DateField(_('From Date'), blank=True)
-    until_date = models.DateField(_('Until Date'), blank=True)
+    position = models.CharField(_('Position'), max_length=50, blank=True, null=True)
+    employer = models.CharField(_('Employer'), max_length=50, blank=True, null=True)
+    from_date = models.DateField(_('From Date'), blank=True, null=True)
+    until_date = models.DateField(_('Until Date'), blank=True, null=True)
     position_2 = models.CharField(_('Position'), max_length=50, null=True, blank=True)
     employer_2 = models.CharField(_('Employer'), max_length=50, null=True, blank=True)
     from_date_2 = models.DateField(_('From Date'), null=True, blank=True)
@@ -107,3 +107,10 @@ class Applicant(models.Model):
     @property
     def age(self):
         return int((timezone.now().date() - self.birthday).days / 365.25)
+
+    def save(self, *args, **kwargs):
+        for v in self.__dict__:
+            print(v)
+            print(getattr(self, v, 'nada'))
+        # print([v for v in self.__dict__])
+        super().save(*args, **kwargs)
