@@ -27,10 +27,10 @@ class ApplicantForm(forms.ModelForm):
     graduation_start_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
                                             label=_('Graduation Start Date'))
     graduation_end_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
-                                          label=_('Graduation End Date'))
+                                          label=_('Graduation End Date'), required=False)
     nationality = forms.ChoiceField(choices=NATIONALITY_CHOICES, label=_('Nationality'))
     country = forms.ChoiceField(choices=NATIONALITY_CHOICES, label=_('Country'))
-    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
+    language1 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=True, label=_('Language'))
     language2 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language3 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))
     language4 = forms.ChoiceField(choices=LANGUAGE_CHOICES, required=False, label=_('Language'))

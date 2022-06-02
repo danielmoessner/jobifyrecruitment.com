@@ -53,7 +53,7 @@ class Applicant(models.Model):
     nationality = models.CharField(_('Nationality'), max_length=100)
     marital_status = models.CharField(_('Marital Status'), max_length=20, choices=MARITAL_STATUS_CHOICES)
     # language skills
-    language1 = models.CharField(_('Language'), max_length=50, blank=False)
+    language1 = models.CharField(_('Language'), max_length=50)
     language1knowledge = models.CharField(_('Knowledge'), max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES)
     language2 = models.CharField(_('Language'), max_length=50, blank=True)
     language2knowledge = models.CharField(_('Knowledge'), max_length=50, choices=LANGUAGE_KNOWLEDGE_CHOICES, blank=True)
