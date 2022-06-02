@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, FormView
-from django.utils.translation import gettext_lazy as _, get_language
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage, StaffCategory, \
     ApplicantsHowItWorksPage, WorkingInAustriaPage, EmployerFaqPage, StaffingSolutionsPage, VideoResumePage, \
@@ -156,7 +156,7 @@ class SubmitReferralView(BaseContext, PageContext, CreateView):
             text_content = '{}{}'.format(text_content, text)
 
         msg = EmailMultiAlternatives(subject=subject, body=text_content, from_email=from_email, to=[to],
-                                     bcc=['info@jobifyrecruitment.com'], reply_to=['info@jobifyrecruitment.com'])
+                                     reply_to=['info@jobifyrecruitment.com'])
         msg.send()
 
 
@@ -220,7 +220,7 @@ class ContactView(BaseContext, PageContext, FormView):
             text_content = '{}{}'.format(text_content, text)
 
         msg = EmailMultiAlternatives(subject=subject, body=text_content, from_email=from_email, to=[to],
-                                     bcc=['info@jobifyrecruitment.com'], reply_to=['info@jobifyrecruitment.com'])
+                                     reply_to=['info@jobifyrecruitment.com'])
         msg.send()
 
 

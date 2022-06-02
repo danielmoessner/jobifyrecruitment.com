@@ -9,14 +9,20 @@ from django import forms
 class ApplicantForm(forms.ModelForm):
     privacy = forms.BooleanField(label=PRIVACY_LABEL)
     birthday = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Birthday'))
-    from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
-    until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+    from_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'),
+                                required=False)
+    until_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'),
+                                 required=False)
 
-    from_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
-    until_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+    from_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'),
+                                  required=False)
+    until_date_2 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'),
+                                   required=False)
 
-    from_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'))
-    until_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'))
+    from_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('From Date'),
+                                  required=False)
+    until_date_3 = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}), label=_('Until Date'),
+                                   required=False)
 
     graduation_start_date = forms.CharField(widget=forms.DateTimeInput(attrs={'type': 'date'}),
                                             label=_('Graduation Start Date'))
