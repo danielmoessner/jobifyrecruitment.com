@@ -1,4 +1,3 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, FormView
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
@@ -36,7 +35,7 @@ class PageContext:
 ###
 # views
 ###
-class IndexView(BaseContext, LoginRequiredMixin, PageContext, TemplateView):
+class IndexView(BaseContext, PageContext, TemplateView):
     template_name = 'index/index.html'
     page = IndexPage
 
