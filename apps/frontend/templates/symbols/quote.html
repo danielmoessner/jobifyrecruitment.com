@@ -3,7 +3,7 @@
 <div class="bg-yellow-500 py-3">
     <div class="{% include 'symbols/container.class' %}">
         <div class="w-full flex flex-col items-center justify-between md:flex-row">
-            <blockquote class="w-full pt-8 sm:pb-8 lg:py-5 xl:py-0">
+            <blockquote class="w-full lg:py-5 xl:py-0">
                 <div class="relative flex justify-center">
                     <div class="relative">
 {#                        <div class="absolute top-0 left-2 -translate-x-1/2 -translate-y-full md:left-0">#}
@@ -23,11 +23,12 @@
                     </footer>
                 {% endif %}
             </blockquote>
-            <div class="flex flex-col items-center max-w-[50%] mt-5 md:max-w-none md:mt-0 lg:py-2">
-{#                <img class="max-w-md w-full h-auto md:h-8 lg:h-10 lg:w-auto" src="{% static 'img/logo.png' %}"#}
-{#                     alt="Bild das ein Puzzle Teil darstellt.">#}
-                <img class="max-w-md w-full h-auto md:h-32 lg:h-32 lg:w-auto" src="{% static 'icon/quote.png' %}"
-                     alt="Bild das ein Puzzle Teil darstellt.">
+            <div class="hidden md:flex flex-col items-center max-w-[50%] mt-5 md:max-w-none md:mt-0 lg:py-2">
+
+                <img class="max-w-xs h-auto md:h-32 lg:max-w-md lg:h-32 lg:w-auto" src="{% static 'icon/quote.png' %}"
+                     alt="JobifyRecruitment Icon.">
+                <img class="max-w-xs h-auto mt-2 md:h-8 lg:max-w-md lg:h-10 lg:w-auto" src="{% static 'img/logo.png' %}"
+                     alt="JobifyRecruitment Logo.">
             </div>
         </div>
     </div>
