@@ -1530,6 +1530,10 @@ html {
   width: 100vw;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -2185,16 +2189,16 @@ html {
   padding-right: 0px;
 }
 
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .pl-4 {
   padding-left: 1rem;
 }
 
 .pb-16 {
   padding-bottom: 4rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .pb-3 {
@@ -3029,10 +3033,6 @@ html {
 
   .sm\:pb-16 {
     padding-bottom: 4rem;
-  }
-
-  .sm\:pb-8 {
-    padding-bottom: 2rem;
   }
 
   .sm\:pl-6 {
