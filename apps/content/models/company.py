@@ -6,11 +6,11 @@ from django.db import models
 class Company(models.Model):
     # choices
     JOB_DURATION_CHOICES = (
-        ('4', '4 Months'),
-        ('6', '6 Months'),
-        ('8', '8 Months'),
-        ('12', '12 Months'),
-        ('PERMANENT', 'Permanent'),
+        ('4', '4 {}'.format(_('Months'))),
+        ('6', '6 {}'.format(_('Months'))),
+        ('8', '8 {}'.format(_('Months'))),
+        ('12', '12 {}'.format(_('Months'))),
+        ('PERMANENT', _('Permanent')),
     )
     YES_NO_CHOICES = (
         ('Y', _('Yes')),

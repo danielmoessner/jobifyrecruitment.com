@@ -81,25 +81,25 @@ class PageAdmin(SingletonModelAdmin, TranslationAdmin):
                     # Extract the original field's verbose_name for use as this
                     # fieldset's label - using gettext_lazy in your model
                     # declaration can make that translatable.
-                    label = self.model._meta.get_field(orig_field).verbose_name.capitalize()
+                    label = self.model._meta.get_field(orig_field).verbose_name
                     temp_fieldsets[orig_field] = (
                         label,
                         {'fields': trans_fieldnames, 'classes': ('mt-fieldset collapse',)},
                     )
 
+            for field in untranslated_fields:
+                temp_fieldsets[field.name] = (
+                    field.verbose_name,
+                    {'fields': [field.name], 'classes': ('mt-fieldset collapse',)},
+                )
+
             fields_order = unique(
-                f.translated_field.name
+                f.translated_field.name if hasattr(f, 'translated_field') else f.name
                 for f in self.opts.fields
-                if hasattr(f, 'translated_field') and f.name in flattened_fieldsets
+                if f.name in flattened_fieldsets
             )
             for field_name in fields_order:
                 fieldsets.append(temp_fieldsets.pop(field_name))
-
-            for field in untranslated_fields:
-                fieldsets.append((
-                    field.verbose_name,
-                    {'fields': [field.name], 'classes': ('mt-fieldset collapse',)},
-                ))
 
             assert not temp_fieldsets  # cleaned
 
