@@ -20,15 +20,15 @@ msgstr ""
 
 #: apps/content/models/applicant.py:10
 msgid "Mr."
-msgstr ""
+msgstr "Herr"
 
 #: apps/content/models/applicant.py:11
 msgid "Mrs."
-msgstr ""
+msgstr "Frau"
 
 #: apps/content/models/applicant.py:12
 msgid "Diverse"
-msgstr ""
+msgstr "Divers"
 
 #: apps/content/models/applicant.py:15
 msgid "Single"
@@ -36,11 +36,11 @@ msgstr ""
 
 #: apps/content/models/applicant.py:16
 msgid "Divorced"
-msgstr ""
+msgstr "Geschieden"
 
 #: apps/content/models/applicant.py:17
 msgid "Separated"
-msgstr ""
+msgstr "Getrennt"
 
 #: apps/content/models/applicant.py:18
 msgid "Married"
@@ -48,7 +48,7 @@ msgstr "Verheiratet"
 
 #: apps/content/models/applicant.py:19
 msgid "Widowed"
-msgstr ""
+msgstr "Verwitwet"
 
 #: apps/content/models/applicant.py:22
 msgid "Mother tongue"
