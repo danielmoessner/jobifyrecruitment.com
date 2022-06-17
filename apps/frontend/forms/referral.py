@@ -11,7 +11,7 @@ class ReferralForm(forms.ModelForm):
 
     class Meta:
         model = Referral
-        fields = '__all__'
+        exclude = ['completed']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

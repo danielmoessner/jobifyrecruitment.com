@@ -115,6 +115,10 @@ class SubmitReferralPage(BasePage):
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',
                                   blank=True)
+    #
+    email_subject = models.CharField(verbose_name='Mail > Subject', max_length=300, blank=True)
+    email_text = models.TextField(verbose_name='Mail > Text', blank=True)
+    email_html = tinymce_models.HTMLField(verbose_name='Mail > Rich Text', blank=True)
 
     class Meta:
         verbose_name = 'Page > Submit A Referral'

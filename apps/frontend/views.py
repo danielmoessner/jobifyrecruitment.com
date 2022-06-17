@@ -146,16 +146,16 @@ class SubmitReferralView(BaseContext, PageContext, CreateView):
         return ret
 
     def send_mail(self, data):
-        from_email, to = 'website@jobifyrecruitment.com', 'info@jobifyrecruitment.com'
+        from_email, to = 'website@jobifyrecruitment.com', data['your_email']
 
-        subject = 'Contact Form'
-        text_content = 'The following data was submitted: \n\n'
-        for key, value in data.items():
-            text = '{}:\n{}\n\n'.format(key, value)
-            text_content = '{}{}'.format(text_content, text)
+        page = self.page.get_solo()
+        subject = page.email_subject
+        text_content = page.email_text
+        html_content = page.email_html
 
         msg = EmailMultiAlternatives(subject=subject, body=text_content, from_email=from_email, to=[to],
-                                     reply_to=['info@jobifyrecruitment.com'])
+                                     bcc=['info@jobifyrecruitment.com'], reply_to=['info@jobifyrecruitment.com'])
+        msg.attach_alternative(html_content, "text/html")
         msg.send()
 
 
