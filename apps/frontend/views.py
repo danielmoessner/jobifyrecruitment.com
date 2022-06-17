@@ -59,7 +59,7 @@ class InitiativeApplicationView(BaseContext, PageContext, CreateView):
         return ret
 
     def send_mail(self, data):
-        from_email, to = 'website@jobifyrecruitment.com', data['email']
+        from_email, to = 'JobifyRecruitment <website@jobifyrecruitment.com>', data['email']
 
         page = self.page.get_solo()
         subject = page.email_subject
@@ -100,7 +100,7 @@ class SubmitPositionView(BaseContext, PageContext, CreateView):
         return ret
 
     def send_mail(self, data):
-        from_email, to = 'website@jobifyrecruitment.com', data['company_email']
+        from_email, to = 'JobifyRecruitment <website@jobifyrecruitment.com>', data['company_email']
 
         page = self.page.get_solo()
         subject = page.email_subject
@@ -146,7 +146,7 @@ class SubmitReferralView(BaseContext, PageContext, CreateView):
         return ret
 
     def send_mail(self, data):
-        from_email, to = 'website@jobifyrecruitment.com', data['your_email']
+        from_email, to = 'JobifyRecruitment <website@jobifyrecruitment.com>', data['your_email']
 
         page = self.page.get_solo()
         subject = page.email_subject
@@ -210,7 +210,7 @@ class ContactView(BaseContext, PageContext, FormView):
         return ret
 
     def send_mail(self, data):
-        from_email, to = 'website@jobifyrecruitment.com', 'info@jobifyrecruitment.com'
+        from_email, to = 'JobifyRecruitment <website@jobifyrecruitment.com>', 'info@jobifyrecruitment.com'
 
         subject = 'Contact Form'
         text_content = 'The following data was submitted: \n\n'
