@@ -40,6 +40,9 @@ class IndexPage(BasePage):
     applicants_text = models.TextField(verbose_name='Applicants > Text', blank=True)
     applicants_button = models.CharField(verbose_name='Applicants > Button', max_length=200, blank=True)
     #
+    reviews_title = models.CharField(verbose_name='Reviews > Title', max_length=1000, blank=True)
+    reviews_text = models.TextField(verbose_name='Reviews > Text', blank=True)
+    #
     quote_text = models.TextField(verbose_name='Quote > Text', blank=True)
     quote_author = models.CharField(verbose_name='Quote > Author', max_length=500, blank=True)
     quote_size = models.CharField(verbose_name='Quote > Size', choices=SIZE_CHOICES, max_length=100, default='NORMAL',

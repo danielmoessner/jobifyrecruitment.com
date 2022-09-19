@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Review(models.Model):
-    customer = models.CharField(max_length=1000)
+    customer = models.CharField(max_length=1000, blank=True)
     text = models.TextField()
     ordering = models.IntegerField(default=0)
     show = models.BooleanField(default=True)
@@ -10,7 +10,7 @@ class Review(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.customer
+        return self.text[:40]
 
     class Meta:
         verbose_name = 'Review'

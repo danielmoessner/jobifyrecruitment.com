@@ -6,7 +6,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     SubmitPositionPage, ServicesPage, SubmitReferralThanksPage, InitiativeApplicationThanksPage, \
     SubmitPositionThanksPage, AboutPage, Company, Applicant, Referral, MemberCategory, PortalPage, ContactPage, \
     ImprintPage, ContactThanksPage, InitiativeApplicationPage, IndexPage, JobSeekerFaqPage, Navigation, AgbPage, \
-    PrivacyPage, EmployerHowItWorksPage, Footer
+    PrivacyPage, EmployerHowItWorksPage, Footer, Review
 from django.core.mail import EmailMultiAlternatives
 from django.urls import reverse_lazy
 from .forms import ApplicantForm, CompanyForm, ReferralForm, ContactForm
@@ -43,6 +43,7 @@ class IndexView(BaseContext, PageContext, TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = _('English')
         context['applicants'] = Applicant.objects.filter(show=True)
+        context['reviews'] = Review.objects.filter(show=True)
         return context
 
 
