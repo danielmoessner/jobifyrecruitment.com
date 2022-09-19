@@ -115,7 +115,7 @@
         Alpine.data('portal', () => ({
             experience: [],
             experienceOpen: false,
-            expertise: [{{ request.GET.expertise }}],
+            expertise: ['{{ request.GET.expertise }}'],
             expertiseOpen: false,
             getShow(expertise, experience) {
                 const expertiseInclude = this.expertise.length === 0 || this.expertise.includes(expertise.toString());
