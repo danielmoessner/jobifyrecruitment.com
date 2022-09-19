@@ -4,6 +4,7 @@ from .applicant import *
 from .referral import *
 from .service import *
 from .company import *
+from .review import *
 from .member import *
 from .pages import *
 from .user import *

@@ -1,3 +1,4 @@
+from django.contrib.admin import ModelAdmin
 from django.contrib.admin.utils import flatten_fieldsets
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
@@ -10,7 +11,7 @@ from apps.content.models import WhyToWorkWithUsPage, Service, SubmitReferralPage
     SubmitPositionPage, ServicesPage, AboutPage, Applicant, Company, Referral, User, Member, MemberCategory, \
     PortalPage, ContactPage, ImprintPage, ContactThanksPage, SubmitReferralThanksPage, SubmitPositionThanksPage, \
     InitiativeApplicationThanksPage, IndexPage, InitiativeApplicationPage, JobSeekerFaqPage, Navigation, AgbPage, \
-    PrivacyPage, EmployerHowItWorksPage, Footer
+    PrivacyPage, EmployerHowItWorksPage, Footer, Review
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -106,6 +107,15 @@ class PageAdmin(SingletonModelAdmin, TranslationAdmin):
         return fieldsets
 
 
+class ApplicantAdmin(ModelAdmin):
+    list_display = ("name", "show", "preview_set")
+
+    def preview_set(self, obj):
+        return obj.preview_set
+
+    preview_set.boolean = True
+
+
 # unregister
 admin.site.unregister(Site)
 admin.site.unregister(Group)
@@ -115,11 +125,12 @@ admin.site.register(MemberCategory, GroupedTranslationAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Referral)
 admin.site.register(Company)
-admin.site.register(Applicant)
+admin.site.register(Applicant, ApplicantAdmin)
 admin.site.register(Service, GroupedTranslationAdmin)
 admin.site.register(StaffCategory, GroupedTranslationAdmin)
 admin.site.register(Navigation, PageAdmin)
 admin.site.register(Footer, PageAdmin)
+admin.site.register(Review)
 # register pages
 admin.site.register(PortalPage, PageAdmin)
 admin.site.register(SubmitReferralPage, PageAdmin)

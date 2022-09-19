@@ -32,6 +32,7 @@ class Applicant(models.Model):
     )
     # admin
     show = models.BooleanField(default=False)
+    preview = models.ImageField(upload_to='content/applicant/preview/', blank=True, null=True)
     # contact details
     wanted_job_title = models.CharField(_('Wanted Job Title'), max_length=200)
     photo = models.ImageField(verbose_name=_('Photo'), upload_to='content/applicant/photo/')
@@ -108,9 +109,6 @@ class Applicant(models.Model):
     def age(self):
         return int((timezone.now().date() - self.birthday).days / 365.25)
 
-    def save(self, *args, **kwargs):
-        for v in self.__dict__:
-            print(v)
-            print(getattr(self, v, 'nada'))
-        # print([v for v in self.__dict__])
-        super().save(*args, **kwargs)
+    @property
+    def preview_set(self) -> bool:
+        return bool(self.preview)
