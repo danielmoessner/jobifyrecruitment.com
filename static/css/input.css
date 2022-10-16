@@ -4,7 +4,38 @@
 
 @font-face {
     font-family: Copperplate;
-    src: /*local('Copperplate'),*/ /*local('Copperplate Gothic'),*/ /*local('Copperplate Gothic Bold'),*/ url("/static/fonts/CopperplateGothicBold.ttf");
+    src: url("/static/fonts/CopperplateGothicBold.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/fonts/Roboto-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/fonts/Roboto-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/fonts/Roboto-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/fonts/Roboto-Black.ttf");
+    font-weight: 900;
 }
 
 @layer base {
